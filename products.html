@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/globe.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;400;500;600;700;900&family=Roboto+Mono:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- js -->
+    <script defer src="js/common.js"></script>
+
+    <title>ACH居家美甲工作室</title>
+</head>
+<body>
+    <!-- header -->
+    <header class="header"></header>
+
+    <!-- main -->
+    <main class="main">
+        <div class="products">
+            <nav class="product_list flex center">
+                <div class="price low">單色 | 跳色</div>
+                <div class="price low_center">貓眼 | 鏡面</div>
+                <div class="price center">單色漸層</div>
+                <div class="price center_high">法式凝膠</div>
+                <div class="price high">造型款式</div>
+            </nav>
+            <div class="product flex"></div>
+        </div>
+    </main>
+    
+    <!-- footer -->
+    <footer class="footer"></footer>
+</body>
+</html>
+
+<script>
+
+    // 待解決：hover效果消失
+
+    // create default price 900 product image
+    for (let i = 16; i<28; i++) document.getElementsByClassName('product')[0].innerHTML += '<a href="product.html"><img src="img/products/' + i + '.jpeg"></a>';
+
+    // change images when price tag onclick
+    let element= document.getElementsByClassName('price');
+    for(let i = 0; i < element.length ; i++){
+        element[i].onclick = function(){
+            // reset price background color and clear images
+            document.getElementsByClassName('product')[0].innerHTML = '';
+            for(let j = 0; j < element.length; j++) element[j].style.background = '#A5896A80';
+            // change onclick price background color
+            element[i].style.background = '#A5896A';
+            // change images
+            for (let j = 16 + 4 * i; j < 28 + 4 * i; j++) document.getElementsByClassName('product')[0].innerHTML += '<a href="product.html"><img src="img/products/' + j + '.jpeg"></a>';
+        }
+    }
+</script>

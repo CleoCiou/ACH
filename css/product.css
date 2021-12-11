@@ -1,0 +1,51 @@
+.product_wrap {
+    padding-top: 30px;
+}
+.product_wrap .path li a {
+    color: #777;
+    padding: 0 10px;
+}
+.product_wrap .path li:not(:first-child):before {
+    content: "\203A";
+    color: #777;
+    display: inline-block;
+}
+.product_wrap .product {
+    background-color: #fff;
+    font-size: 0;
+}
+.product_wrap .product .item {
+    width: 600px;
+}
+.product_wrap .product .description {
+    padding: 30px;
+}
+.product_wrap .product .description h1 {
+    font-weight: 700;
+    color: #684337;
+    margin-bottom: 10px;
+}
+.product_wrap .product .description p {
+    font-size: 18px;
+    color: #666;
+}
+.product_wrap .product .description .icon span {
+    font-size: 40px;
+    font-weight: 700;
+    color: #E3C284;
+    padding-right: 10px;
+}
+.product_wrap .product .description .icon button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #A5896A;
+    color: #fff;
+}
+.product_wrap .product .description .icon .appointment {
+    background-color: #7E9A8A;
+    width: 200px;
+}

@@ -1,0 +1,41 @@
+.footer {
+    margin-top: 60px;
+    color: #684337;
+    background-color: #c2b5ac50;
+}
+.footer .maplist {
+    padding: 30px 0;
+}
+.footer .maplist > li {
+    width: 200px;
+}
+.footer .maplist > li > a,
+.footer .maplist > li > span {
+    padding: 5px;
+    font-size: 14px;
+}
+.footer .maplist > li > a:first-child {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer .maplist .about {
+    width: 600px;
+}
+.footer .maplist .about .icon > img {
+    width: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.footer .maplist .about .description > span {
+    margin-bottom: 10px;
+}
+.footer .maplist .about > img {
+    width: 200px;
+    object-fit: contain;
+}
+
+.footer .copyright {
+    background-color: #c2b5ac;
+    padding: 3px 0;
+}
