@@ -34,12 +34,13 @@ myelement.innerHTML +=
 '    </li>' +
 '    <li class="appointment flex col">' +
 '        <a href="#">預約行事曆</a>' +
-'        <a href="#">預約流程</a>' +
-'        <a href="#">預約須知</a>' +
 '        <a href="#">我的最愛</a>' +
+'        <a href="#">價目表</a>' +
 '    </li>' +
 '    <li class="others flex col">' +
-'        <a href="#">價目表</a>' +
+'        <a href="#">其他資訊</a>' +
+'        <a href="#">預約流程</a>' +
+'        <a href="#">預約須知</a>' +
 '        <a href="#">防疫公告</a>' +
 '        <a href="#">FAQ</a>' +
 '    </li>' +

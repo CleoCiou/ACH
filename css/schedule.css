@@ -1,0 +1,103 @@
+#schedule {
+    text-align: center;
+    padding-bottom: 30px;
+}
+#calendar_contain {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: inline-block;
+    text-align: left;
+    overflow: hidden;
+}
+#calendar_header {
+    text-align: center;
+    position: relative;
+}
+.month {
+    color: #A5896A;
+    font-size: 30px;
+    line-height: 30px;
+    display: inline-block;
+    margin: 20px 30px;
+}
+.lastmonth {
+    display: inline-block;
+    font-size: 16px;
+    color: #A5896A;
+    left: 50px;
+    top: 26px;
+    position: absolute;
+    cursor: pointer;
+}
+.nextmonth {
+    display: inline-block;
+    font-size: 16px;
+    color: #A5896A;
+    right: 50px;
+    top: 26px;
+    position: absolute;
+    cursor: pointer;
+}
+.week {
+    width: 600px;
+    height: 70px;
+    display: flex;
+}
+#week0 {
+    height: 30px;
+    line-height: 12px;
+    background-color: #c2b5ac;
+    color: #fff;
+    font-size: 24px;
+}
+.day {
+    width: 100px;
+    border-bottom: 1px solid #c2b5ac;
+    border-left: 1px solid #c2b5ac;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-top: 5px;
+    position: relative;
+}
+.day:nth-child(7n) {
+    border-right: 1px solid #c2b5ac;
+}
+#week5 .day0 {
+    border-bottom-left-radius: 5px;
+}
+#week5 .day6 {
+    border-bottom-right-radius: 5px;
+}
+
+/* calendar footer */
+.calendar_footer {
+    margin-top: 10px;
+    text-align: left;
+    padding: 0 50px;
+}
+.timePeriod {
+    text-align: left;
+    padding: 10px 0;
+    font-size: 12px;
+    line-height: 30px;
+    color: #684337;
+    display: inline-block;
+}
+.timePeriod span {
+    padding-right: 20px;
+}
+.timePeriod span:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #A5896A;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.timePeriod span:nth-child(2):before {
+    background-color: #7E9A8A;
+}
+.timePeriod span:nth-child(3):before {
+    background-color: #E3C284;
+}

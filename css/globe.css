@@ -1,10 +1,7 @@
 * {
     box-sizing: border-box;
     line-height: 1.5;
-    letter-spacing: 1.5px;
-    /* font-family: 'Merriweather', 'Noto Serif TC', serif; */
     font-family: 'Noto Serif TC', serif, 'Roboto Mono', monospace;
-    /* font-family: 'Roboto Mono', monospace; */
     /* outline: 1px solid red; */
 }
 body {

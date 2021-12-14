@@ -10,6 +10,21 @@ p {
     color: #555;
 }
 
+.main section {
+    margin-bottom: 80px;
+}
+.main .appointment_btn {
+    background-color: #7E9A8A;
+    color: #fff;
+    letter-spacing: 5px;
+    font-size: 20px;
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    width: 150px;
+    line-height: 40px;
+}
+
 /* popular_product */
 .main .popular_product {
     margin-top: 30px;
@@ -23,9 +38,22 @@ p {
 .main .popular_product .description h2,
 .main .popular_product .description p {
     padding: 10px 50px;
+    letter-spacing: 2px;
+}
+.main .popular_product .description .appointment_btn {
+    margin-top: 10px;
+    margin-left: 50px;
 }
 
 /* appointment */
+.main .appointment h1:after {
+    content: '預約';
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 30px;
+    color: #c2b5ac;
+    font-weight: 400;
+}
 .main .appointment .schedule_wrap {
     width: 100%;
 }
@@ -35,15 +63,18 @@ p {
 .main .appointment .schedule {
     background-color: #fff;
 }
-.main .appointment a {
-    color: #A5896A;
-    font-size: 40px;
-    width: 100%;
-}
 
 /* product_list */
 .main .product_list {
     position: relative;
+}
+.main .product_list h1:after {
+    content: '樣式';
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 30px;
+    color: #c2b5ac;
+    font-weight: 400;
 }
 .main .product_list :not(h1) {
     font-size: 0;
@@ -75,7 +106,6 @@ p {
     transition: .5s;
 }
 .main .product_list .preview > img {
-    /* width: 0; */
     width: 216px;
     margin: 10px;
     transition: .5s;
@@ -106,15 +136,12 @@ p {
     color: #fff;
     padding-left: 15px;
     margin-bottom: 10px;
-}
-.main .others ul li:first-child {
-    background-color: #A5896A;
+    transition: .5s;
 }
 .main .others ul li:hover {
     background-color: #A5896A;
     transform: translate(10px);
     cursor: pointer;
-    transition: .5s;
 }
 .main .others .description {
     height: 500px;  

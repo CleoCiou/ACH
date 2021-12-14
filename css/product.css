@@ -28,6 +28,8 @@
 .product_wrap .product .description p {
     font-size: 18px;
     color: #666;
+    letter-spacing: 2px;
+    line-height: 1.8;
 }
 .product_wrap .product .description .icon span {
     font-size: 40px;
