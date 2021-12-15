@@ -7,6 +7,10 @@
 body {
     width: 100%;
     background-color: #ebe9e2;
+    overflow-x: hidden;
+    /* overflow: hidden; */
+    /* background: url('../img/background/body4.svg'); */
+    /* background-size: cover; */
 }
 h1 {
     font-size: 60px;

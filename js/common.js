@@ -6,7 +6,7 @@ myelement.innerHTML +=
     '<!-- menu -->' +
     '<nav class="menu grow">' +
         '<a href="#" class="appointment">預約</a>' +
-        '<a href="products.html" class="product_list">樣式</a>' +
+        '<a href="../products.html" class="product_list">樣式</a>' +
         '<a href="#" class="others">其他資訊</a>' +
         '<a href="#" class="about">關於</a>' +
     '</nav>' +
@@ -14,8 +14,8 @@ myelement.innerHTML +=
     '<input type="text" class="search" placeholder="&#128269;&#xFE0E; 搜尋..">' +
     '<!-- member -->' +
     '<div class="member">' +
-        '<button class="like">&#9829;</button>' + 
-        '<button class="login">&#9863;</button>' +
+        '<a href="#" class="like">&#9829;</a>' + 
+        '<a href="../member.html" class="login">&#9863;</a>' +
     '</div>' +
 '</div>';
 
