@@ -4,61 +4,134 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- css -->
+    <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/globe.css">
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/product.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;400;500;600;700;900&family=Roboto+Mono:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <!-- js -->
-    <script defer src="js/common.js"></script>
-
-    <title>ACH居家美甲工作室</title>
+    <script defer src="js/products.js"></script>
 </head>
 <body>
     <!-- header -->
-    <header class="header"></header>
+    <header>
+        <div class="container">
+            <!-- logo -->
+            <div class="headerItem logo">
+                <img src="img/logo_nb.png" alt="LOGO">
+                <span>ACH Nails Studio.</span>
+            </div>
+            <!-- menu -->
+            <nav class="headerItem menu">
+                <a href="#" class="appointment">Appointment</a>
+                <a href="#" class="category">Category</a>
+                <a href="#" class="info">Info</a>
+                <a href="#" class="about">About</a>
+            </nav>
+            <!-- others -->
+            <div class="headerItem others">
+                <a href="#">Search</a>
+                <a href="#">My Account</a>
+                <a href="#">Like</a>
+            </div>
+        </div>
+    </header>
 
     <!-- main -->
-    <main class="main">
-        <div class="product_wrap w1200">
-            <ul class="path flex">
-                <li><a href="homepage.html">首頁</a></li>
-                <li><a href="products.html">樣式</a></li>
-                <li><a href="products.html">造型</a></li>
-                <li><a href="#">聖誕節</a></li>
-            </ul>
-            <section class="product w1200 flex">
-                <img src="img/products/04.jpg" alt="商品名稱" class="item">
-                <div class="description item flex col">
-                    <h1 class="name">聖誕節</h1>
-                    <p class="detail grow">
-                        一年一度聖誕月即將到來<br>
-                        想要美美過聖誕千萬別錯過<br>
-                        圖一任選2指+圖二1指+其他指單色<br>
-                        $999｜價格皆含基礎保養&建構加厚<br>
-                        ≣款式底色、亮面霧面皆可換<br>
-                        ≣多一指造型+$50<br>
-                        ≣預約加LINE | @510auogx
-                    </p>
-                    <div class="icon flex end item_center">
-                        <span class="price grow">NT $900</span>
-                        <button class="appointment">預 約</button>
-                        <button class="like">&#9825;</button>
-                    </div>
+    <main>
+        <div class="container">
+            <!-- view method switch (display: none) -->
+            <input type="radio" name="viewMethod" id="explore">
+            <input type="radio" name="viewMethod" id="grid" checked>
+            <input type="radio" name="viewMethod" id="filter">
+            <!-- filters category switch (display: none) -->
+            <input type="radio" name="filters" id="all" checked>
+            <input type="radio" name="filters" id="single">
+            <input type="radio" name="filters" id="catEyes" >
+            <input type="radio" name="filters" id="singleGradual">
+            <input type="radio" name="filters" id="frenchGradual">
+            <input type="radio" name="filters" id="style">
+            <!-- products -->
+            <div class="mainItem products" id="products"></div>
+            <!-- filters -->
+            <div class="mainItem filters">
+                <!-- filters info -->
+                <!-- <div class="filtersItem txt">
+                    <span class="result">0 Results</span>
+                    <span class="result">Remove All Filters</span>
+                </div> -->
+                <!-- filters by category -->
+                <span class="filtersItem">Category</span>
+                <div class="filtersItem category">
+                    <label for="all">全部類別</label>
+                    <label for="single">單色 | 跳色</label>
+                    <label for="catEyes">貓眼 | 鏡面</label>
+                    <label for="singleGradual">單色漸層</label>
+                    <label for="frenchGradual">法式漸層</label>
+                    <label for="style">客製化造型</label>
                 </div>
-            </section>
-            <section class="comment">
-            </section>
+                <!-- filters by color -->
+                <!-- <div class="filtersItem color"></div> -->
+            </div>
+            <!-- view method bar -->
+            <div class="mainItem viewMethod">
+                <label for="explore">Explore</label>
+                <label for="grid">Grid</label>
+                <label for="filter">Filter</label>
+            </div>
         </div>
     </main>
 
     <!-- footer -->
-    <footer class="footer"></footer>
+    <footer>
+        <!-- web map and about -->
+        <div class="container">
+            <div class="footerItem webMap">
+                <ul class="mapList">
+                    <!-- products category -->
+                    <li class="mapListItem products">
+                        <span>樣式</span>
+                        <a href="#">熱門款</a>
+                        <a href="#">優惠活動</a>
+                        <a href="#">單色 | 跳色</a>
+                        <a href="#">貓眼 | 鏡面</a>
+                        <a href="#">單色漸層</a>
+                        <a href="#">法式凝膠</a>
+                        <a href="#">客製化造型</a>
+                    </li>
+                    <li class="mapListItem appointment">
+                        <span>預約</span>
+                        <a href="#">預約行事曆</a>
+                        <a href="#">我的最愛</a>
+                    </li>
+                    <li class="mapListItem others">
+                        <span href="#">其他資訊</span>
+                        <a href="#">價目表</a>
+                        <a href="#">預約流程</a>
+                        <a href="#">預約須知</a>
+                        <a href="#">防疫公告</a>
+                        <a href="#">FAQ</a>
+                    </li>
+                    <li class="mapListItem about">
+                        <div class="aboutItem description">
+                            <div class="icon flex item_center">
+                                <img src="img/icon/line.png" alt="line icon">
+                                <img src="img/icon/instagram.svg" alt="instagram icon">
+                            </div>
+                            <span>居家美甲工作室 | 預約制</span>
+                            <span>美甲師 | 寶尼</span>
+                            <span>饒河街觀光夜市(八德)站 | 步行 2 分鐘</span>
+                            <span>捷運松山站 | 步行 7 分鐘</span>
+                        </div>
+                        <img src="img/logo_nb.png" alt="LOGO" class="aboutItem logo">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- copyright -->
+        <div class="container">
+            <div class="footerItem copyright">
+                <span>ACH Nails Studio 2021 &copy</span>
+                <a href="#">Back To Top ▲</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
