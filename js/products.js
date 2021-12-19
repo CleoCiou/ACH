@@ -1,15 +1,17 @@
-// appen product
-
-/* <div class="productsItem">
-    <img src="img/...">
-    <div class="txt">
-        <p class="category">class</p>
-        <h3 class="name">title</h3>
-        <p class="description">price</p>
-        <p class="price">price</p>
-    </div>
+// TODO: appen product
+/* <div class="productsItem product [category for filters]">
     <button class="last"></button>
     <button class="next"></button>
+    <a class="productLink" href="../product.html">
+        <img class="productItem" src="img/products/create/1.jpg">
+        <div class="txt productItem">
+            <p class="category">貓眼|鏡面 CatEyes</p>
+            <h3 class="name">樣式名稱1</h3>
+            <p class="description">有一種弦律，叫做大自然，<br>
+            他不比命運交響曲的豪邁，也不同田園交響曲的柔情。</p>
+            <p class="price">NT $1,000</p>
+        </div>
+    </a>
 </div> */
 
 // products info
@@ -43,10 +45,17 @@ for (let i = 1; i < 20; i++){
     item.onclick = changeImg;
     node.appendChild(item);
 
+    // product link
+    item = document.createElement('a');
+    item.classList.add('productLink');
+    item.href = '../product.html';
+    node.appendChild(item);
+
+    node = item;
     // product img
     item = document.createElement('img');
     item.classList.add('productItem');
-    item.src = 'img/products/hand/' + i + '.jpeg';
+    item.src = 'img/products/create/' + i + '.jpg';
     node.appendChild(item);
     
     // product info

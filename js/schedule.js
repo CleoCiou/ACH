@@ -71,14 +71,11 @@ function createCalendar(){
     node = document.createElement('div')
     node.id = 'calendar_footer'
     node.classList.add('calendar_footer')
-    node.classList.add('flex')
-    node.classList.add('item_center')
     document.getElementById('schedule').appendChild(node)
     // time period wrap
     node = document.createElement('div')
     node.id = 'timePeriod'
     node.classList.add('timePeriod')
-    node.classList.add('grow')
     document.getElementById('calendar_footer').appendChild(node)
     // time period item
     node = document.createElement('span')

@@ -12,7 +12,7 @@
     <!-- css -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/products.css">
     <!-- js -->
     <script defer src="js/products.js"></script>
 </head>
@@ -44,7 +44,49 @@
     <!-- main -->
     <main>
         <div class="container">
-            
+            <!-- view method switch (display: none) -->
+            <input type="radio" name="viewMethod" id="explore">
+            <input type="radio" name="viewMethod" id="grid" checked>
+            <input type="radio" name="viewMethod" id="filter">
+            <!-- filters category switch (display: none) -->
+            <input type="radio" name="filters" id="all" checked>
+            <input type="radio" name="filters" id="single">
+            <input type="radio" name="filters" id="catEyes" >
+            <input type="radio" name="filters" id="singleGradual">
+            <input type="radio" name="filters" id="frenchGradual">
+            <input type="radio" name="filters" id="style">
+            <!-- products -->
+            <div class="mainItem products" id="products"></div>
+            <!-- filters -->
+            <div class="mainItem filters">
+                <div class="filtersItem filtersList">
+                    <!-- filters info -->
+                    <div class="listItem txt">
+                        <span class="result">0 Results</span>
+                        <label class="remove" for="all">Remove All Filters</label>
+                    </div>
+                    <!-- filters by category -->
+                    <div class="listItem category">
+                        <span class="categoryItem title">Category</span>
+                        <div class="categoryItem list">
+                            <label class="listItem" for="all">全部類別</label>
+                            <label class="listItem" for="single">單色 | 跳色</label>
+                            <label class="listItem" for="catEyes">貓眼 | 鏡面</label>
+                            <label class="listItem" for="singleGradual">單色漸層</label>
+                            <label class="listItem" for="frenchGradual">法式漸層</label>
+                            <label class="listItem" for="style">客製化造型</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- filters by color -->
+                <!-- <div class="filtersItem color"></div> -->
+            </div>
+            <!-- view method bar -->
+            <div class="mainItem viewMethod">
+                <label for="explore">Explore</label>
+                <label for="grid">Grid</label>
+                <label for="filter">Filter</label>
+            </div>
         </div>
     </main>
 

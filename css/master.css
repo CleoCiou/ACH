@@ -1,0 +1,233 @@
+/* globe */
+* {
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    font-family: 'Noto Serif TC', serif, 'Roboto Mono', monospace;
+}
+body {
+    background-color: #ebe9e2;
+}
+h1,
+h2,
+h3,
+p {
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 36px;
+}
+h3 {
+    font-size: 20px;
+}
+p {
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+    color: #684337;
+}
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+/* header */
+header {
+    width: 100%;
+    box-shadow: 0 1px 2px 0 #ccc;
+    background-color: #c2b5ac;
+    box-shadow: 0 2px 3px #68433780;
+    position: fixed;
+    z-index: 1;
+    padding: 3px 0;
+}
+header .container {
+    display: flex;
+    align-items: center;
+}
+.headerItem {
+    width: calc(100% / 4 - 30px);
+    padding: 5px;
+}
+header .menu {
+    flex-grow: 1;
+}
+/* header link */
+header .menu,
+header .others {
+    display: flex;
+}
+header .others {
+    justify-content: flex-end;
+}
+header .menu a,
+header .others a {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+header .menu a {
+    padding-right: 25px;
+}
+header .others label {
+    padding-left: 20px;
+}
+/* header link decoration */
+header .menu a:after,
+header .others a:after {
+    content: '';
+    width: 0;
+    height: 1px;
+    padding-top: 5px;
+    border-bottom: 2px solid #684337;
+    display: block;
+    transition: .5s;
+}
+header .menu a:hover:after,
+header .others a:hover:after {
+    width: 100%;
+}
+/* logo */
+header .logo {
+    display: flex;
+    align-items: center;
+}
+header .logo img {
+    width: 50px;
+}
+
+/* footer */
+footer {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    color: #684337;
+    background-color: #ded9d1;
+    font-size: 14px;
+}
+footer span,
+footer a {
+    color: #777;
+}
+/* webmap */
+footer .webMap {
+    padding: 20px 0;
+}
+footer .webMap .mapList {
+    display: flex;
+}
+
+footer .webMap .mapListItem {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+footer .webMap .mapListItem span,
+footer .webMap .mapListItem a {
+    padding: 4px 0;
+    padding-right: 100px;
+}
+footer .webMap .mapListItem span {
+    color: #000;
+    padding: 8px 0;
+}
+/* about */
+footer .webMap .mapListItem.about {
+    flex-direction: row;
+    flex-grow: 1;
+}
+footer .webMap .mapListItem .aboutItem {
+    display: flex;
+    flex-direction: column;
+}
+/* about logo */
+footer .webMap .mapListItem .aboutItem.logo {
+    width: 300px;
+    padding-left: 50px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+/* about icon */
+footer .webMap .mapListItem .aboutItem img {
+    width: 30px;
+    vertical-align: middle;
+}
+/* copyright */
+footer .container:last-child {
+    width: 100%;
+    background-color: #c2b5ac;
+}
+footer .copyright {
+    width: 1200px;
+    margin: auto;
+    padding: 3px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* index main */
+main .container:first-child {
+    padding-top: 80px;
+}
+main .news,
+main .appointment,
+main .categoryItem {
+    display: flex;
+    flex-wrap: wrap;
+}
+main .news,
+main .categoryItem {
+    align-items: center;
+}
+main .categoryItem:nth-child(even) {
+    flex-direction: row-reverse;
+}
+main .newsItem,
+main .categoryItem .item {
+    width: calc(100% / 2);
+}
+main .categoryItem .categoryImg img {
+    width: 100%;
+}
+main .appointment h2 {
+    width: 100%;
+}
+main .appointment img {
+    width: 45%;
+}
+main .appointment .schedule {
+    flex-grow: 1;
+    padding: 0 30px;
+    background-color: #fff;
+}
+main .others {
+    display: flex;
+}
+/* others list */
+main .others .infoList {
+    width: 20%;
+    padding-right: 50px;
+    padding-right: 50px;
+}
+main .others .infoList .listItem {
+    background-color: #c2ab90;
+    color: #fff;
+    padding: 10px 80px 10px 20px;
+    margin-bottom: 10px;
+    transition: .5s;
+}
+main .others .infoList .listItem:hover {
+    background-color: #A5896A;
+    transform: translate(10px);
+    cursor: pointer;
+}
+
+/* others description */
+main .others .description {
+    flex-grow: 1;
+    height: 500px;
+    background-color: #c2ab90;
+}
