@@ -114,6 +114,7 @@ function reset(){
     day = 1;
     document.getElementById('schedule').innerHTML = '';
 }
+
 function lastMonth(){
     // innerText e.g. < Jan.
     let tmp = this.innerText.replace('< ','');
@@ -123,6 +124,7 @@ function lastMonth(){
     reset();
     createCalendar();
 }
+
 function nextMonth(){
     // innerText e.g. Feb. >
     let tmp = this.innerText.replace(' >','');
