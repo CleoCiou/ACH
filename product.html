@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/product.css">
-    <!-- js -->
-    <script defer src="js/products.js"></script>
 </head>
 <body>
     <!-- header -->
@@ -44,7 +42,72 @@
     <!-- main -->
     <main>
         <div class="container">
-            
+            <!-- detail -->
+            <div class="mainItem detail">
+                <!-- 70% left -->
+                <div class="detailItem detailImg">
+                    <img src="img/products/hand/1.jpeg" alt="">
+                    <img src="img/products/hand/2.jpeg" alt="">
+                    <img src="img/products/hand/3.jpeg" alt="">
+                    <img src="img/products/hand/4.jpeg" alt="">
+                    <img src="img/products/hand/5.jpeg" alt="">
+                </div>
+                <!-- 30% right fixed -->
+                <div class="detailItem detailTxt">
+                    <div class="productInfo">
+                        <p>category</p>
+                        <h3>樣式名稱</h3>
+                        <p>NT $1,000</p>
+                        <p>有一種弦律，叫做大自然，<br>他不比命運交響曲的豪邁，也不同田園交響曲的柔情。</p>
+                        <div class="customName">
+                            <label for="name">姓名:</label>
+                            <input type="text" id="name">
+                        </div>
+                        <div class="customTel">
+                            <label for="phone">電話:</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="customItem">
+                            <label>施作項目:</label>
+                            <select>
+                                <option>手部</option>
+                                <option>足部</option>
+                                <option>純保養</option>
+                                <option>純卸甲</option>
+                            </select>
+                            <input type="radio" name="disarm" id="disarm" checked>
+                            <label for="disarm">卸甲</label>
+                            <input type="radio" name="disarm" id="noNeed">
+                            <label for="noNeed">不須卸甲</label>
+                        </div>
+                        <input type="date" id="appointmentDate">
+                        <select>
+                            <option>12:00~15:00</option>
+                            <option>15:00~18:00</option>
+                            <option>19:00~22:00</option>
+                        </select>
+                        <div class="appointment">
+                            <input type="button" value="預約">
+                            <a href="#">Login</a>
+                        </div>
+                        <ul class="announcement">
+                            <li>提供現金交易、現場網銀轉帳，未提供刷卡。</li>
+                            <li>預約保留15分鐘，遲到15分鐘視同取消。</li>
+                            <li>施作時間約2-3小時。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mainItem story"></div>
+            <!-- description -->
+            <div class="mainItem description"></div>
+            <!-- recommend -->
+            <div class="mainItem recommend">
+                <div class="recommendItem">
+                    <div class="recommendImg"></div>
+                    <div class="recommendTxt"></div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -104,3 +167,31 @@
     </footer>
 </body>
 </html>
+<script>
+    // TODO: set appointment default date
+    // get date
+    let today = new Date();
+    let year = today.getFullYear();
+    let maxYear = year;
+    // getMonth(): 0-11
+    let month = today.getMonth() + 1; // 1-12
+    let maxMonth = month + 1;
+    if (maxMonth === 13) {maxMonth = 1; maxYear++}
+    // input:date value/min/max format: yyyy-mm-dd
+    if (month < 10 ) month = '0' + month.toString(); // 01-12
+    if (maxMonth < 10 ) maxMonth = '0' + maxMonth.toString();
+    let date = today.getDate();
+    let hours = today.getHours();
+    // get all days of this month
+    let nowMonthDays = new Date(year, month, 0);
+    nowMonthDays = nowMonthDays.getDate();
+    // get all days of next month
+    let nextMonthDays = new Date(year, maxMonth, 0);
+    nextMonthDays = nextMonthDays.getDate();
+    // set input:date default value/max/min date
+    let node = document.getElementById('appointmentDate');
+    node.value = year + '-' + month + '-' + date;
+    node.min = year + '-' + month + '-' + date;
+    // mm/15 20:00 open next month appointment
+    node.max = (date > 15 || (date === 15 && hours > 19)) ? maxYear + '-' + maxMonth + '-' + nextMonthDays : maxYear + '-' + month + '-' + nowMonthDays;
+</script>

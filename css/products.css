@@ -227,7 +227,7 @@ main .filters {
 }
 main .filters .filtersList {
     position: fixed;
-    width: 400px;
+    width: 360px;
     /* width: 30%; */
 }
 main .filters .filtersList .category .list {
