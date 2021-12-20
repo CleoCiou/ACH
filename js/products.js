@@ -48,7 +48,7 @@ for (let i = 1; i < 20; i++){
     // product link
     item = document.createElement('a');
     item.classList.add('productLink');
-    item.href = '../product.html';
+    item.href = 'product.html';
     node.appendChild(item);
 
     node = item;
