@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+        .item {
+            width: calc(100% / 3 - 30px);
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=1">
+            <div class="txt">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam dolorum, quisquam eveniet, inventore illo molestias a ullam officiis sapiente velit, facilis aperiam consectetur rem natus totam? Ea commodi ad rerum?</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=1">
+            <div class="txt">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam dolorum, quisquam eveniet, inventore illo molestias a ullam officiis sapiente velit, facilis aperiam consectetur rem natus totam? Ea commodi ad rerum?</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=1">
+            <div class="txt">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam dolorum, quisquam eveniet, inventore illo molestias a ullam officiis sapiente velit, facilis aperiam consectetur rem natus totam? Ea commodi ad rerum?</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // <div class="item">
+    //     <img src="https://picsum.photos/300/300/?random=1">
+    //     <div class="txt">
+    //         <h3>title</h3>
+    //         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam dolorum, quisquam eveniet, inventore illo molestias a ullam officiis sapiente velit, facilis aperiam consectetur rem natus totam? Ea commodi ad rerum?</p>
+    //     </div>
+    // </div>
+
+    for (let i = 0; i < 10; i++) {
+        // get div
+        let node = document.getElementById('wrap');
+        // append div.item
+        let newNode = document.createElement('div');
+        newNode.classList.add('item');
+        node.appendChild(newNode);
+
+        // append img to div.item
+        node = newNode;
+        newNode = document.createElement('img');
+        newNode.src = 'https://picsum.photos/300/300/?random=2';
+        node.appendChild(newNode);
+        // append txt to div.item
+        newNode = document.createElement('div');
+        newNode.classList.add('txt');
+        node.appendChild(newNode);
+
+        // append title to div.txt
+        node = newNode;
+        newNode = document.createElement('h3');
+        newNode.innerText = 'newTitle';
+        node.appendChild(newNode);
+        // append description to div.txt
+        newNode = document.createElement('p');
+        newNode.innerText = 'testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest';
+        node.appendChild(newNode);
+    }
+
+</script>

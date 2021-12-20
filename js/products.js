@@ -55,6 +55,7 @@ for (let i = 1; i < 20; i++){
     // product img
     item = document.createElement('img');
     item.classList.add('productItem');
+    // item.src = 'img/products/hand/' + i + '.jpeg';
     item.src = 'img/products/create/' + i + '.jpg';
     node.appendChild(item);
     

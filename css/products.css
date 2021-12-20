@@ -34,9 +34,6 @@ main .productsItem .txt {
     padding: 20px 10px;
     background-color: #fff;
 }
-main .productsItem:hover .txt {
-    box-shadow: 0 2px 5px 0 #aaa;
-}
 main .productsItem img {
     transition: .5s;
 }

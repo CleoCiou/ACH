@@ -42,7 +42,7 @@ header {
     background-color: #c2b5ac;
     box-shadow: 0 2px 3px #68433780;
     position: fixed;
-    z-index: 1;
+    z-index: 5;
     padding: 3px 0;
 }
 header .container {
@@ -110,7 +110,7 @@ footer {
 }
 footer span,
 footer a {
-    color: #777;
+    color: #555;
 }
 /* webmap */
 footer .webMap {
