@@ -140,6 +140,9 @@ main .recommend {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+main .recommend h2 {
+    width: 100%;
+}
 main .recommendItem {
     width: calc(100% / 3 - 50px);
     margin: 25px 0;

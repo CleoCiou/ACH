@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgImg {
+            position: relative;
+        }
+        .bgImg:after {
+            content: '';
+            display: block;
+            position: absolute;
+            border: 1px solid red;
+            bottom: 0;
+            /* width: 200px; */
+            /* height: 200px; */
+            background: linear-gradient(45deg, #557777 50%, transparent 50%),
+                linear-gradient(90deg, #ee6655 100%, transparent 100%),
+                linear-gradient(135deg, #ffeebb 50%, transparent 50%) 100% 0%,
+                linear-gradient(180deg, #ffcc55 100%, transparent 100%) 100% 0%,
+                linear-gradient(225deg, #ffaa22 50%, transparent 50%) 100% 100%,
+                linear-gradient(270deg, #ccddaa 100%, transparent 100%) 100% 100%,
+                linear-gradient(315deg, #77aa88 50%, transparent 50%) 0% 100%,
+                linear-gradient(360deg, #99cc99 100%, transparent 100%) 0% 100%;
+            background-repeat: no-repeat;
+            background-size: 50% 50%;
+            border-radius: 50%;
+            margin: 0 auto;
+            width: 150px;
+            height: 150px;
+            border: 1em solid tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="bgImg">
+        <img src="img/products/hand/10.jpeg" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+/* index main */
+main .container:first-child {
+    padding-top: 80px;
+}
+main .news,
+main .appointment,
+main .categoryItem {
+    display: flex;
+    flex-wrap: wrap;
+}
+main .news,
+main .categoryItem {
+    align-items: center;
+}
+main .categoryItem:nth-child(even) {
+    flex-direction: row-reverse;
+}
+main .newsItem,
+main .categoryItem .item {
+    width: calc(100% / 2);
+}
+/* appointment */
+main .appointment h2 {
+    width: 100%;
+}
+main .appointment img {
+    width: 45%;
+}
+main .appointment .schedule {
+    flex-grow: 1;
+    padding: 0 30px;
+    background-color: #fff;
+}
+/* category */
+main .categoryItem .categoryImg img {
+    width: 100%;
+}
+/* others */
+main .others {
+    display: flex;
+}
+/* others list */
+main .others .infoList {
+    width: 20%;
+    padding-right: 50px;
+    padding-right: 50px;
+}
+main .others .infoList .listItem {
+    background-color: #c2ab90;
+    color: #fff;
+    padding: 10px 80px 10px 20px;
+    margin-bottom: 10px;
+    transition: .5s;
+}
+main .others .infoList .listItem:hover {
+    background-color: #A5896A;
+    transform: translate(10px);
+    cursor: pointer;
+}
+
+/* others description */
+main .others .description {
+    flex-grow: 1;
+    height: 500px;
+    background-color: #c2ab90;
+}
