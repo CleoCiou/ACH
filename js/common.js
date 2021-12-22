@@ -63,11 +63,12 @@ function init() {
         '        </nav>' +
         '        <!-- others -->' +
         '        <div class="headerItem others">' +
-        '            <label for="search"><a href="#">Search</a></label>' +
-        '            <label for="account"><a href="#">My Account</a></label>' +
-        '            <label for="like"><a href="#">&#9825;</a></label>' +
+        '            <a href="#"><label for="search">Search</label></a>' +
+        '            <a href="#"><label for="account">My Account</label></a>' +
+        '            <a href="#"><label for="like"><img class="like" src="img/heart.png" alt="愛心icon"></label></a>' +
         '        </div>' +
         '    </div>';
+
     // append footer
     myelement = document.getElementsByTagName('footer')[0];
     myelement.innerHTML += 

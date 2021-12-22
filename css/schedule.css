@@ -3,14 +3,14 @@
     flex-direction: column;
     justify-content: center;
 }
-#calendar_contain {
+#calendarContain {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     text-align: left;
     overflow: hidden;
     width: 100%;
 }
-#calendar_header {
+#calendarHeader {
     text-align: center;
     position: relative;
     display: flex;
@@ -80,7 +80,7 @@
 }
 
 /* calendar footer */
-#schedule .calendar_footer {
+#schedule .calendarFooter {
     padding: 10px 0;
     display: flex;
     justify-content: space-between;

@@ -5,7 +5,7 @@ const monthShort = ["Jan.","Feb.","Mar.","Apr.","May.","June.","July.","Aug.","S
 // get now date time
 let today = new Date()
 let year = today.getFullYear();
- // getMonth(): 0-11
+// getMonth(): 0-11
 let month = today.getMonth() + 1;
 // get weekday of month first day
 let myDate = new Date(year + ', ' + month + ', 01');
@@ -15,13 +15,14 @@ let alldays = new Date(year, month, 0);
 let boo = false;
 // first date of month
 let day = 1;
-window.onload = createCalendar;
+
+if (document.getElementById('schedule') !== null) window.onload = createCalendar;
 function createCalendar(){
     // calendar header
     // month
     let node = document.createElement('div');
-    node.id = 'calendar_header';
-    node.classList.add('calendar_header');
+    node.id = 'calendarHeader';
+    node.classList.add('calendarHeader');
     document.getElementById('schedule').appendChild(node);
     // last month
     node = document.createElement('div');
@@ -30,13 +31,13 @@ function createCalendar(){
     node.classList.add('lastmonth');
     // month: 1-12
     node.innerText = (month - 1) === 0 ? '< ' + monthShort[11] : '< ' + monthShort[month - 2];
-    document.getElementById('calendar_header').appendChild(node);
+    document.getElementById('calendarHeader').appendChild(node);
     // this month
     node = document.createElement('div');
     node.classList.add('month');
     // month: 1-12
     node.innerText = monthName[month - 1];
-    document.getElementById('calendar_header').appendChild(node);
+    document.getElementById('calendarHeader').appendChild(node);
     // next month
     node = document.createElement('div');
     node.id = 'nextmonth';
@@ -44,17 +45,17 @@ function createCalendar(){
     node.classList.add('nextmonth');
     // month: 1-12
     node.innerText = (month + 1) > 12 ? monthShort[0] + ' >' : monthShort[month] + ' >';
-    document.getElementById('calendar_header').appendChild(node);
+    document.getElementById('calendarHeader').appendChild(node);
     
     // calendar contain
     node = document.createElement('div');
-    node.id = 'calendar_contain';
+    node.id = 'calendarContain';
     document.getElementById('schedule').appendChild(node);
     for (let i=0; i<6; i++) {
         node = document.createElement('div');
         node.id = 'week' + i;
         node.className = 'week';
-        document.getElementById("calendar_contain").appendChild(node);
+        document.getElementById("calendarContain").appendChild(node);
         for (let j=0; j<7; j++) {
             node = document.createElement('div');
             node.classList.add('day');
@@ -80,14 +81,14 @@ function createCalendar(){
     
     // calendar footer
     node = document.createElement('div');
-    node.id = 'calendar_footer';
-    node.classList.add('calendar_footer');
+    node.id = 'calendarFooter';
+    node.classList.add('calendarFooter');
     document.getElementById('schedule').appendChild(node);
     // time period wrap
     node = document.createElement('div');
     node.id = 'timePeriod';
     node.classList.add('timePeriod');
-    document.getElementById('calendar_footer').appendChild(node);
+    document.getElementById('calendarFooter').appendChild(node);
     // time period item
     node = document.createElement('span');
     node.innerText = '12:00~15:00';
@@ -101,8 +102,8 @@ function createCalendar(){
     // appointment button
     node = document.createElement('button');
     node.innerText = '預約';
-    node.classList.add('appointment_btn');
-    document.getElementById('calendar_footer').appendChild(node);
+    node.classList.add('appointmentBtn');
+    document.getElementById('calendarFooter').appendChild(node);
 }
 
 function reset(){

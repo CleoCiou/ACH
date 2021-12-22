@@ -7,32 +7,50 @@
 body {
     background-color: #ebe9e2;
 }
-h1,
-h2,
-h3,
-p {
-    line-height: 1.5;
-    letter-spacing: 2px;
-}
 h1 {
     font-size: 40px;
+    color: #684337;
+    line-height: 2;
+    letter-spacing: 2px;
 }
 h2 {
     font-size: 36px;
+    color: #684337;
+    line-height: 2;
+    letter-spacing: 2px;
 }
 h3 {
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 1.5;
+    letter-spacing: 2px;
 }
 p {
     font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 2px;
 }
 a {
     text-decoration: none;
     color: #684337;
 }
+a > label {
+    cursor: pointer;
+}
 .container {
     width: 1200px;
     margin: auto;
+}
+.appointmentBtn {
+    background-color: #7E9A8A;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.appointmentBtn:hover {
+    background-color: #E3C284;
 }
 
 /* header */
@@ -72,7 +90,7 @@ header .others a {
 header .menu a {
     padding-right: 25px;
 }
-header .others label {
+header .others a {
     padding-left: 20px;
 }
 /* header link decoration */
@@ -89,6 +107,11 @@ header .others a:after {
 header .menu a:hover:after,
 header .others a:hover:after {
     width: 100%;
+    vertical-align: middle;
+}
+header .others .like {
+    width: 15px;
+    vertical-align: middle;
 }
 /* logo */
 header .logo {
@@ -166,4 +189,68 @@ footer .copyright {
     padding: 3px 0;
     display: flex;
     justify-content: space-between;
+}
+
+/* index main */
+main .container:first-child {
+    padding-top: 80px;
+}
+main .news,
+main .appointment,
+main .categoryItem {
+    display: flex;
+    flex-wrap: wrap;
+}
+main .news,
+main .categoryItem {
+    align-items: center;
+}
+main .categoryItem:nth-child(even) {
+    flex-direction: row-reverse;
+}
+main .newsItem,
+main .categoryItem .item {
+    width: calc(100% / 2);
+}
+main .categoryItem .categoryImg img {
+    width: 100%;
+}
+main .appointment h2 {
+    width: 100%;
+}
+main .appointment img {
+    width: 45%;
+}
+main .appointment .schedule {
+    flex-grow: 1;
+    padding: 0 30px;
+    background-color: #fff;
+}
+main .others {
+    display: flex;
+}
+/* others list */
+main .others .infoList {
+    width: 20%;
+    padding-right: 50px;
+    padding-right: 50px;
+}
+main .others .infoList .listItem {
+    background-color: #c2ab90;
+    color: #fff;
+    padding: 10px 80px 10px 20px;
+    margin-bottom: 10px;
+    transition: .5s;
+}
+main .others .infoList .listItem:hover {
+    background-color: #A5896A;
+    transform: translate(10px);
+    cursor: pointer;
+}
+
+/* others description */
+main .others .description {
+    flex-grow: 1;
+    height: 500px;
+    background-color: #c2ab90;
 }

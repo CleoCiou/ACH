@@ -63,12 +63,29 @@ main .detail .detailTxt .productInfo form .customDateTime > label {
     display: inline-block;
     width: 100%;
 }
-main .detail .detailTxt .productInfo form .appointmentBtn,
-
-main .detail .detailTxt .productInfo form .loginBtn {
+/* customBtn */
+main .detail .detailTxt .productInfo form .customBtn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+main .detail .detailTxt .productInfo form .signUp {
+    font-size: 12px;
+    color: #684337;
+    margin-left: 10px;
+}
+main .detail .detailTxt .productInfo form .signUp:after {
+    content: '';
+    width: 0;
+    height: 1px;
+    padding-top: 5px;
+    border-bottom: 1px solid #684337;
     display: block;
+    transition: .5s;
+}
+main .detail .detailTxt .productInfo form .signUp:hover:after {
     width: 100%;
-    text-align: center;
+    vertical-align: middle;
 }
 main .detail .detailTxt .productInfo ul {
     padding-top: 30px;
@@ -106,9 +123,6 @@ main .story .storyImg {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-/* main .story .storyImg img {
-    width: calc(100% / 2 - 15px);
-} */
 main .story .storyImg .storyIntro {
     width: 40%;
     object-fit: contain;
@@ -147,7 +161,6 @@ main .recommendItem {
     width: calc(100% / 3 - 50px);
     margin: 25px 0;
     background-color: #fff;
-    /* border-radius: 10px; */
     overflow: hidden;
     transition: .5s;
 }

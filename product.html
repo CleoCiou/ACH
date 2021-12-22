@@ -64,8 +64,10 @@
                                     <option>19:00~22:00</option>
                                 </select>
                             </div>
-                            <input type="button" value="預約" class="appointmentBtn">
-                            <a href="#" class="loginBtn">Login</a>
+                            <div class="customBtn">
+                                <input type="button" value="預約" class="appointmentBtn">
+                                <a href="#" class="signUp">立即註冊</a>
+                            </div>
                         </form>
                         <ul class="announcement">
                             <li>付款方式: 現金、現場網銀轉帳。</li>
@@ -155,30 +157,33 @@
 </body>
 </html>
 <script>
+    if (document.getElementById('appointmentDate') !== null) window.onload = appointmentDate;
     // TODO: set appointment default date
-    // get date
-    let today = new Date();
-    let year = today.getFullYear();
-    let maxYear = year;
-    // getMonth(): 0-11
-    let month = today.getMonth() + 1; // 1-12
-    let maxMonth = month + 1;
-    if (maxMonth === 13) {maxMonth = 1; maxYear++}
-    // input:date value/min/max format: yyyy-mm-dd
-    if (month < 10 ) month = '0' + month.toString(); // 01-12
-    if (maxMonth < 10 ) maxMonth = '0' + maxMonth.toString();
-    let date = today.getDate();
-    let hours = today.getHours();
-    // get all days of this month
-    let nowMonthDays = new Date(year, month, 0);
-    nowMonthDays = nowMonthDays.getDate();
-    // get all days of next month
-    let nextMonthDays = new Date(year, maxMonth, 0);
-    nextMonthDays = nextMonthDays.getDate();
-    // set input:date default value/max/min date
-    let node = document.getElementById('appointmentDate');
-    node.value = year + '-' + month + '-' + date;
-    node.min = year + '-' + month + '-' + date;
-    // mm/15 20:00 open next month appointment
-    node.max = (date > 15 || (date === 15 && hours > 19)) ? maxYear + '-' + maxMonth + '-' + nextMonthDays : maxYear + '-' + month + '-' + nowMonthDays;
+    function appointmentDate() {
+        // get date
+        let today = new Date();
+        let year = today.getFullYear();
+        let maxYear = year;
+        // getMonth(): 0-11
+        let month = today.getMonth() + 1; // 1-12
+        let maxMonth = month + 1;
+        if (maxMonth === 13) {maxMonth = 1; maxYear++}
+        // input:date value/min/max format: yyyy-mm-dd
+        if (month < 10 ) month = '0' + month.toString(); // 01-12
+        if (maxMonth < 10 ) maxMonth = '0' + maxMonth.toString();
+        let date = today.getDate();
+        let hours = today.getHours();
+        // get all days of this month
+        let nowMonthDays = new Date(year, month, 0);
+        nowMonthDays = nowMonthDays.getDate();
+        // get all days of next month
+        let nextMonthDays = new Date(year, maxMonth, 0);
+        nextMonthDays = nextMonthDays.getDate();
+        // set input:date default value/max/min date
+        let node = document.getElementById('appointmentDate');
+        node.value = year + '-' + month + '-' + date;
+        node.min = year + '-' + month + '-' + date;
+        // mm/15 20:00 open next month appointment
+        node.max = (date > 15 || (date === 15 && hours > 19)) ? maxYear + '-' + maxMonth + '-' + nextMonthDays : maxYear + '-' + month + '-' + nowMonthDays;
+    }
 </script>
