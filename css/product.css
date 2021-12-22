@@ -11,7 +11,8 @@ main h3.title {
     line-height: 2;
 }
 main p.price {
-    /* color: #7E9A8A; */
+    color: #7E9A8A;
+    font-weight: 700;
 }
 main p.productDescript {
     padding: 20px 0;
