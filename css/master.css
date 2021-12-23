@@ -48,9 +48,23 @@ a > label {
     padding: 5px 15px;
     border-radius: 5px;
     cursor: pointer;
+    letter-spacing: 3px;
 }
 .appointmentBtn:hover {
     background-color: #E3C284;
+}
+main .container:first-child {
+    padding-top: 100px;
+}
+main .productName {
+    line-height: 2;
+    font-weight: 600;
+    color: #333
+}
+main .price {
+    color: #d3ae69;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 /* header */
@@ -105,13 +119,16 @@ header .others a:after {
     transition: .5s;
 }
 header .menu a:hover:after,
-header .others a:hover:after {
+header .others a:not(:last-child):hover:after {
     width: 100%;
     vertical-align: middle;
 }
-header .others .like {
+header .others a .like {
     width: 15px;
     vertical-align: middle;
+}
+header .others a:last-child:hover .like {
+    content: url(../img/icon/heart_filled.png);
 }
 /* logo */
 header .logo {
@@ -121,12 +138,16 @@ header .logo {
 header .logo img {
     width: 50px;
 }
+header .logo span {
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #462115;
+}
 
 /* footer */
 footer {
     position: relative;
     z-index: 2;
-    background-color: #fff;
     color: #684337;
     background-color: #ded9d1;
     font-size: 14px;
@@ -192,9 +213,6 @@ footer .copyright {
 }
 
 /* index main */
-main .container:first-child {
-    padding-top: 80px;
-}
 main .news,
 main .appointment,
 main .categoryItem {

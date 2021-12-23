@@ -19,18 +19,21 @@
             <!-- detail -->
             <div class="mainItem detail">
                 <!-- 70% left -->
+                <div class="detailItem changeImg">
+                    <img onclick="changeImg(this)" src="img/products/create/28.jpg" alt="">
+                    <img onclick="changeImg(this)" src="img/products/hand/special6.jpg" alt="">
+                    <img onclick="changeImg(this)" src="img/products/hand/special7.jpg" alt="">
+                    <img onclick="changeImg(this)" src="img/products/hand/16.jpeg" alt="">
+                    <img onclick="changeImg(this)" src="img/products/hand/11.jpeg" alt="">
+                </div>
                 <div class="detailItem detailImg">
-                    <img src="img/products/create/28.jpg" alt="">
-                    <img src="img/products/hand/special6.jpg" alt="">
-                    <img src="img/products/hand/special7.jpg" alt="">
-                    <img src="img/products/hand/16.jpeg" alt="">
-                    <img src="img/products/hand/11.jpeg" alt="">
+                    <img id="showImg" src="img/products/create/28.jpg" alt="">
                 </div>
                 <!-- 30% right fixed -->
                 <div class="detailItem detailTxt">
                     <div class="productInfo">
                         <p class="category">法式漸層 | FrenchGradual</p>
-                        <h3 class="title">南雅奇岩</h3>
+                        <h3 class="productName">南雅奇岩</h3>
                         <p class="price">NT $1,000</p>
                         <p class="productDescript">靈感來自於瑞芳有個叫「南雅奇岩」的美麗岩石岩面上的紋路就像樹木年輪，記錄了大自然經年歲月的痕跡與生命力。</p>
                         <form>
@@ -77,14 +80,16 @@
                     </div>
                 </div>
             </div>
-            <div class="mainItem story">
-                <blockquote cite="https://www.taiwan.net.tw/m1.aspx?sNo=0001091&id=704" class="storyItem storyTxt">
-                    <h3>南雅奇岩</h3>
-                    <p>南雅是東北角海岸的一個賞遊點，以奇岩景觀著稱，除了觸目可見的海蝕礁岸外，最令人稱奇的便是千狀萬態，鬼斧神工的風化紋石錯落其間，彷彿一座戶外大型雕塑博物館。南雅風化紋地形為臺灣所罕見，其成因為砂岩中的節理經風化作用造成含鐵礦物氧化，於是顯露出氧化鐵的帶狀花紋，饒富造形之美。</p>
-                    <img src="img/products/intro/nanya_rock.jpg" alt="" class="storyIntro">
-                </blockquote>
-                <div class="storyItem storyImg">
-                    <img src="img/products/create/28.jpg" alt="" class="storyCreate">
+            <div class="mainItem storyContainer">
+                <div class="story">
+                    <blockquote cite="https://www.taiwan.net.tw/m1.aspx?sNo=0001091&id=704" class="storyItem storyTxt">
+                        <h3>南雅奇岩</h3>
+                        <p>南雅是東北角海岸的一個賞遊點，以奇岩景觀著稱，除了觸目可見的海蝕礁岸外，最令人稱奇的便是千狀萬態，鬼斧神工的風化紋石錯落其間，彷彿一座戶外大型雕塑博物館。南雅風化紋地形為臺灣所罕見，其成因為砂岩中的節理經風化作用造成含鐵礦物氧化，於是顯露出氧化鐵的帶狀花紋，饒富造形之美。</p>
+                        <img src="img/products/intro/nanya_rock.jpg" alt="" class="storyIntro">
+                    </blockquote>
+                    <div class="storyItem storyImg">
+                        <img src="img/products/create/28.jpg" alt="" class="storyCreate">
+                    </div>
                 </div>
             </div>
             <!-- description -->
@@ -116,38 +121,50 @@
                 </div>
             </div>
             <!-- recommend -->
-            <div class="mainItem recommend">
-                <h2>來點不一樣的..</h2>
-                <a href="#" class="recommendItem">
-                    <div class="recommendImg">
-                        <img src="img/products/create/5.jpg" alt="">
-                    </div>
-                    <div class="recommendTxt">
-                        <p class="recommendTxtItem category">造型 Style</p>
-                        <h3 class="recommendTxtItem title">聖誕暖冬</h3>
-                        <p class="recommendTxtItem price">NT $1,300</p>
-                    </div>
-                </a>
-                <a href="#" class="recommendItem">
-                    <div class="recommendImg">
-                        <img src="img/products/create/14.jpg" alt="">
-                    </div>
-                    <div class="recommendTxt">
-                        <p class="recommendTxtItem category">單色漸層 SingleGradual</p>
-                        <h3 class="recommendTxtItem title">黑耀大理石</h3>
-                        <p class="recommendTxtItem price">NT $1,100</p>
-                    </div>
-                </a>
-                <a href="#" class="recommendItem">
-                    <div class="recommendImg">
-                        <img src="img/products/create/20.jpg" alt="">
-                    </div>
-                    <div class="recommendTxt">
-                        <p class="recommendTxtItem category">法式漸層 FranchGradual</p>
-                        <h3 class="recommendTxtItem title">琥珀</h3>
-                        <p class="recommendTxtItem price">NT $1,200</p>
-                    </div>
-                </a>
+            <div class="recommendContainer">
+                <div class="mainItem recommend">
+                    <h3>來點不一樣的..</h3>
+                    <a href="#" class="recommendItem">
+                        <div class="recommendImg">
+                            <img src="img/products/create/5.jpg" alt="">
+                        </div>
+                        <div class="recommendTxt">
+                            <p class="recommendTxtItem category">造型 Style</p>
+                            <h3 class="recommendTxtItem productName">聖誕暖冬</h3>
+                            <p class="recommendTxtItem price">NT $1,300</p>
+                        </div>
+                    </a>
+                    <a href="#" class="recommendItem">
+                        <div class="recommendImg">
+                            <img src="img/products/create/14.jpg" alt="">
+                        </div>
+                        <div class="recommendTxt">
+                            <p class="recommendTxtItem category">單色漸層 SingleGradual</p>
+                            <h3 class="recommendTxtItem productName">黑耀大理石</h3>
+                            <p class="recommendTxtItem price">NT $1,100</p>
+                        </div>
+                    </a>
+                    <a href="#" class="recommendItem">
+                        <div class="recommendImg">
+                            <img src="img/products/create/20.jpg" alt="">
+                        </div>
+                        <div class="recommendTxt">
+                            <p class="recommendTxtItem category">法式漸層 FranchGradual</p>
+                            <h3 class="recommendTxtItem productName">琥珀</h3>
+                            <p class="recommendTxtItem price">NT $1,200</p>
+                        </div>
+                    </a>
+                    <a href="#" class="recommendItem">
+                        <div class="recommendImg">
+                            <img src="img/products/create/20.jpg" alt="">
+                        </div>
+                        <div class="recommendTxt">
+                            <p class="recommendTxtItem category">法式漸層 FranchGradual</p>
+                            <h3 class="recommendTxtItem productName">琥珀</h3>
+                            <p class="recommendTxtItem price">NT $1,200</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
@@ -185,5 +202,16 @@
         node.min = year + '-' + month + '-' + date;
         // mm/15 20:00 open next month appointment
         node.max = (date > 15 || (date === 15 && hours > 19)) ? maxYear + '-' + maxMonth + '-' + nextMonthDays : maxYear + '-' + month + '-' + nowMonthDays;
+    }
+
+    // TODO: change detail img
+    function changeImg(img) {
+        document.getElementById('showImg').src = img.src;
+        let imgs = document.getElementsByClassName('changeImg')[0].children;
+        imgs = Array.prototype.slice.call(imgs);
+        for (let i = 0; i < imgs.length; i++) {
+            imgs[i].setAttribute("style","opacity: 0.8; filter: brightness(50%)");
+        }
+        img.setAttribute("style","opacity: 1; filter: brightness(100%)");
     }
 </script>

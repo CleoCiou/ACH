@@ -1,4 +1,7 @@
-/* globe */
+/* header */
+header .menu > .category:after {
+    width: 100%;
+}/* globe */
 main a {
     color: #000;
 }
@@ -6,13 +9,6 @@ main p.category {
     font-size: 14px;
     color: #555;
     line-height: 1.2;
-}
-main h3.title {
-    line-height: 2;
-}
-main p.price {
-    color: #7E9A8A;
-    font-weight: 700;
 }
 main p.productDescript {
     padding: 20px 0;
@@ -25,35 +21,61 @@ main li:before {
     color: #000;
 }
 /* detail */
-main .detail {
+main .container {
     width: 100%;
+    background: url(../img/background/w500h500_brown.svg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+main .mainItem {
+    width: 1200px;
+    margin: auto;
+}
+main .detail {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 30px;
 }
 /* detail img left 70% */
+main .detail .changeImg {
+    width: 10%;
+}
 main .detail .detailImg {
-    width: 70%;
-    display: flex;
-    flex-wrap: wrap;
+    width: 60%;
+}
+main .detail .changeImg img,
+main .detail .detailImg img {
+    width: 85%;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+}
+main .detail .changeImg img {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+main .detail .changeImg img:not(:first-child) {
+    opacity: 0.8;
+    filter: brightness(50%);
 }
 main .detail .detailImg img {
-    width: calc(100% / 2 - 10px);
-    margin: 5px;
+    margin-left: 20px;
 }
 /* detail txt right 30% fixed */
 main .detail .detailTxt {
     width: 30%;
     position: relative;
-    margin-top: 5px;
+    margin-top: 25px;
 }
 main .detail .detailTxt .productInfo {
     width: 360px;
-    position: fixed;
+    position: sticky;
+    top: 70px;
     padding-left: 20px;
 }
 /* appointment form */
-main .detail .detailTxt .productInfo form > div,
-main .detail .detailTxt .productInfo form > input {
+main .detail .detailTxt .productInfo form > div {
     margin-bottom: 10px;
 }
 main .detail .detailTxt .productInfo form .customName > label,
@@ -63,6 +85,21 @@ main .detail .detailTxt .productInfo form .customDateTime > label {
     margin-bottom: 5px;
     display: inline-block;
     width: 100%;
+}
+main .detail .detailTxt .productInfo form input[type='text'],
+main .detail .detailTxt .productInfo form input[type='tel'],
+main .detail .detailTxt .productInfo form input[type='date'] {
+    background-color: transparent;
+    border: 2px solid #68433750;
+    border-radius: 100px;
+    line-height: 1.7;
+    padding: 0 15px;
+}
+main .detail .detailTxt .productInfo form select {
+    background-color: transparent;
+    border: 2px solid #68433750;
+    padding: 3px 5px;
+    border-radius: 100px;
 }
 /* customBtn */
 main .detail .detailTxt .productInfo form .customBtn {
@@ -93,15 +130,21 @@ main .detail .detailTxt .productInfo ul {
     line-height: 2;
 }
 /* story */
+main .storyContainer {
+    width: 100%;
+    background-color: #68433720;
+}
 main .story {
     position: relative;
     z-index: 2;
-    background-color: #ebe9e2;
-    padding-top: 50px;
+    padding: 50px 0;
     display: flex;
+    justify-content: space-evenly;
+    width: 1200px;
+    margin: auto;
 }
 main .story .storyItem {
-    width: calc(100% / 2);
+    width: calc(100% / 2 - 50px);
 }
 main .story .storyTxt p {
     padding: 10px 0;
@@ -119,7 +162,7 @@ main .story .storyTxt {
     padding: 0 5px;
 }
 main .story .storyImg {
-    padding: 0 50px;
+    padding: 0 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -132,38 +175,52 @@ main .story .storyImg .storyIntro {
 main .description {
     position: relative;
     z-index: 2;
-    background-color: #ebe9e2;
+    background-color: #fcfaf5;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     letter-spacing: 2px;
     line-height: 2;
     padding: 50px 0;
+    margin: 60px auto;
+    border-radius: 10px;
 }
 main .description .descriptionItem {
+    padding: 0 20px;
     width: calc(100% / 2 - 50px);
 }
 main .description .descriptionItem h3 {
     padding-bottom: 10px;
 }
 /* recommend */
+main .recommendContainer {
+    width: 100%;
+    background-color: #5551;
+}
 main .recommend {
     position: relative;
     z-index: 2;
-    background-color: #ebe9e2;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    padding-bottom: 30px;
+    width: 1200px;
+    margin: auto;
 }
-main .recommend h2 {
+main .recommend > h3 {
+    padding-left: 35px;
+}
+main .recommend h3 {
     width: 100%;
+    margin-top: 30px;
 }
 main .recommendItem {
-    width: calc(100% / 3 - 50px);
+    width: calc(100% / 4 - 50px);
     margin: 25px 0;
-    background-color: #fff;
+    background-color: #fcfaf5;
     overflow: hidden;
     transition: .5s;
+    border-radius: 10px;
 }
 main .recommendItem:hover {
     transform: scale(1.05);

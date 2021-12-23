@@ -2,11 +2,8 @@ body {
     overflow-x: hidden;
 }
 /* index main */
-main .container:first-child {
-    padding-top: 80px;
-}
 main .container {
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 main .news,
 main .appointment {
@@ -62,7 +59,7 @@ main .category:after {
     display: block;
     width: 500px;
     height: 500px;
-    bottom: -250px;
+    bottom: -350px;
     right: -200px;
     background: url(../img/background/w500h500_green.svg);
     z-index: -1;
@@ -178,8 +175,64 @@ main .others .infoList .listItem:hover {
 }
 
 /* others description */
-main .others .description {
-    flex-grow: 1;
-    height: 500px;
-    background-color: #c2ab90;
+main .container:last-child {
+    background: url(../img/background/store_ach.png) no-repeat;
+    background-size: contain;
+    background-position: 100%;
+    position: relative;
+}
+main .others input {
+    display: none;
+}
+main .others .priceList {
+    background: url(../img/background/price-list.png) no-repeat;
+    background-size: contain;
+    display: block;
+    margin: auto;
+    padding: 45px 130px 70px;
+    text-align: center;
+    color: #fcfaf5;
+    margin-top: 100px;
+    margin-bottom: -20px;
+}
+main .others .priceList:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    right: 80px;
+    background: url(../img/background/price2.png) no-repeat;
+    background-size: contain;
+}
+main .others .changePage {
+    position: absolute;
+    padding: 100px;
+    bottom: -70px;
+    right: -135px;
+}
+main .others .changePage:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../img/background/sign-post.png) no-repeat;
+    background-size: contain;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -25%);
+}
+main .others .changePage label {
+    display: block;
+    color: #fcfaf5;
+    padding: 36px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+main .others .changePage .covidSign,
+main .others .changePage .flowSign {
+    display: none;
 }

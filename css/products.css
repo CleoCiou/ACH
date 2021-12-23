@@ -24,6 +24,8 @@ main .productsItem a {
     flex-direction: column;
     position: relative;
     font-size: 0;
+    border-radius: 10px;
+    overflow: hidden;
 }
 main .productsItem:hover {
     cursor: pointer;
@@ -31,8 +33,9 @@ main .productsItem:hover {
     transition: 1s;
 }
 main .productsItem .txt {
+    position: relative;
     padding: 20px 10px;
-    background-color: #fff;
+    background-color: #fcfaf5;
 }
 main .productsItem img {
     transition: .5s;
@@ -42,34 +45,31 @@ main .productsItem .category {
     font-size: 12px;
     color: #777;
 }
-/* product name */
-main .productsItem .name {
-    font-weight: 600;
-}
 /* products last / next button */
 main .productsItem button {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: #ccc;
+    width: 60px;
+    height: 60px;
     border: none;
-    border-radius: 50%;
     opacity: 0;
     transition: .5s;
     top: 50%;
     cursor: pointer;
-    z-index: 1;
 }
 main .productsItem .last{
-    left: 15px;
-    transform: translate(-50%, -100%);
+    left: 0;
+    top: -60px;
+    background: url(../img/icon/left-arrow.png);
+    background-size: contain;
 }
 main .productsItem .next{
-    right: 15px;
-    transform: translate(50%, -100%);
+    right: 0;
+    top: -60px;
+    background: url(../img/icon/right-arrow.png);
+    background-size: contain;
 }
 main .productsItem:hover button {
-    opacity: 0.8;
+    opacity: 1;
 }
 /* product img */
 main .productsItem img {
@@ -88,7 +88,7 @@ main .viewMethod {
     left: 50%;
     transform: translate(-50%);
     z-index: 1;
-    background-color: #fff;
+    background-color: #fcfaf5;
     border-radius: 300px;
     box-shadow: 0 0 1px 0 #777;
 }
@@ -104,7 +104,7 @@ main .viewMethod label {
 }
 main .viewMethod:hover label,
 main .filters .filtersList .category .list label {
-    background-color: #fff;
+    background-color: #fcfaf5;
     color: #000;
 }
 main .viewMethod label:hover,
@@ -139,8 +139,10 @@ main #explore:checked ~ .products .productsItem:nth-child(5n+1) a {
     flex-direction: row;
     align-items: center;
     padding: 0 15px 10px 15px;
+    background: url(../img/background/w500h500_brown.svg);
 }
 main #explore:checked ~ .products .productsItem:nth-child(5n+1) .txt {
+    background-color: transparent;
     font-size: 20px;
     letter-spacing: 2px;
     padding: 10px 30px 10px 30px;
@@ -149,10 +151,16 @@ main #explore:checked ~ .products .productsItem:nth-child(10n+1) a {
     width: 100%;
     flex-direction: row-reverse;
     padding: 10px 15px 10px 15px;
+    background: url(../img/background/w500h500_gray_filp.svg) no-repeat;
 }
 main #explore:checked ~ .products .productsItem:nth-child(5n+1) .productItem,
 main #explore:checked ~ .products .productsItem:nth-child(10n+1) .productItem {
-    width: calc(100% / 2);
+    width: calc(100% / 2 - 60px);
+    margin: 30px;
+}
+main #explore:checked ~ .products .productsItem:nth-child(5n+1) .productItem,
+main #explore:checked ~ .products .productsItem:nth-child(10n+1) .productItem {
+    border-radius: 10px;
 }
 main #explore:checked ~ .products .productsItem:nth-child(5n+2),
 main #explore:checked ~ .products .productsItem:nth-child(5n+3),
@@ -166,7 +174,7 @@ main #explore:checked ~ .products .productsItem:nth-child(5n) {
     padding-top: 50px;
     padding-bottom: 0;
 }
-main #explore:checked ~ .products .productsItem:nth-child(10n+7),
+/* main #explore:checked ~ .products .productsItem:nth-child(10n+7),
 main #explore:checked ~ .products .productsItem:nth-child(10n+8),
 main #explore:checked ~ .products .productsItem:nth-child(10n+9),
 main #explore:checked ~ .products .productsItem:nth-child(10n) {
@@ -178,7 +186,7 @@ main #explore:checked ~ .products .productsItem:nth-child(10n+7),
 main #explore:checked ~ .products .productsItem:nth-child(10n+9) {
     padding-top: 50px;
     padding-bottom: 0;
-}
+} */
 
 /* grid */
 main #grid:checked ~ .products {
@@ -264,7 +272,7 @@ main .filters .filtersList .category .list label {
     border: 1px solid #ccc;
     text-align: center;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #fcfaf5;
     color: #000;
 }
 main #filter:checked ~ #single:checked ~ .products .productsItem:not(.single),

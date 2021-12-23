@@ -64,8 +64,8 @@ function init() {
         '        <!-- others -->' +
         '        <div class="headerItem others">' +
         '            <a href="#"><label for="search">Search</label></a>' +
-        '            <a href="#"><label for="account">My Account</label></a>' +
-        '            <a href="#"><label for="like"><img class="like" src="img/heart.png" alt="愛心icon"></label></a>' +
+        '            <a href="member.html"><label for="account">My Account</label></a>' +
+        '            <a href="#"><label for="like"><img class="like" src="img/icon/heart_border.png" alt="愛心框框icon"></label></a>' +
         '        </div>' +
         '    </div>';
 

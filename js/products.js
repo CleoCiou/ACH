@@ -1,18 +1,4 @@
 // TODO: appen product
-/* <div class="productsItem product [category for filters]">
-    <button class="last"></button>
-    <button class="next"></button>
-    <a class="productLink" href="../product.html">
-        <img class="productItem" src="img/products/create/1.jpg">
-        <div class="txt productItem">
-            <p class="category">貓眼|鏡面 CatEyes</p>
-            <h3 class="name">樣式名稱1</h3>
-            <p class="description">有一種弦律，叫做大自然，<br>
-            他不比命運交響曲的豪邁，也不同田園交響曲的柔情。</p>
-            <p class="price">NT $1,000</p>
-        </div>
-    </a>
-</div> */
 
 // products info
 let productNames = ['單色|跳色', '貓眼|鏡面', '單色漸層', '法式漸層', '客製化造型'];
@@ -34,16 +20,6 @@ for (let i = 1; i < 20; i++){
     node.appendChild(item);
     // appen #products > .item child node
     node = item;
-    // btn.last
-    item = document.createElement('button');
-    item.classList.add('last');
-    item.onclick = changeImg;
-    node.appendChild(item);
-    // btn.next
-    item = document.createElement('button');
-    item.classList.add('next');
-    item.onclick = changeImg;
-    node.appendChild(item);
 
     // product link
     item = document.createElement('a');
@@ -74,7 +50,7 @@ for (let i = 1; i < 20; i++){
     // product name
     item = document.createElement('h3');
     item.innerText = '樣式名稱' + i;
-    item.classList.add('name');
+    item.classList.add('productName');
     node.appendChild(item);
     // product description
     item = document.createElement('p');
@@ -85,6 +61,17 @@ for (let i = 1; i < 20; i++){
     item = document.createElement('p');
     item.classList.add('price');
     item.innerText = productPrice[i%5];
+    node.appendChild(item);
+    
+    // btn.last
+    item = document.createElement('button');
+    item.classList.add('last');
+    item.onclick = changeImg;
+    node.appendChild(item);
+    // btn.next
+    item = document.createElement('button');
+    item.classList.add('next');
+    item.onclick = changeImg;
     node.appendChild(item);
 }
 
