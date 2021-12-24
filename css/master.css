@@ -4,9 +4,20 @@
     letter-spacing: 1px;
     font-family: 'Noto Serif TC', serif, 'Roboto Mono', monospace;
 }
+/* default background color */
 body {
     background-color: #ebe9e2;
 }
+/* container default width */
+.container {
+    width: 1200px;
+    margin: auto;
+}
+/* main padding top */
+main .container:first-child {
+    padding-top: 100px;
+}
+/* txt size, color, etc.. */
 h1 {
     font-size: 40px;
     color: #684337;
@@ -36,10 +47,17 @@ a {
 a > label {
     cursor: pointer;
 }
-.container {
-    width: 1200px;
-    margin: auto;
+main .productName {
+    line-height: 2;
+    font-weight: 600;
+    color: #333
 }
+main .price {
+    color: #d3ae69;
+    font-weight: 700;
+    font-size: 18px;
+}
+/* appointment button */
 .appointmentBtn {
     background-color: #7E9A8A;
     border: none;
@@ -53,18 +71,36 @@ a > label {
 .appointmentBtn:hover {
     background-color: #E3C284;
 }
-main .container:first-child {
-    padding-top: 100px;
+/* form format */
+main form input[type='text'],
+main form input[type='tel'],
+main form input[type='date'],
+main form input[type='email'] {
+    background-color: transparent;
+    border: 2px solid #68433750;
+    border-radius: 100px;
+    line-height: 1.7;
+    padding: 0 15px;
 }
-main .productName {
+main form input[type='button'],
+main form input[type='submit'],
+main button:not(.appointmentBtn) {
+    background-color: #fa0;
+}
+/* checkbox switch */
+.labelBtn {
+    background-color: #fcfaf5;
+    color: #000;
+    cursor: pointer;
     line-height: 2;
-    font-weight: 600;
-    color: #333
+    transition: .5s;
 }
-main .price {
-    color: #d3ae69;
-    font-weight: 700;
-    font-size: 18px;
+.labelBtn:hover {
+    background-color: #777;
+    color: #fff;
+}
+.displayNone {
+    display: none;
 }
 
 /* header */

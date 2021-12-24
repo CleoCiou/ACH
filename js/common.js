@@ -23,6 +23,12 @@ link.rel  = 'stylesheet';
 link.type = 'text/css';
 link.href = 'css/reset.css';
 head.appendChild(link);
+// grid.css
+link  = document.createElement('link');
+link.rel  = 'stylesheet';
+link.type = 'text/css';
+link.href = 'css/grid.css';
+head.appendChild(link);
 // master.css
 link  = document.createElement('link');
 link.rel  = 'stylesheet';

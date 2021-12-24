@@ -86,15 +86,6 @@ main .detail .detailTxt .productInfo form .customDateTime > label {
     display: inline-block;
     width: 100%;
 }
-main .detail .detailTxt .productInfo form input[type='text'],
-main .detail .detailTxt .productInfo form input[type='tel'],
-main .detail .detailTxt .productInfo form input[type='date'] {
-    background-color: transparent;
-    border: 2px solid #68433750;
-    border-radius: 100px;
-    line-height: 1.7;
-    padding: 0 15px;
-}
 main .detail .detailTxt .productInfo form select {
     background-color: transparent;
     border: 2px solid #68433750;

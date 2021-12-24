@@ -1,0 +1,127 @@
+/* nav bar */
+main .container .pagebar {
+    margin-bottom: 50px;
+    justify-content: center;
+    text-align: center;
+}
+main .container .pagebar label {
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+}
+/* checked change color */
+main .container #overviewPage:checked ~ .pagebar label[for="overviewPage"],
+main .container #appointmentPage:checked ~ .pagebar label[for="appointmentPage"],
+main .container #likePage:checked ~ .pagebar label[for="likePage"],
+main .container #historyPage:checked ~ .pagebar label[for="historyPage"] {
+    background-color: #000;
+    color: #fff;
+}
+
+/* left panel */
+/* sticky profile */
+main .profile {
+    position: relative;
+}
+main .profile .profileList {
+    position: sticky;
+    top: 80px;
+}
+/* profile img */
+main .container .row .profile img {
+    width: 60%;
+    display: block;
+    margin: auto;
+}
+
+/* right panel */
+/* profile info */
+main #edit:checked ~ .onEdit {
+    display: none;
+}
+
+/* show if checkBtn checked */
+main #overviewPage:checked ~ .page .overviewPage {
+    display: block;
+}
+
+/* overview page appointment */
+main .overviewPage .appointmentBlock .item {
+    align-items: center;
+    padding: 20px 10px;
+    background-color: #fcfaf5;
+    border-radius: 10px;
+}
+main .overviewPage .appointmentBlock .item .pic img {
+    width: 80%;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+
+/* overview page favorite */
+main .overviewPage .favoriteBlock {
+    padding: 30px 0;
+}
+main .overviewPage .favoriteBlock .item {
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+main .overviewPage .favoriteBlock .item .pic img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* overview page history */
+main .historyBlock {
+    position: relative;
+}
+main .historyBlock:before {
+    content: '';
+    width: 200px;
+    height: 200px;
+    display: block;
+    background: url(../img/background/tree.png) no-repeat;
+    background-size: contain;
+    bottom: 0;
+    right: 15%;
+    position: absolute;
+}
+main .historyBlock .item {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    padding-right: 200px;
+}
+main .historyBlock .item:nth-child(odd) {
+    padding-right: 0;
+    padding-left: 200px;
+}
+main .historyBlock .item:after {
+    content: '';
+    height: 20px;
+    width: 20px;
+    background-color: #c2b5ac;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+main .historyBlock .item:before {
+    content: '';
+    height: 100%;
+    width: 2px;
+    background-color: #c2b5ac;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+main .overviewPage .historyBlock .item .pic img {
+    width: 20%;
+    border-radius: 50%;
+}

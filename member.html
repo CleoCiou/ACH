@@ -16,90 +16,188 @@
 
     <!-- main -->
     <main>
-        <!-- news -->
         <div class="container">
-            <section class="mainItem news">
-                <div class="newsItem txt">
-                    <h2>本月新款</h2>
-                    <h3 class="productName">南雅奇岩</h3>
-                    <p>靈感來自於瑞芳有個叫「南雅奇岩」的美麗岩石岩面上的紋路就像樹木年輪，記錄了大自然經年歲月的痕跡與生命力。</p>
-                    <button class="appointmentBtn">預約</button>
-                </div>
-                <img class="newsItem" src="img/products/create/28.jpg" alt="">
-            </section>
-        </div>
-        <!-- appointment -->
-        <div class="container">
-            <section class="mainItem appointment">
-                <h2>預約 Appointment</h2>
-                <img class="appointmentItem" src="img/products/create/6.jpg" alt="">
-                <div class="appointmentItem schedule" id="schedule"></div>
-            </section>
-        </div>
-        <!-- category -->
-        <div class="container">
-            <section class="mainItem category">
-                <div>
-                    <h2>樣式 Category</h2>
-                    <div class="categoryList">
-                        <svg width="0" height="0">
-                            <defs>
-                                <clipPath id="mask1" clipPathUnits="objectBoundingBox">
-                                    <path id="curve"
-                                          transform="scale(0.003, 0.003)"
-                                          d="M90.77,342.5l15.78-35.9-.59-.13C44.85,292,.5,228.34.5,155,.5,69.81,59.49.5,132,.5S263.5,69.81,263.5,155c0,35.84-10.68,70.76-30.08,98.34-19.12,27.2-45.77,46-75,53l-.59.14,15.82,36Z">
-                                    </path>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <img class="categoryBg" src="img/background/category_bg2.png" alt="拿氣球的手">
-                        <h3 class="cateyes">貓眼 | 鏡面<br>CatEyes<br>Mirror</h3>
-                        <h3 class="single">單色 | 跳色<br>Single<br>Jump</h3>
-                        <h3 class="gardual">單色漸層<br>Single<br>Gardual</h3>
-                        <h3 class="style">客製化造型<br>Style</h3>
-                        <h3 class="franch">法式漸層<br>Franch<br>Gardual</h3>
-                        <img class="showImg" src="img/products/hand/special2.jpg"/>
+            <!-- radio for change page => display: none -->
+            <input type="radio" name="changePage" id="overviewPage" class="displayNone" checked>
+            <input type="radio" name="changePage" id="appointmentPage" class="displayNone">
+            <input type="radio" name="changePage" id="likePage" class="displayNone">
+            <input type="radio" name="changePage" id="historyPage" class="displayNone">
+
+            <!-- nav bar -->
+            <nav class="row pagebar">
+                <label for="overviewPage" class="col-2 labelBtn">Overview</label>
+                <label for="appointmentPage" class="col-2 labelBtn">Appointment</label>
+                <label for="likePage" class="col-2 labelBtn">My Favorite</label>
+                <label for="historyPage" class="col-2 labelBtn">History</label>
+            </nav>
+
+            <!-- page -->
+            <div class="row page">
+                <!-- left panel -->
+                <!-- profile -->
+                <div class="col-3 profile">
+                    <div class="profileList">
+                        <!-- profile img -->
+                        <div class="pic">
+                            <img src="img/icon/user.png" alt="" class="sticker">
+                        </div>
+                        <!-- profile info -->
+                        <div class="txt">
+                            <p class="userName">CleoCiou</p>
+                        </div>
+                        <!-- profile form -->
+                        <form>
+                            <label for="edit" class="labelBtn">edit</label>
+                            <input type="checkbox" name="edit" id="edit" class="displayNone" checked>
+                            <div class="onEdit">
+                                <!-- user ID -->
+                                <div class="userID">
+                                    <label>使用者ID：</label>
+                                    <label id="userID">587878787</label>
+                                </div>
+                                <!-- user name -->
+                                <div class="userName">
+                                    <label for="userName">使用者名稱：</label>
+                                    <input type="text" id="userName">
+                                </div>
+                                <!-- user password -->
+                                <div class="userPassword">
+                                    <label for="userPassword">密碼：</label>
+                                    <input id="userPassword" type="button" value="修改">
+                                </div>
+                                <!-- user phone -->
+                                <div class="userPhone">
+                                    <label for="userPhone">手機：</label>
+                                    <input type="tel" id="userPhone">
+                                </div>
+                                <!-- user email -->
+                                <div class="userEmail">
+                                    <label for="userEmail">信箱：</label>
+                                    <input type="email" id="userEmail">
+                                </div>
+                                <!-- user payment -->
+                                <div class="payment">
+                                    <label>付款方式：</label>
+                                    <div class="method">
+                                        <input type="radio" name="payment" id="cash" checked>
+                                        <label for="cash">現金</label>
+                                        <input type="radio" name="payment" id="webAccount">
+                                        <label for="webAccount">現場網銀轉帳</label>
+                                    </div>
+                                </div>
+                                <div class="action">
+                                    <input type="submit" value="確認">
+                                    <input type="button" value="取消">
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </section>
-        </div>
-        <!-- others info -->
-        <div class="container">
-            <h2>相關資訊 Info</h2>
-            <section class="mainItem others">
-                <input type="radio" name="infoPage" id="priceList" checked>
-                <input type="radio" name="infoPage" id="notice">
-                <input type="radio" name="infoPage" id="flow">
-                <input type="radio" name="infoPage" id="covid19">
-                <div class="priceList">
-                    <div class="single">
-                        <p class="priceTitle">單色|跳色</p>
-                        <p class="price">NT $900</p>
+                <!-- right panel -->
+                <!-- overviewPage -->
+                <div class="col-9 displayNone overviewPage">
+                    <!-- appointment block -->
+                    <div class="appointmentBlock">
+                        <h3 class="col-12">我的預約</h3>
+                        <div class="row item">
+                            <!-- appointment img -->
+                            <div class="col-4 pic">
+                                <img src="img/products/hand/special2.jpg">
+                            </div>
+                            <!-- appointment description -->
+                            <div class="col-8 txt">
+                                <h3>樣式</h3>
+                                <p>日期</p>
+                                <p>時段</p>
+                                <p>NT $999</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="cateyes">
-                        <p class="priceTitle">貓眼|鏡面</p>
-                        <p class="price">NT $1,000</p>
+                    <!-- favorite block -->
+                    <div class="row favoriteBlock">
+                        <h3 class="col-12">我喜歡的</h3>
+                        <div class="col-3 item">
+                            <div class="pic">
+                                <img src="img/products/create/6.jpg">
+                            </div>
+                            <div class="txt">
+                                <p>樣式1</p>
+                                <p>NT $1,000</p>
+                            </div>
+                        </div>
+                        <div class="col-3 item">
+                            <div class="pic">
+                                <img src="img/products/create/5.jpg">
+                            </div>
+                            <div class="txt">
+                                <p>樣式1</p>
+                                <p>NT $1,000</p>
+                            </div>
+                        </div>
+                        <div class="col-3 item">
+                            <div class="pic">
+                                <img src="img/products/create/4.jpg">
+                            </div>
+                            <div class="txt">
+                                <p>樣式1</p>
+                                <p>NT $1,300</p>
+                            </div>
+                        </div>
+                        <div class="col-3 item">
+                            <div class="pic">
+                                <img src="img/products/create/8.jpg">
+                            </div>
+                            <div class="txt">
+                                <p>樣式1</p>
+                                <p>NT $1,000</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="gradual">
-                        <p class="priceTitle">單色漸層</p>
-                        <p class="price">NT $1,100</p>
-                    </div>
-                    <div class="french">
-                        <p class="priceTitle">法式漸層</p>
-                        <p class="price">NT $1,200</p>
-                    </div>
-                    <div class="style">
-                        <p class="priceTitle">客製化造型</p>
-                        <p class="price">NT $1,300</p>
+                    <!-- history block -->
+                    <div class="historyBlock">
+                        <h3>歷史紀錄</h3>
+                        <div class="item">
+                            <!-- history img -->
+                            <div class="pic">
+                                <img src="img/products/create/4.jpg">
+                            </div>
+                            <!-- history description -->
+                            <div class="txt">
+                                <p>聖誕節</p>
+                                <span>2021.12.25</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <!-- history img -->
+                            <div class="pic">
+                                <img src="img/products/create/8.jpg">
+                            </div>
+                            <!-- history description -->
+                            <div class="txt">
+                                <p>太空人</p>
+                                <span>2021.11.17</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <!-- history img -->
+                            <div class="pic">
+                                <img src="img/products/create/15.jpg">
+                            </div>
+                            <!-- history description -->
+                            <div class="txt">
+                                <p>拈花惹草</p>
+                                <span>2021.10.20</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="changePage">
-                    <label for="priceList" class="priceSign">價目表</label>
-                    <label for="notice" class="noticeSign">預約須知</label>
-                    <label for="flow" class="flowSign">預約流程</label>
-                    <label for="covid19" class="covidSign">防疫公告</label>
-                </div>
-            </section>
+                <!-- appointmentPage -->
+                <div class="col-9 displayNone overviewPage"></div>
+                <!-- favoritePage -->
+                <div class="col-9 displayNone favoritePage"></div>
+                <!-- historyPage -->
+                <div class="col-9 displayNone historyPage"></div>
+            </div>
         </div>
     </main>
 
