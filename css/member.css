@@ -50,10 +50,9 @@ main .container .page .profile .profileList form .onEdit div > * {
 }
 
 /* profile info */
-main #edit:not(:checked) ~ .edit {
-    display: none;
-}
-main #edit:checked ~ .onEdit {
+main #edit:not(:checked) ~ .page .txt .userName,
+main #edit:not(:checked) ~ .page .edit,
+main #edit:checked ~ .page .onEdit {
     display: none;
 }
 
@@ -71,7 +70,7 @@ main .appoinementPage > [class$="Block"] {
 /* appointment page appointment block */
 main .overviewPage .appointmentBlock .item,
 main .appoinementPage .appointmentBlock .item,
-main .overviewPage .favoriteBlock .favoriteList {
+main .overviewPage .likeBlock .likeList {
     align-items: center;
     padding: 20px 0;
     background-color: #fcfaf5;
@@ -95,18 +94,29 @@ main .appoinementPage .appointmentBlock .item .txt .icon img {
     margin-right: 5px;
 }
 
-/* overview page favorite */
-main .overviewPage .favoriteBlock .item {
-    align-items: center;
-    padding: 0 30px;
+/* overview page like block */
+/* like page like block */
+main .overviewPage .likeBlock .item {
+    align-items: center; 
+    padding: 10px 20px;
     border-radius: 10px;
 }
-main .overviewPage .favoriteBlock .item .pic img {
-    width: 100%;
+main .overviewPage .likeBlock .item .pic img {
+    width: 90%;
     border-radius: 10px;
 }
 
 /* overview page history */
+main #historyPage:checked ~ .page .overviewPage,
+main #historyPage:checked ~ .page .historyBlock {
+    display: block;
+}
+main #historyPage:checked ~ .page .appointmentBlock,
+main #historyPage:checked ~ .page .likeBlock,
+main #historyPage:checked ~ .page .historyBlock h3,
+main #historyPage:not(:checked) ~ .page .historyBlock .item:not(:nth-child(-n + 4)) {
+    display: none;
+}
 main .historyBlock {
     position: relative;
 }
@@ -168,4 +178,37 @@ main .appoinementPage #schedule {
     background-color: #fcfaf5;
     border-radius: 10px;
     padding: 20px 50px;
+}
+
+/* like page */
+main #likePage:checked ~ .page .likePage {
+    display: block;
+}
+/* like page if no content */
+main .likePage .likeBlock {
+    padding-bottom: 400px;
+}
+main .page .likePage .itemWrap {
+    padding: 20px;
+}
+main .page .likePage .item {
+    background-color: #fcfaf5;
+    overflow: hidden;
+    border-radius: 10px;
+}
+/* like page like img */
+main .page .likePage .item .pic img {
+    width: 100%;
+}
+main .page .overviewPage .item .txt .txtWrap,
+main .page .overviewPage .item .txt button,
+main .page .likePage .item .txt .txtWrap,
+main .page .likePage .item .txt button {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 5px;
+    padding: 10px;
+}
+main .page .likePage .item .txt .txtWrap {
+    margin-right: 85px;
 }

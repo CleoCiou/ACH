@@ -18,6 +18,7 @@
     <main>
         <div class="container">
             <!-- radio for change page => display: none -->
+            <input type="checkbox" name="edit" id="edit" class="displayNone" checked>
             <input type="radio" name="changePage" id="overviewPage" class="displayNone" checked>
             <input type="radio" name="changePage" id="appointmentPage" class="displayNone">
             <input type="radio" name="changePage" id="likePage" class="displayNone">
@@ -43,11 +44,10 @@
                         </div>
                         <!-- profile info -->
                         <div class="txt">
-                            <p class="userName">Hello Bed</p>
+                            <p class="userName">我豪想睡</p>
                         </div>
                         <!-- profile form -->
                         <form>
-                            <input type="checkbox" name="edit" id="edit" class="displayNone" checked>
                             <label for="edit" class="edit otherBtn">修改</label>
                             <div class="onEdit">
                                 <!-- user ID -->
@@ -58,7 +58,7 @@
                                 <!-- user name -->
                                 <div class="userName">
                                     <label for="userName">使用者名稱：</label>
-                                    <input type="text" id="userName">
+                                    <input type="text" id="userName" value="我豪想睡">
                                 </div>
                                 <!-- user password -->
                                 <div class="userPassword">
@@ -68,12 +68,12 @@
                                 <!-- user phone -->
                                 <div class="userPhone">
                                     <label for="userPhone">手機：</label>
-                                    <input type="tel" id="userPhone">
+                                    <input type="tel" id="userPhone" value="0952525252">
                                 </div>
                                 <!-- user email -->
                                 <div class="userEmail">
                                     <label for="userEmail">信箱：</label>
-                                    <input type="email" id="userEmail">
+                                    <input type="email" id="userEmail" value="happyNewYear@zzz.com">
                                 </div>
                                 <!-- user payment -->
                                 <div class="payment">
@@ -117,17 +117,20 @@
                             </div>
                         </div>
                     </div>
-                    <!-- favorite block -->
-                    <div class="favoriteBlock">
+                    <!-- like block -->
+                    <div class="likeBlock">
                         <h3>我的收藏</h3>
-                        <div class="row favoriteList">
+                        <div class="row likeList">
                             <div class="col-3 item">
                                 <div class="pic">
                                     <img src="img/products/create/6.jpg">
                                 </div>
                                 <div class="txt">
-                                    <p>樣式1</p>
-                                    <p>NT $1,000</p>
+                                    <div class="txtWrap">
+                                        <p>樣式1</p>
+                                        <p>NT $900</p>
+                                    </div>
+                                    <button class="appointmentBtn">預約</button>
                                 </div>
                             </div>
                             <div class="col-3 item">
@@ -135,8 +138,11 @@
                                     <img src="img/products/create/5.jpg">
                                 </div>
                                 <div class="txt">
-                                    <p>樣式1</p>
-                                    <p>NT $1,000</p>
+                                    <div class="txtWrap">
+                                        <p>樣式1</p>
+                                        <p>NT $900</p>
+                                    </div>
+                                    <button class="appointmentBtn">預約</button>
                                 </div>
                             </div>
                             <div class="col-3 item">
@@ -144,8 +150,11 @@
                                     <img src="img/products/create/4.jpg">
                                 </div>
                                 <div class="txt">
-                                    <p>樣式1</p>
-                                    <p>NT $1,300</p>
+                                    <div class="txtWrap">
+                                        <p>樣式1</p>
+                                        <p>NT $900</p>
+                                    </div>
+                                    <button class="appointmentBtn">預約</button>
                                 </div>
                             </div>
                             <div class="col-3 item">
@@ -153,8 +162,11 @@
                                     <img src="img/products/create/8.jpg">
                                 </div>
                                 <div class="txt">
-                                    <p>樣式1</p>
-                                    <p>NT $1,000</p>
+                                    <div class="txtWrap">
+                                        <p>樣式1</p>
+                                        <p>NT $900</p>
+                                    </div>
+                                    <button class="appointmentBtn">預約</button>
                                 </div>
                             </div>
                         </div>
@@ -195,13 +207,34 @@
                                 <span>2021.10.20</span>
                             </div>
                         </div>
+                        <div class="item">
+                            <!-- history img -->
+                            <div class="pic">
+                                <img src="img/products/create/13.jpg">
+                            </div>
+                            <!-- history description -->
+                            <div class="txt">
+                                <p>大地</p>
+                                <span>2021.09.01</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <!-- history img -->
+                            <div class="pic">
+                                <img src="img/products/create/11.jpg">
+                            </div>
+                            <!-- history description -->
+                            <div class="txt">
+                                <p>奢華</p>
+                                <span>2021.09.01</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- appointmentPage -->
                 <div class="col-9 displayNone appoinementPage">
                     <!-- appointment block -->
                     <div class="appointmentBlock">
-                        <h3>我的預約</h3>
                         <div class="row item">
                             <!-- appointment img -->
                             <div class="col-3 pic">
@@ -227,8 +260,83 @@
                         </div>
                     </div>
                 </div>
-                <!-- favoritePage -->
-                <div class="col-9 displayNone favoritePage"></div>
+                <!-- likePage -->
+                <div class="col-9 displayNone likePage">
+                    <div class="likeBlock">
+                        <div class="row likeList">
+                            <div class="col-4 itemWrap">
+                                <div class="item">
+                                    <div class="pic">
+                                        <img src="img/products/hand/special10.jpg">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="txtWrap">
+                                            <p>樣式1</p>
+                                            <p>NT $900</p>
+                                        </div>
+                                        <button class="appointmentBtn">預約</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 itemWrap">
+                                <div class="item">
+                                    <div class="pic">
+                                        <img src="img/products/hand/special8.jpg">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="txtWrap">
+                                            <p>樣式1</p>
+                                            <p>NT $900</p>
+                                        </div>
+                                        <button class="appointmentBtn">預約</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 itemWrap">
+                                <div class="item">
+                                    <div class="pic">
+                                        <img src="img/products/hand/special2.jpg">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="txtWrap">
+                                            <p>樣式1</p>
+                                            <p>NT $900</p>
+                                        </div>
+                                        <button class="appointmentBtn">預約</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 itemWrap">
+                                <div class="item">
+                                    <div class="pic">
+                                        <img src="img/products/hand/special4.jpg">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="txtWrap">
+                                            <p>樣式1</p>
+                                            <p>NT $900</p>
+                                        </div>
+                                        <button class="appointmentBtn">預約</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 itemWrap">
+                                <div class="item">
+                                    <div class="pic">
+                                        <img src="img/products/hand/special1.jpg">
+                                    </div>
+                                    <div class="txt">
+                                        <div class="txtWrap">
+                                            <p>樣式1</p>
+                                            <p>NT $900</p>
+                                        </div>
+                                        <button class="appointmentBtn">預約</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- historyPage -->
                 <div class="col-9 displayNone historyPage"></div>
             </div>
@@ -239,3 +347,9 @@
     <footer></footer>
 </body>
 </html>
+<script>
+    const para = new URLSearchParams(window.location.search);
+    let pass = para.get('p');
+    let view = document.getElementById(pass + 'Page');
+    view.checked = true;
+</script>
