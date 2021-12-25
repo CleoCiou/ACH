@@ -5,19 +5,18 @@ body {
 main .container {
     margin-bottom: 50px;
 }
-main .news,
 main .appointment {
     display: flex;
     flex-wrap: wrap;
 }
 /* news */
-main .container:first-child {
+main .news {
     width: 100%;
     background: linear-gradient(to bottom, transparent 40%, #ebe9e2ff),
         url(../img/background/news_bg.svg) center bottom no-repeat;
     background-size: cover;
 }
-main .news {
+main .news .row {
     width: 1200px;
     margin: auto;
     align-items: center;
@@ -25,6 +24,9 @@ main .news {
 main .news .txt > * {
     margin-bottom: 15px;
     margin-right: 20px;
+}
+main .news .pic img {
+    width: 100%;
 }
 /* appointment */
 main .appointment h2 {

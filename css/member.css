@@ -1,4 +1,7 @@
 /* nav bar */
+main .container {
+    position: relative;
+}
 main .container .pagebar {
     margin-bottom: 50px;
     justify-content: center;
@@ -17,6 +20,9 @@ main .container #historyPage:checked ~ .pagebar label[for="historyPage"] {
     background-color: #000;
     color: #fff;
 }
+main .container .page {
+    padding-bottom: 50px;
+}
 
 /* left panel */
 /* sticky profile */
@@ -33,39 +39,66 @@ main .container .row .profile img {
     display: block;
     margin: auto;
 }
+main .container .row .profile .txt {
+    padding: 10px 0;
+}
+/* profile form */
+/* edit */
+main .container .page .profile .profileList form .onEdit div > * {
+    display: inline-block;
+    margin-bottom: 12px;
+}
 
-/* right panel */
 /* profile info */
+main #edit:not(:checked) ~ .edit {
+    display: none;
+}
 main #edit:checked ~ .onEdit {
     display: none;
 }
 
+/* right panel */
 /* show if checkBtn checked */
 main #overviewPage:checked ~ .page .overviewPage {
     display: block;
 }
-
-/* overview page appointment */
-main .overviewPage .appointmentBlock .item {
+/* block margin */
+main .overviewPage > [class$="Block"],
+main .appoinementPage > [class$="Block"] {
+    margin-bottom: 30px;
+}
+/* overview page appointment block */
+/* appointment page appointment block */
+main .overviewPage .appointmentBlock .item,
+main .appoinementPage .appointmentBlock .item,
+main .overviewPage .favoriteBlock .favoriteList {
     align-items: center;
-    padding: 20px 10px;
+    padding: 20px 0;
     background-color: #fcfaf5;
     border-radius: 10px;
 }
-main .overviewPage .appointmentBlock .item .pic img {
+main .overviewPage .appointmentBlock .item .pic img,
+main .appoinementPage .appointmentBlock .item .pic img {
     width: 80%;
     border-radius: 10px;
     display: block;
     margin: auto;
 }
+main .overviewPage .appointmentBlock .item .txt .icon,
+main .appoinementPage .appointmentBlock .item .txt .icon {
+    margin-top: 20px;
+}
+main .overviewPage .appointmentBlock .item .txt .icon img,
+main .appoinementPage .appointmentBlock .item .txt .icon img {
+    width: 6%;
+    padding: 5px;
+    margin-right: 5px;
+}
 
 /* overview page favorite */
-main .overviewPage .favoriteBlock {
-    padding: 30px 0;
-}
 main .overviewPage .favoriteBlock .item {
     align-items: center;
-    padding: 10px;
+    padding: 0 30px;
     border-radius: 10px;
 }
 main .overviewPage .favoriteBlock .item .pic img {
@@ -79,13 +112,13 @@ main .historyBlock {
 }
 main .historyBlock:before {
     content: '';
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     display: block;
-    background: url(../img/background/tree.png) no-repeat;
+    background: url(../img/icon/nail.png) no-repeat;
     background-size: contain;
     bottom: 0;
-    right: 15%;
+    right: 10%;
     position: absolute;
 }
 main .historyBlock .item {
@@ -124,4 +157,15 @@ main .historyBlock .item:before {
 main .overviewPage .historyBlock .item .pic img {
     width: 20%;
     border-radius: 50%;
+    border: 4px solid #c2b5ac;
+}
+
+/* appointment page */
+main #appointmentPage:checked ~ .page .appoinementPage {
+    display: block;
+}
+main .appoinementPage #schedule {
+    background-color: #fcfaf5;
+    border-radius: 10px;
+    padding: 20px 50px;
 }

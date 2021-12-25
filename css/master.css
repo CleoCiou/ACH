@@ -72,6 +72,9 @@ main .price {
     background-color: #E3C284;
 }
 /* form format */
+main form * {
+    letter-spacing: 2px;
+}
 main form input[type='text'],
 main form input[type='tel'],
 main form input[type='date'],
@@ -82,16 +85,46 @@ main form input[type='email'] {
     line-height: 1.7;
     padding: 0 15px;
 }
-main form input[type='button'],
+/* other btn */
+main form .otherBtn,
+main form input[type='button']:not(.appointmentBtn),
 main form input[type='submit'],
 main button:not(.appointmentBtn) {
-    background-color: #fa0;
+    background-color: #c2b5ac;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.5;
 }
-/* checkbox switch */
+/* reset btn */
+main form input[type='reset'] {
+    border: 1px solid #c2b5ac;
+    border-radius: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+/* other, reset btn hover */
+main form .otherBtn:hover,
+main form input[type='button']:not(.appointmentBtn):hover,
+main form input[type='submit']:hover,
+main button:not(.appointmentBtn):hover,
+main form input[type='reset']:hover {
+    box-shadow: 0 0 3px 1px #ccc;
+}
+/* checkbox switch (label btn) */
 .labelBtn {
     background-color: #fcfaf5;
     color: #000;
+    border: 1px solid #ccc;
     cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 14px;
     line-height: 2;
     transition: .5s;
 }

@@ -25,10 +25,10 @@
 
             <!-- nav bar -->
             <nav class="row pagebar">
-                <label for="overviewPage" class="col-2 labelBtn">Overview</label>
-                <label for="appointmentPage" class="col-2 labelBtn">Appointment</label>
-                <label for="likePage" class="col-2 labelBtn">My Favorite</label>
-                <label for="historyPage" class="col-2 labelBtn">History</label>
+                <label for="overviewPage" class="col-2 labelBtn">總覽</label>
+                <label for="appointmentPage" class="col-2 labelBtn">我的預約</label>
+                <label for="likePage" class="col-2 labelBtn">我的收藏</label>
+                <label for="historyPage" class="col-2 labelBtn">歷史紀錄</label>
             </nav>
 
             <!-- page -->
@@ -43,12 +43,12 @@
                         </div>
                         <!-- profile info -->
                         <div class="txt">
-                            <p class="userName">CleoCiou</p>
+                            <p class="userName">Hello Bed</p>
                         </div>
                         <!-- profile form -->
                         <form>
-                            <label for="edit" class="labelBtn">edit</label>
                             <input type="checkbox" name="edit" id="edit" class="displayNone" checked>
+                            <label for="edit" class="edit otherBtn">修改</label>
                             <div class="onEdit">
                                 <!-- user ID -->
                                 <div class="userID">
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="action">
                                     <input type="submit" value="確認">
-                                    <input type="button" value="取消">
+                                    <input type="reset" value="取消">
                                 </div>
                             </div>
                         </form>
@@ -98,58 +98,64 @@
                 <div class="col-9 displayNone overviewPage">
                     <!-- appointment block -->
                     <div class="appointmentBlock">
-                        <h3 class="col-12">我的預約</h3>
+                        <h3>我的預約</h3>
                         <div class="row item">
                             <!-- appointment img -->
-                            <div class="col-4 pic">
+                            <div class="col-3 pic">
                                 <img src="img/products/hand/special2.jpg">
                             </div>
                             <!-- appointment description -->
-                            <div class="col-8 txt">
+                            <div class="col-9 txt">
                                 <h3>樣式</h3>
                                 <p>日期</p>
                                 <p>時段</p>
                                 <p>NT $999</p>
+                                <div class="icon">
+                                    <img src="img/icon/alarm.png" alt="alarm">
+                                    <img src="img/icon/messenger.png" alt="messenger">
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- favorite block -->
-                    <div class="row favoriteBlock">
-                        <h3 class="col-12">我喜歡的</h3>
-                        <div class="col-3 item">
-                            <div class="pic">
-                                <img src="img/products/create/6.jpg">
+                    <div class="favoriteBlock">
+                        <h3>我的收藏</h3>
+                        <div class="row favoriteList">
+                            <div class="col-3 item">
+                                <div class="pic">
+                                    <img src="img/products/create/6.jpg">
+                                </div>
+                                <div class="txt">
+                                    <p>樣式1</p>
+                                    <p>NT $1,000</p>
+                                </div>
                             </div>
-                            <div class="txt">
-                                <p>樣式1</p>
-                                <p>NT $1,000</p>
+                            <div class="col-3 item">
+                                <div class="pic">
+                                    <img src="img/products/create/5.jpg">
+                                </div>
+                                <div class="txt">
+                                    <p>樣式1</p>
+                                    <p>NT $1,000</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-3 item">
-                            <div class="pic">
-                                <img src="img/products/create/5.jpg">
+                            <div class="col-3 item">
+                                <div class="pic">
+                                    <img src="img/products/create/4.jpg">
+                                </div>
+                                <div class="txt">
+                                    <p>樣式1</p>
+                                    <p>NT $1,300</p>
+                                </div>
                             </div>
-                            <div class="txt">
-                                <p>樣式1</p>
-                                <p>NT $1,000</p>
-                            </div>
-                        </div>
-                        <div class="col-3 item">
-                            <div class="pic">
-                                <img src="img/products/create/4.jpg">
-                            </div>
-                            <div class="txt">
-                                <p>樣式1</p>
-                                <p>NT $1,300</p>
-                            </div>
-                        </div>
-                        <div class="col-3 item">
-                            <div class="pic">
-                                <img src="img/products/create/8.jpg">
-                            </div>
-                            <div class="txt">
-                                <p>樣式1</p>
-                                <p>NT $1,000</p>
+                            <div class="col-3 item">
+                                <div class="pic">
+                                    <img src="img/products/create/8.jpg">
+                                </div>
+                                <div class="txt">
+                                    <p>樣式1</p>
+                                    <p>NT $1,000</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -192,7 +198,35 @@
                     </div>
                 </div>
                 <!-- appointmentPage -->
-                <div class="col-9 displayNone overviewPage"></div>
+                <div class="col-9 displayNone appoinementPage">
+                    <!-- appointment block -->
+                    <div class="appointmentBlock">
+                        <h3>我的預約</h3>
+                        <div class="row item">
+                            <!-- appointment img -->
+                            <div class="col-3 pic">
+                                <img src="img/products/hand/special2.jpg">
+                            </div>
+                            <!-- appointment description -->
+                            <div class="col-9 txt">
+                                <h3>樣式</h3>
+                                <p>日期</p>
+                                <p>時段</p>
+                                <p>NT $999</p>
+                                <div class="icon">
+                                    <img src="img/icon/alarm.png" alt="alarm">
+                                    <img src="img/icon/messenger.png" alt="messenger">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scheduleBlock">
+                        <h3>預約排程表</h3>
+                        <div class="row item">
+                            <div class="col-12" id="schedule"></div>
+                        </div>
+                    </div>
+                </div>
                 <!-- favoritePage -->
                 <div class="col-9 displayNone favoritePage"></div>
                 <!-- historyPage -->

@@ -35,7 +35,7 @@ main .detail {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 /* detail img left 70% */
 main .detail .changeImg {
