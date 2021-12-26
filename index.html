@@ -17,7 +17,7 @@
     <!-- main -->
     <main>
         <!-- news -->
-        <div class="container news">
+        <section class="container news">
             <div class="row item">
                 <div class="col-6 txt">
                     <h2>本月新款</h2>
@@ -29,21 +29,23 @@
                     <img class="newsItem" src="img/products/create/28.jpg" alt="">
                 </div>
             </div>
-        </div>
+        </section>
         <!-- appointment -->
-        <div class="container">
-            <section class="mainItem appointment">
-                <h2>預約 Appointment</h2>
-                <img class="appointmentItem" src="img/products/create/6.jpg" alt="">
-                <div class="appointmentItem schedule" id="schedule"></div>
-            </section>
-        </div>
+        <section class="container appointment">
+            <div class="row item">
+                <h2 class="col-12">預約 Appointment</h2>
+                <div class="col pic">
+                    <img src="img/products/create/6.jpg" alt="樣式6">
+                </div>
+                <div class="col appointmentItem schedule" id="schedule"></div>
+            </div>
+        </section>
         <!-- appointment block: appointment btn onclick -->
         <div class="displayNone appointmentBlock">
             <button id="closeAppointment">&#10539;</button>
             <div class="productName">
                 <span>樣式名稱:</span>
-                <select>
+                <select id="style">
                     <option>南雅奇岩</option>
                     <option>聖誕節</option>
                     <option>旋轉跳躍閉著眼</option>
@@ -52,6 +54,8 @@
             </div>
             <div class="pic">
                 <img src="img/products/create/28.jpg" alt="">
+                <button class="last"></button>
+                <button class="next"></button>
             </div>
             <form>
                 <label>預約時段:</label>
@@ -153,6 +157,7 @@
 </body>
 </html>
 <script>
+    // TODO: open appointment block
     let element = document.querySelectorAll('.appointmentBtn');
     for (let i = 0; i < element.length; i++) {
         element[i].addEventListener('click', function(){
@@ -161,6 +166,7 @@
             dialog.style.animation = "showDialog 1s 1";
         });
     }
+    // TODO: close appointment block
     document.getElementById('closeAppointment').addEventListener('click', function(){
         let dialog = document.getElementsByClassName('appointmentBlock')[0];
         dialog.style.animation = "closeDialog 1s 1";
@@ -168,4 +174,51 @@
             dialog.classList.add('displayNone');
         }, 1000); 
     });
+    // TODO: change img if selectd onchange
+    let styleList = ['南雅奇岩',
+                    '聖誕節',
+                    '旋轉跳躍閉著眼',
+                    '恭喜鴨恭喜發鴨發大財'];
+    let imgList = ['img/products/create/28.jpg',
+                    'img/products/create/12.jpg',
+                    'img/products/create/8.jpg',
+                    'img/products/create/24.jpg' ]
+    document.getElementById('style').addEventListener('change', function(){
+        document.querySelectorAll('main .appointmentBlock .pic img')[0].src = imgList[styleList.indexOf(document.getElementById('style').value)];
+    });
+    // TODO: click btn -> change title and img
+    let last = document.querySelectorAll('main .appointmentBlock .pic .last')[0];
+    last.addEventListener('click', function(){
+        let title = document.getElementById('style').value;
+        let img = document.querySelectorAll('main .appointmentBlock .pic img')[0];
+        let index = styleList.indexOf(title);
+        index = ((index - 1) === -1) ? styleList.length - 1 : index - 1;
+        document.getElementById('style').value = styleList[index];
+        img.src = imgList[index];
+    });
+    let next = document.querySelectorAll('main .appointmentBlock .pic .next')[0];
+    next.addEventListener('click', function(){
+        let title = document.getElementById('style').value;
+        let img = document.querySelectorAll('main .appointmentBlock .pic img')[0];
+        let index = styleList.indexOf(title);
+        index = ((index + 1) === styleList.length) ? 0 : index + 1;
+        document.getElementById('style').value = styleList[index];
+        img.src = imgList[index];
+    });
+    // TODO: link category page
+    document.querySelectorAll('main .category .categoryList .single')[0].addEventListener('click', function(){
+        window.location = 'products.html?f=single';
+    })
+    document.querySelectorAll('main .category .categoryList .cateyes')[0].addEventListener('click', function(){
+        window.location = 'products.html?f=catEyes';
+    })
+    document.querySelectorAll('main .category .categoryList .gardual')[0].addEventListener('click', function(){
+        window.location = 'products.html?f=singleGradual';
+    })
+    document.querySelectorAll('main .category .categoryList .franch')[0].addEventListener('click', function(){
+        window.location = 'products.html?f=frenchGradual';
+    })
+    document.querySelectorAll('main .category .categoryList .style')[0].addEventListener('click', function(){
+        window.location = 'products.html?f=style';
+    })
 </script>

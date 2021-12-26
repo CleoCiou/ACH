@@ -60,6 +60,31 @@ main .appointmentBlock .pic {
     width: 50%;
     margin: auto;
     margin-bottom: 20px;
+    position: relative;
+}
+main .appointmentBlock .pic .last {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 0px;
+    transform: translate(0, -50%);
+    opacity: 0.5;
+    background: url(../img/icon/left.png) no-repeat;
+    background-size: contain;
+}
+main .appointmentBlock .pic .next {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    right: 0px;
+    transform: translate(0, -50%);
+    opacity: 0.5;
+    background: url(../img/icon/right.png) no-repeat;
+    background-size: contain;
 }
 main .appointmentBlock .pic img {
     width: 100%;
@@ -85,11 +110,11 @@ main .news .pic img {
     width: 100%;
 }
 /* appointment */
-main .appointment h2 {
-    width: 100%;
-}
-main .appointment img {
+main .appointment .pic {
     width: 45%;
+}
+main .appointment .pic img {
+    width: 100%;
 }
 main .appointment .schedule {
     flex-grow: 1;
@@ -173,7 +198,7 @@ main .category .categoryList .single {
     top: 52%;
     left: 3.5%;
     transform: rotate(-14deg);
-    /* animation: brownBoolean 10s linear 1s 10; */
+    animation: brownBoolean 10s linear 1s 10;
 }
 main .category .categoryList .single:hover ~ .showImg {
     content: url(../img/products/hand/12.jpeg);
@@ -182,7 +207,7 @@ main .category .categoryList .cateyes {
     top: 43%;
     left: 12%;
     transform: rotate(15deg);
-    /* animation: brownBoolean 10s linear 2s 10; */
+    animation: brownBoolean 10s linear 2s 10;
 }
 main .category .categoryList .cateyes:hover ~ .showImg {
     content: url(../img/products/hand/4.jpeg);
