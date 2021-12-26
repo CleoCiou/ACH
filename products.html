@@ -68,3 +68,12 @@
     <footer></footer>
 </body>
 </html>
+
+<script>
+    const para = new URLSearchParams(window.location.search);
+    let pass = para.get('f');
+    if (pass !== null) {
+        view = document.getElementById('filter').checked = true;
+        view = document.getElementById(pass).checked = true;
+    }
+</script>

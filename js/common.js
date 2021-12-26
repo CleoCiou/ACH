@@ -62,10 +62,10 @@ function init() {
         '        </a>' +
         '        <!-- menu -->' +
         '        <nav class="headerItem menu">' +
-        '            <a href="#" class="appointment">Appointment</a>' +
+        '            <a href="member.html?p=appointment" class="appointment">Appointment</a>' +
         '            <a href="products.html" class="category">Category</a>' +
-        '            <a href="#" class="info">Info</a>' +
-        '            <a href="#" class="about">About</a>' +
+        '            <a href="information.html" class="info">Info</a>' +
+        '            <a href="information.html?f=aboutACH" class="about">About</a>' +
         '        </nav>' +
         '        <!-- others -->' +
         '        <div class="headerItem others">' +
@@ -85,30 +85,30 @@ function init() {
         '                <!-- products category -->' +
         '                <li class="mapListItem products">' +
         '                    <span>樣式</span>' +
-        '                    <a href="#">熱門款</a>' +
-        '                    <a href="#">優惠活動</a>' +
-        '                    <a href="#">單色 | 跳色</a>' +
-        '                    <a href="#">貓眼 | 鏡面</a>' +
-        '                    <a href="#">單色漸層</a>' +
-        '                    <a href="#">法式凝膠</a>' +
-        '                    <a href="#">客製化造型</a>' +
+        '                    <a href="products.html?f=all">熱門款</a>' +
+        '                    <a href="products.html?f=siallngle">優惠活動</a>' +
+        '                    <a href="products.html?f=single">單色 | 跳色</a>' +
+        '                    <a href="products.html?f=catEyes">貓眼 | 鏡面</a>' +
+        '                    <a href="products.html?f=singleGradual">單色漸層</a>' +
+        '                    <a href="products.html?f=frenchGradual">法式凝膠</a>' +
+        '                    <a href="products.html?f=style">客製化造型</a>' +
         '                </li>' +
         '                <li class="mapListItem appointment">' +
         '                    <span>預約</span>' +
-        '                    <a href="#">預約行事曆</a>' +
-        '                    <a href="#">我的最愛</a>' +
+        '                    <a href="member.html?p=appointment">預約行事曆</a>' +
+        '                    <a href="member.html?p=like">我的最愛</a>' +
         '                </li>' +
         '                <li class="mapListItem others">' +
-        '                    <span href="#">其他資訊</span>' +
-        '                    <a href="#">價目表</a>' +
-        '                    <a href="#">預約流程</a>' +
-        '                    <a href="#">預約須知</a>' +
-        '                    <a href="#">防疫公告</a>' +
-        '                    <a href="#">FAQ</a>' +
+        '                    <span>其他資訊</span>' +
+        '                    <a href="information.html">價目表</a>' +
+        '                    <a href="information.html">預約流程</a>' +
+        '                    <a href="information.html">預約須知</a>' +
+        '                    <a href="information.html">防疫公告</a>' +
+        '                    <a href="information.html">FAQ</a>' +
         '                </li>' +
         '                <li class="mapListItem about">' +
         '                    <div class="aboutItem description">' +
-                                '<div class="icon flex item_center">' +
+                                '<div class="icon ">' +
         '                            <img src="img/icon/line.png" alt="line icon">' +
         '                            <img src="img/icon/instagram.svg" alt="instagram icon">' +
                                 '</div>' +

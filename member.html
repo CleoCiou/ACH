@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="action">
                                     <input type="submit" value="確認">
-                                    <input type="reset" value="取消">
+                                    <input type="reset" id="canelEdit" value="取消">
                                 </div>
                             </div>
                         </form>
@@ -350,6 +350,10 @@
 <script>
     const para = new URLSearchParams(window.location.search);
     let pass = para.get('p');
-    let view = document.getElementById(pass + 'Page');
-    view.checked = true;
+    if (pass !== null) {
+        let view = document.getElementById(pass + 'Page');
+        view.checked = true;
+    }
+
+    document.getElementById('canelEdit').addEventListener('click', function(){ document.getElementById('edit').checked = true; });
 </script>
