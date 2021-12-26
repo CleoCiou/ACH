@@ -1,279 +1,224 @@
-/* header */
-header .menu > .category:after {
+main .searchBar .row .barWrap input,
+main .productList .row .productWrap .product .pic img {
     width: 100%;
 }
+main img {
+    vertical-align: middle;
+}
+/* search bar */
+main .searchBar .row .barWrap input {
+    border-radius: 100px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    line-height: 2;
+}
 
-/* main */
-main {
-    padding-bottom: 30px;
+/* product list */
+main .productList .row .productWrap {
+    padding: 15px;
 }
-main .container {
-    display: flex;
-}
-/* switch */
-main .container > input {
-    display: none;
-}
-/* product */
-main .products {
-    display: flex;
-    flex-wrap: wrap;
-}
-main .productsItem a {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    font-size: 0;
+main .productList .row .productWrap .product {
+    background-color: #fcfaf5;
+    display: inline-block;
+    height: 100%;
     border-radius: 10px;
     overflow: hidden;
+    transition: .5s;
 }
-main .productsItem:hover {
-    cursor: pointer;
+main .productList .row .productWrap .product:hover {
     transform: scale(1.05);
-    transition: 1s;
+    /* box-shadow: 0 0 3px 0 #c2b5ac; */
 }
-main .productsItem .txt {
+/* product img btn */
+main .productList .row .productWrap .pic {
     position: relative;
-    padding: 20px 10px;
-    background-color: #fcfaf5;
 }
-main .productsItem img {
-    transition: .5s;
-}
-/* product category */
-main .productsItem .category {
-    font-size: 12px;
-    color: #777;
-}
-/* products last / next button */
-main .productsItem button {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border: none;
-    opacity: 0;
-    transition: .5s;
-    top: 50%;
+main .productList .row .productWrap .pic:hover span {
+    display: inline-block;
     cursor: pointer;
 }
-main .productsItem .last{
+main .productList .row .productWrap .pic .last {
+    background: url(../img/icon/left.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
     left: 0;
-    top: -60px;
-    background: url(../img/icon/left-arrow.png);
-    background-size: contain;
+    transform: translate(0, -50%);
+    opacity: 0.5;
+    transition: .3s;
 }
-main .productsItem .next{
+main .productList .row .productWrap .pic .next:hover {
+    transform: translate(0, -50%);
+}
+main .productList .row .productWrap .pic .next {
+    background: url(../img/icon/right.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
     right: 0;
-    top: -60px;
-    background: url(../img/icon/right-arrow.png);
-    background-size: contain;
+    transform: translate(0, -50%);
+    opacity: 0.5;
+    transition: .5s;
 }
-main .productsItem:hover button {
-    opacity: 1;
+main .productList .row .productWrap .pic .next:hover {
+    transform: translate(0, -50%);
 }
-/* product img */
-main .productsItem img {
-    width: 100%;
-}
-/* product name, product price */
-main .productsItem h3,
-main .productsItem p {
-    padding: 5px 0 5px 5px;
+/* product txt */
+main .productList .row .productWrap .product .txt {
+    padding: 10px;
+    display: inline-block;
 }
 
-/* view method bar */
+/* view method */
 main .viewMethod {
     position: fixed;
-    bottom: 20px;
     left: 50%;
+    bottom: 30px;
     transform: translate(-50%);
-    z-index: 1;
+    font-size: 0;
+    text-align: center;
     background-color: #fcfaf5;
-    border-radius: 300px;
-    box-shadow: 0 0 1px 0 #777;
+    border-radius: 100px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    margin-bottom: -1px;
 }
 main .viewMethod label {
-    text-align: center;
     display: inline-block;
-    border-radius: 300px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: .5s;
-    width: 80px;
-    font-size: 14px;
+    padding: 3px 15px;
+    border: none;
+    height: 100%;
 }
-main .viewMethod:hover label,
-main .filters .filtersList .category .list label {
-    background-color: #fcfaf5;
-    color: #000;
+main .viewMethod label:not(:first-child) {
+    margin-left: -1px;
 }
-main .viewMethod label:hover,
-main .filters .filtersList .category .list label:hover {
-    background-color: #777;
-    color: #fff;
-}
-main #explore:checked ~ .viewMethod label:nth-child(1),
-main #grid:checked ~ .viewMethod label:nth-child(2),
-main #filter:checked ~ .viewMethod label:nth-child(3),
-main #all:checked ~ .filters .filtersList .category .list label:nth-child(1),
-main #single:checked ~ .filters .filtersList .category .list label:nth-child(2),
-main #catEyes:checked ~ .filters .filtersList .category .list label:nth-child(3),
-main #singleGradual:checked ~ .filters .filtersList .category .list label:nth-child(4),
-main #frenchGradual:checked ~ .filters .filtersList .category .list label:nth-child(5),
-main #style:checked ~ .filters .filtersList .category .list label:nth-child(6) {
+
+/* label btn selected */
+main #explore:checked ~ .viewMethod .explore,
+main #grid:checked ~ .viewMethod .grid,
+main #filter:checked ~ .viewMethod .filter,
+main #all:checked ~ .productList .filterList .category .all,
+main #single:checked ~ .productList .filterList .category .single,
+main #catEyes:checked ~ .productList .filterList .category .catEyes,
+main #singleGradual:checked ~ .productList .filterList .category .singleGradual,
+main #frenchGradual:checked ~ .productList .filterList .category .frenchGradual,
+main #style:checked ~ .productList .filterList .category .style {
     background-color: #000;
     color: #fff;
 }
 
-/* explore */
-/* flexgroup(10):1-4-1-2-2 */
-main #explore:checked ~ .products {
-    flex-direction: row;
-}
-main #explore:checked ~ .products .productsItem .txt .category,
-main #explore:checked ~ .products .productsItem .txt .price {
+/* product info display: none */
+main #explore:checked ~ .productList .row .productWrap .product .txt .category,
+main #explore:checked ~ .productList .row .productWrap .product .txt .price,
+main #grid:checked ~ .productList .row .productWrap .product .txt .description,
+main #filter:checked ~ .productList .row .productWrap .product .txt .description,
+main #filter:checked ~ #single:checked ~ .productList .productWrap:not(.single),
+main #filter:checked ~ #catEyes:checked ~ .productList .productWrap:not(.catEyes),
+main #filter:checked ~ #singleGradual:checked ~ .productList .productWrap:not(.singleGradual),
+main #filter:checked ~ #frenchGradual:checked ~ .productList .productWrap:not(.frenchGradual),
+main #filter:checked ~ #style:checked ~ .productList .productWrap:not(.style) {
     display: none;
 }
-main #explore:checked ~ .products .productsItem:nth-child(5n+1) a {
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 15px 10px 15px;
-    background: url(../img/background/w500h500_brown.svg);
-}
-main #explore:checked ~ .products .productsItem:nth-child(5n+1) .txt {
-    background-color: transparent;
-    font-size: 20px;
-    letter-spacing: 2px;
-    padding: 10px 30px 10px 30px;
-}
-main #explore:checked ~ .products .productsItem:nth-child(10n+1) a {
-    width: 100%;
-    flex-direction: row-reverse;
-    padding: 10px 15px 10px 15px;
-    background: url(../img/background/w500h500_gray_filp.svg) no-repeat;
-}
-main #explore:checked ~ .products .productsItem:nth-child(5n+1) .productItem,
-main #explore:checked ~ .products .productsItem:nth-child(10n+1) .productItem {
-    width: calc(100% / 2 - 60px);
-    margin: 30px;
-}
-main #explore:checked ~ .products .productsItem:nth-child(5n+1) .productItem,
-main #explore:checked ~ .products .productsItem:nth-child(10n+1) .productItem {
-    border-radius: 10px;
-}
-main #explore:checked ~ .products .productsItem:nth-child(5n+2),
-main #explore:checked ~ .products .productsItem:nth-child(5n+3),
-main #explore:checked ~ .products .productsItem:nth-child(5n+4),
-main #explore:checked ~ .products .productsItem:nth-child(5n) {
-    width: calc(100% / 4);
-    padding: 0 15px 10px 15px;
-}
-main #explore:checked ~ .products .productsItem:nth-child(5n+3),
-main #explore:checked ~ .products .productsItem:nth-child(5n) {
-    padding-top: 50px;
-    padding-bottom: 0;
-}
-/* main #explore:checked ~ .products .productsItem:nth-child(10n+7),
-main #explore:checked ~ .products .productsItem:nth-child(10n+8),
-main #explore:checked ~ .products .productsItem:nth-child(10n+9),
-main #explore:checked ~ .products .productsItem:nth-child(10n) {
-    width: calc(100% / 2);
-    padding: 50px 30px;
-    padding-top: 0;
-}
-main #explore:checked ~ .products .productsItem:nth-child(10n+7),
-main #explore:checked ~ .products .productsItem:nth-child(10n+9) {
-    padding-top: 50px;
-    padding-bottom: 0;
-} */
 
-/* grid */
-main #grid:checked ~ .products {
+/* explore sort 10:1-4-1-4 */
+main #explore:checked ~ .productList .productWrap {
+    width: calc(100% / 4);
+}
+main #explore:checked ~ .productList .productWrap:nth-child(5n+1) {
+    width: calc(100%);
+}
+main #explore:checked ~ .productList .productWrap:nth-child(5n+2),
+main #explore:checked ~ .productList .productWrap:nth-child(5n+4) {
+    padding-top: 50px;
+}
+main #explore:checked ~ .productList .productWrap:nth-child(5n+3),
+main #explore:checked ~ .productList .productWrap:nth-child(5n) {
+    padding-bottom: 50px;
+}
+main #explore:checked ~ .productList .productWrap:nth-child(5n+1) .product {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+}
+main #explore:checked ~ .productList .productWrap:nth-child(10n+1) .product {
     flex-direction: row;
 }
-main #grid:checked ~  .products .productsItem {
-    width: calc(100% / 4);
-    padding: 15px;
-    flex-direction: column;
-    justify-content: flex-start;
+main #explore:checked ~ .productList .productWrap:nth-child(5n+1) .product .pic {
+    width: 40%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+main #explore:checked ~ .productList .productWrap:nth-child(5n+1) .product .txt {
+    width: 55%;
+    padding: 200px 100px;
     position: relative;
 }
-main #grid:checked ~  .products .productsItem:nth-child(-n + 4) {
-    padding-top: 0;
+main #explore:checked ~ .productList .productWrap:nth-child(5n+1) .product .txt:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../img/background/w500h500_gray_filp.svg) no-repeat;
+    z-index: -1;
 }
-main #grid:checked ~  .products .productItem .description {
-    display: none;
+main #explore:checked ~ .productList .productWrap:nth-child(10n+1) .product .txt:before {
+    background: url(../img/background/w500h500_brown.svg) no-repeat;
 }
-main #filter:checked ~ .products {
+/* grid sort 4 */
+main #grid:checked ~ .productList .row .productWrap {
+    width: calc(100% / 4);
+}
+/* filter sort 2 */
+main #filter:checked ~ .productList {
+    position: relative;
+}
+main #filter:checked ~ .productList .row {
     width: 70%;
 }
-/* filter */
-main #filter:checked ~ .products .productsItem {
+main #filter:checked ~ .productList .row .productWrap {
     width: calc(100% / 2);
-    padding: 30px 15px;
-    padding-top: 0;
-    flex-direction: column;
-    position: relative;
+    padding: 20px;
 }
-main #filter:checked ~ .products .productsItem .txt .description {
-    display: none;
-}
-
-/* filters (only visible in filter view method) */
-main #explore:checked ~ .filters,
-main #grid:checked ~ .filters {
-    display: none;
-}
-main .filters {
-    width: 30%;
-    border-left: 1px solid #ccc;
-    position: relative;
-}
-main .filters .filtersList {
+main #filter:checked ~ .productList .filterList {
+    display: block;
     position: fixed;
-    width: 360px;
-    /* width: 30%; */
+    top: 150px;
+    left: calc(50% + 240px);
 }
-main .filters .filtersList .category .list {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-main .filters .filtersList .txt {
+main .productList .filterList .info {
     font-size: 12px;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 16px;
 }
-main .filters .filtersList .txt label {
+main .productList .filterList .info .remove {
+    text-align: right;
     cursor: pointer;
+    
 }
-main .filters .filtersList .txt .remove:after {
+main .productList .filterList .info .remove span {
+    display: inline-block;
+}
+main .productList .filterList .info .remove span:after {
     content: '';
     width: 0;
     height: 1px;
-    padding-top: 5px;
-    border-bottom: 1px solid #684337;
+    border-bottom: 1px solid #aaa;
     display: block;
     transition: .5s;
 }
-main .filters .filtersList .txt .remove:hover:after {
+main .productList .filterList .info .remove span:hover:after {
     width: 100%;
 }
-main .filters .filtersList .category .title {
-    margin-left: 15px;
-}
-main .filters .filtersList .category .list label {
+main .productList .filterList .category .labelBtn {
     width: calc(100% / 3 - 20px);
-    padding: 30px 0;
+    padding: 30px 3px;
     margin: 10px;
     text-align: center;
-}
-main #filter:checked ~ #single:checked ~ .products .productsItem:not(.single),
-main #filter:checked ~ #catEyes:checked ~ .products .productsItem:not(.catEyes),
-main #filter:checked ~ #singleGradual:checked ~ .products .productsItem:not(.singleGradual),
-main #filter:checked ~ #frenchGradual:checked ~ .products .productsItem:not(.frenchGradual),
-main #filter:checked ~ #style:checked ~ .products .productsItem:not(.style) {
-    display: none;
 }

@@ -38,6 +38,49 @@
                 <div class="appointmentItem schedule" id="schedule"></div>
             </section>
         </div>
+        <!-- appointment block: appointment btn onclick -->
+        <div class="displayNone appointmentBlock">
+            <button id="closeAppointment">&#10539;</button>
+            <div class="productName">
+                <span>樣式名稱:</span>
+                <select>
+                    <option>南雅奇岩</option>
+                    <option>聖誕節</option>
+                    <option>旋轉跳躍閉著眼</option>
+                    <option>恭喜鴨恭喜發鴨發大財</option>
+                </select>
+            </div>
+            <div class="pic">
+                <img src="img/products/create/28.jpg" alt="">
+            </div>
+            <form>
+                <label>預約時段:</label>
+                <input type="date" id="appointmentDate">
+                <select>
+                    <option>12:00~15:00</option>
+                    <option>15:00~18:00</option>
+                    <option>19:00~22:00</option>
+                </select>
+                <div class="customTel displayNone">
+                    <label for="phone">電話:</label>
+                    <input type="tel" id="phone"  value="0952525252">
+                </div>
+                <div class="sec">
+                    <label>施作項目:</label>
+                    <select>
+                        <option>手部</option>
+                        <option>足部</option>
+                        <option>純保養</option>
+                        <option>純卸甲</option>
+                    </select>
+                    <input type="radio" name="disarm" id="disarm" checked>
+                    <label for="disarm">卸甲</label>
+                    <input type="radio" name="disarm" id="noNeed">
+                    <label for="noNeed">不須卸甲</label>
+                    <button>完成預約</button>
+                </div>
+            </form>
+        </div>
         <!-- category -->
         <div class="container">
             <section class="mainItem category">
@@ -58,7 +101,7 @@
                         <h3 class="cateyes">貓眼 | 鏡面<br>CatEyes<br>Mirror</h3>
                         <h3 class="single">單色 | 跳色<br>Single<br>Jump</h3>
                         <h3 class="gardual">單色漸層<br>Single<br>Gardual</h3>
-                        <h3 class="style">客製化造型<br>Style</h3>
+                        <h3 class="style">客製化造型<br>Custom<br>Style</h3>
                         <h3 class="franch">法式漸層<br>Franch<br>Gardual</h3>
                         <img class="showImg" src="img/products/hand/special2.jpg"/>
                     </div>
@@ -109,3 +152,20 @@
     <footer></footer>
 </body>
 </html>
+<script>
+    let element = document.querySelectorAll('.appointmentBtn');
+    for (let i = 0; i < element.length; i++) {
+        element[i].addEventListener('click', function(){
+            let dialog = document.getElementsByClassName('appointmentBlock')[0];
+            dialog.classList.remove('displayNone');
+            dialog.style.animation = "showDialog 1s 1";
+        });
+    }
+    document.getElementById('closeAppointment').addEventListener('click', function(){
+        let dialog = document.getElementsByClassName('appointmentBlock')[0];
+        dialog.style.animation = "closeDialog 1s 1";
+        setTimeout(() => {
+            dialog.classList.add('displayNone');
+        }, 1000); 
+    });
+</script>

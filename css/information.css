@@ -67,6 +67,12 @@ main .infoContent .faq li {
     border-radius: 5px;
     padding: 5px 10px;
 }
+main .infoContent .faq li p:first-child {
+    cursor: pointer;
+}
+main .infoContent .faq li:hover {
+    background-color: #c2b5ac80;
+}
 main .infoContent .faq li p:first-child:before {
     content: 'Q:';
 }

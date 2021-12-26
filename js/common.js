@@ -96,15 +96,15 @@ function init() {
         '                <li class="mapListItem appointment">' +
         '                    <span>預約</span>' +
         '                    <a href="member.html?p=appointment">預約行事曆</a>' +
-        '                    <a href="member.html?p=like">我的最愛</a>' +
+        '                    <a href="member.html?p=like">我的收藏</a>' +
         '                </li>' +
         '                <li class="mapListItem others">' +
         '                    <span>其他資訊</span>' +
         '                    <a href="information.html">價目表</a>' +
-        '                    <a href="information.html">預約流程</a>' +
-        '                    <a href="information.html">預約須知</a>' +
-        '                    <a href="information.html">防疫公告</a>' +
-        '                    <a href="information.html">FAQ</a>' +
+        '                    <a href="information.html?f=appointmentFlow">預約流程</a>' +
+        '                    <a href="information.html?f=appointmentNotice">預約須知</a>' +
+        '                    <a href="information.html?f=covid19">防疫公告</a>' +
+        '                    <a href="information.html?f=faq">FAQ</a>' +
         '                </li>' +
         '                <li class="mapListItem about">' +
         '                    <div class="aboutItem description">' +

@@ -77,14 +77,15 @@ main .price {
 main form * {
     letter-spacing: 2px;
 }
-main form input[type='text'],
-main form input[type='tel'],
-main form input[type='date'],
-main form input[type='email'] {
+main input[type='text'],
+main input[type='tel'],
+main input[type='date'],
+main input[type='email'],
+main select {
     background-color: transparent;
     border: 2px solid #68433750;
     border-radius: 100px;
-    line-height: 1.7;
+    line-height: 1.5;
     padding: 0 15px;
 }
 /* other btn */
@@ -246,7 +247,7 @@ footer .webMap .mapListItem a {
     padding-right: 100px;
 }
 footer .webMap .mapListItem .icon {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 footer .webMap .mapListItem span {
     color: #555;

@@ -9,6 +9,62 @@ main .appointment {
     display: flex;
     flex-wrap: wrap;
 }
+/* appointmentBlock */
+@keyframes showDialog {
+    from {top: 0px; opacity: 0;}
+    to {top: 50%; opacity: 1;}
+}
+@keyframes closeDialog {
+    from {top: 50%; opacity: 1;}
+    to {top: 0px; opacity: 0;}
+}
+main .appointmentBlock {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    background-color: #fcfaf5;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 3px #68433780;
+    transition: .5s;
+}
+main .appointmentBlock > button {
+    position: absolute;
+    background-color: #fcfaf5;
+    top: 5px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    line-height: 1;
+    border-radius: 50%;
+    color: #c2b5ac;
+}
+main .appointmentBlock .productName,
+main .appointmentBlock form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+main .appointmentBlock .sec {
+    margin-top: 5px;
+}
+main .appointmentBlock .productName {
+    background-color: #c2b5ac;
+    padding: 5px 0;
+}
+main .appointmentBlock .productName select {
+    background-color: #fcfaf5;
+}
+main .appointmentBlock .pic {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+main .appointmentBlock .pic img {
+    width: 100%;
+    border-radius: 10px;
+}
 /* news */
 main .news {
     width: 100%;
@@ -83,71 +139,77 @@ main .category .categoryList .categoryBg {
     display: block;
     margin: auto;
 }
+@keyframes brownBoolean {
+    0% {
+        color: #684337;
+        background: url(../img/boolean.png) no-repeat;background-size: contain;
+    }
+    10% {
+        color: #fff;
+        background: url(../img/boolean_brown.png) no-repeat;
+        background-size: contain;
+    }
+    20% {
+        color: #684337;
+        background: url(../img/boolean.png) no-repeat;background-size: contain;
+    }
+}
 main .category .categoryList h3 {
     position: absolute;
     text-align: center;
     color: #684337;
     font-size: 16px;
     cursor: pointer;
+    background: url(../img/boolean.png) no-repeat;
+    background-size: contain;
+    padding: 50px 25px 100px 20px;
 }
 main .category .categoryList h3:hover {
     color: #fff;
-}
-main .category .categoryList h3:before {
-    content: '';
-    display: block;
-    top: 50%;
-    left: 50%;
-    width: 160px;
-    height: 280px;
-    transform: translate(-50%, -35%);
-    background: url(../img/boolean.png) no-repeat;
-    position: absolute;
-    background-size: contain;
-    z-index: -1;
-    transition: .3s;
-}
-main .category .categoryList h3:hover:before {
     background: url(../img/boolean_brown.png) no-repeat;
     background-size: contain;
-    transform: translate(-50%, -35%);
 }
 main .category .categoryList .single {
-    top: 57%;
-    left: 5.7%;
+    top: 52%;
+    left: 3.5%;
     transform: rotate(-14deg);
+    /* animation: brownBoolean 10s linear 1s 10; */
 }
 main .category .categoryList .single:hover ~ .showImg {
     content: url(../img/products/hand/12.jpeg);
 }
 main .category .categoryList .cateyes {
-    top: 47%;
-    left: 15%;
+    top: 43%;
+    left: 12%;
     transform: rotate(15deg);
+    /* animation: brownBoolean 10s linear 2s 10; */
 }
 main .category .categoryList .cateyes:hover ~ .showImg {
     content: url(../img/products/hand/4.jpeg);
 }
 main .category .categoryList .gardual {
-    top: 60%;
-    left: 23%;
+    top: 57%;
+    left: 17.5%;
     transform: rotate(46deg);
+    animation: brownBoolean 10s linear 3s 10;
 }
 main .category .categoryList .gardual:hover ~ .showImg {
     content: url(../img/products/hand/7.jpeg);
 }
 main .category .categoryList .franch {
-    top: 10%;
-    left: 73%;
+    top: 12%;
+    left: 74%;
     transform: rotate(-23deg);
+    animation: brownBoolean 10s linear 4s 10;
 }
 main .category .categoryList .franch:hover ~ .showImg {
     content: url(../img/products/hand/11.jpeg);
 }
 main .category .categoryList .style {
-    top: 7%;
-    left: 82%;
+    top: 6%;
+    left: 80%;
     transform: rotate(12deg);
+    animation: brownBoolean 10s linear 5s 10;
 }
 main .category .categoryList .style:hover ~ .showImg {
     content: url(../img/products/hand/special10.jpg);
@@ -178,9 +240,9 @@ main .others .infoList .listItem:hover {
 
 /* others description */
 main .container:last-child {
-    background: url(../img/background/store_ach.png) no-repeat;
+    background: url(../img/background/shop.png) no-repeat;
     background-size: contain;
-    background-position: 100%;
+    background-position: 100% bottom;
     position: relative;
 }
 main .others input {
@@ -203,8 +265,8 @@ main .others .priceList:after {
     display: block;
     width: 100px;
     height: 100px;
-    top: 100px;
-    right: 80px;
+    top: 160px;
+    right: 40px;
     background: url(../img/background/price2.png) no-repeat;
     background-size: contain;
 }
@@ -229,7 +291,7 @@ main .others .changePage:before {
 main .others .changePage label {
     display: block;
     color: #fcfaf5;
-    padding: 36px 0;
+    padding: 28px 0;
     text-align: center;
     position: relative;
     z-index: 1;

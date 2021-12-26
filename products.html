@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ACH Nails Studio | 樣式</title>
     <!-- js -->
     <script src="js/common.js"></script>
     <script defer src="js/products.js"></script>
@@ -17,50 +17,52 @@
 
     <!-- main -->
     <main>
-        <div class="container">
-            <!-- view method switch (display: none) -->
-            <input type="radio" name="viewMethod" id="explore">
-            <input type="radio" name="viewMethod" id="grid" checked>
-            <input type="radio" name="viewMethod" id="filter">
-            <!-- filters category switch (display: none) -->
-            <input type="radio" name="filters" id="all" checked>
-            <input type="radio" name="filters" id="single">
-            <input type="radio" name="filters" id="catEyes" >
-            <input type="radio" name="filters" id="singleGradual">
-            <input type="radio" name="filters" id="frenchGradual">
-            <input type="radio" name="filters" id="style">
-            <!-- products -->
-            <div class="mainItem products" id="products"></div>
-            <!-- filters -->
-            <div class="mainItem filters">
-                <div class="filtersItem filtersList">
-                    <!-- filters info -->
-                    <div class="listItem txt">
-                        <span class="result">0 Results</span>
-                        <label class="remove" for="all">Remove All Filters</label>
-                    </div>
-                    <!-- filters by category -->
-                    <div class="listItem category">
-                        <span class="categoryItem title">Category</span>
-                        <div class="categoryItem list">
-                            <label class="listItem labelBtn" for="all">全部類別</label>
-                            <label class="listItem labelBtn" for="single">單色 | 跳色</label>
-                            <label class="listItem labelBtn" for="catEyes">貓眼 | 鏡面</label>
-                            <label class="listItem labelBtn" for="singleGradual">單色漸層</label>
-                            <label class="listItem labelBtn" for="frenchGradual">法式漸層</label>
-                            <label class="listItem labelBtn" for="style">客製化造型</label>
-                        </div>
-                    </div>
+        <!-- view method switch -->
+        <input type="radio" name="viewMethod" id="explore" checked>
+        <input type="radio" name="viewMethod" id="grid">
+        <input type="radio" name="viewMethod" id="filter">
+        <!-- filters category switch -->
+        <input type="radio" name="filters" id="all" checked>
+        <input type="radio" name="filters" id="single">
+        <input type="radio" name="filters" id="catEyes" >
+        <input type="radio" name="filters" id="singleGradual">
+        <input type="radio" name="filters" id="frenchGradual">
+        <input type="radio" name="filters" id="style">
+        <!-- search bar -->
+        <div class="container searchBar">
+            <div class="row">
+                <div class="col-12 barWrap">
+                    <input type="text" placeholder="想看看聖誕節樣式嗎...?">
                 </div>
-                <!-- filters by color -->
-                <!-- <div class="filtersItem color"></div> -->
             </div>
-            <!-- view method bar -->
-            <div class="mainItem viewMethod">
-                <label for="explore">Explore</label>
-                <label for="grid">Grid</label>
-                <label for="filter">Filter</label>
+        </div>
+        <!-- product list -->
+        <div class="container productList" id="productList">
+            <div class="filterList displayNone">
+                <!-- filters info -->
+                <div class="row info justify-content-between">
+                    <span class="col-3 result">0 Results</span>
+                    <label class="col-5 remove" for="all">
+                        <span>Remove All Filters</span>
+                    </label>
+                </div>
+                <div class="row category">
+                    <span class=" col-12 category">Category</span>
+                    <label class="labelBtn all" for="all">全部類別</label>
+                    <label class="labelBtn single" for="single">單色 | 跳色</label>
+                    <label class="labelBtn catEyes" for="catEyes">貓眼 | 鏡面</label>
+                    <label class="labelBtn singleGradual" for="singleGradual">單色漸層</label>
+                    <label class="labelBtn frenchGradual" for="frenchGradual">法式漸層</label>
+                    <label class="labelBtn style" for="style">客製化造型</label>
+                </div>
             </div>
+        </div>
+
+        <!-- view viewMethod bar -->
+        <div class="viewMethod">
+            <label class="labelBtn explore" for="explore">Explore</label>
+            <label class="labelBtn grid" for="grid">Grid</label>
+            <label class="labelBtn filter" for="filter">Filter</label>
         </div>
     </main>
 
