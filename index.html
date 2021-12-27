@@ -82,7 +82,7 @@
                     <label for="disarm">卸甲</label>
                     <input type="radio" name="disarm" id="noNeed">
                     <label for="noNeed">不須卸甲</label>
-                    <button>完成預約</button>
+                    <button id="confirmAppointment">完成預約</button>
                 </div>
             </form>
         </div>
@@ -222,4 +222,8 @@
     document.querySelectorAll('main .category .categoryList .style')[0].addEventListener('click', function(){
         window.location = 'products.html?f=style';
     })
+    // TODO: confirm appointment and alert
+    document.getElementById('confirmAppointment').addEventListener('click', function(){
+        alert('預約成功!');
+    });
 </script>
