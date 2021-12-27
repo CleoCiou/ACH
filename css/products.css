@@ -1,3 +1,7 @@
+/* header */
+header .menu > .category:after {
+    width: 100%;
+}
 main .searchBar .row .barWrap input,
 main .productList .row .productWrap .product .pic img {
     width: 100%;
