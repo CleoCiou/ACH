@@ -299,7 +299,7 @@ main .others .changePage {
     position: absolute;
     padding: 100px;
     bottom: -70px;
-    right: -135px;
+    right: -20px;
 }
 main .others .changePage:before {
     content: '';
