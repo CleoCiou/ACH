@@ -1,3 +1,7 @@
+/* header */
+header .others > .member:after {
+    width: 100%;
+}
 /* nav bar */
 main .container {
     position: relative;

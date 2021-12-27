@@ -1,3 +1,7 @@
+/* header */
+header .menu > .info:after {
+    width: 100%;
+}
 main {
     font-size: 18px;
     line-height: 2;
