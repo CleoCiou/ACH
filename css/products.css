@@ -43,16 +43,15 @@ main .productList .row .productWrap .pic .like {
     display: block;
     bottom: 10px;
     right: 10px;
-    width: 20px;
-    height: 20px;
-    background: url(../img/icon/heart_border.png) no-repeat;
-    background-size: contain;
+    width: 25px;
+    height: 25px;
+    background: url(../img/icon/heart_border.png) no-repeat 50% 70% / 70% 70%, #fff8;
+    border-radius: 50%;
     z-index: 1;
     cursor: pointer;
 }
 main .productList .row .productWrap .pic .like:hover {
-    background: url(../img/icon/heart_filled.png) no-repeat;
-    background-size: contain;
+    background: url(../img/icon/heart_filled.png) no-repeat 50% 70% / 70% 70%, #fff8;
 }
 main .productList .row .productWrap .pic:hover span {
     display: inline-block;
