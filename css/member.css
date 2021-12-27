@@ -50,7 +50,10 @@ main .container .row .profile .txt {
 /* edit */
 main .container .page .profile .profileList form .onEdit div > * {
     display: inline-block;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
+}
+main .container .page .profile .profileList .payment label {
+    cursor: pointer;
 }
 
 /* profile info */
