@@ -54,6 +54,11 @@ for (let i = 1; i < 20; i++){
     item.classList.add('displayNone');
     item.onclick = changeImg;
     node.appendChild(item);
+    // btn.like
+    item = document.createElement('span');
+    item.classList.add('like');
+    item.onclick = changeImg;
+    node.appendChild(item);
     
     // product info
     node = productNode;
