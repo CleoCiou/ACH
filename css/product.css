@@ -44,6 +44,24 @@ main .detail .changeImg {
 main .detail .detailImg {
     width: 60%;
 }
+main .detail .detailImg .pic {
+    position: relative;
+}
+main .detail .detailImg .pic .like {
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    left: 82%;
+    width: 25px;
+    height: 25px;
+    background: url(../img/icon/heart_border.png) no-repeat 50% 70% / 70% 70%, #fff8;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+}
+main .detail .detailImg .pic .like:hover {
+    background: url(../img/icon/heart_filled.png) no-repeat 50% 70% / 70% 70%, #fff8;
+}
 main .detail .changeImg img,
 main .detail .detailImg img {
     width: 85%;

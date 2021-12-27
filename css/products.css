@@ -38,7 +38,6 @@ main .productList .row .productWrap .pic {
     position: relative;
 }
 main .productList .row .productWrap .pic .like {
-    content: '';
     position: absolute;
     display: block;
     bottom: 10px;
