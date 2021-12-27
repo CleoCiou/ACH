@@ -106,6 +106,24 @@ main .news .txt > * {
     margin-bottom: 15px;
     margin-right: 20px;
 }
+main .news .pic {
+    position: relative;
+}
+main .news .pic .like {
+    position: absolute;
+    display: block;
+    bottom: 20px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    background: url(../img/icon/heart_border.png) no-repeat 50% 70% / 70% 70%, #fff8;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+}
+main .news .pic .like:hover {
+    background: url(../img/icon/heart_filled.png) no-repeat 50% 70% / 70% 70%, #fff8;
+}
 main .news .pic img {
     width: 100%;
 }
