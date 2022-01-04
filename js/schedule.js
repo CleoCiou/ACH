@@ -16,7 +16,7 @@ let boo = false;
 // first date of month
 let day = 1;
 
-if (document.getElementById('schedule') !== null) window.onload = createCalendar;
+if (document.getElementById('schedule') !== null) window.onload = createCalendar();
 function createCalendar(){
     // calendar header
     // month

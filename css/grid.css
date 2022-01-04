@@ -37,10 +37,17 @@
 .col-11 {width: 91.666666%;}
 .col-12 {width: 100%;}
 
+.wrap {flex-wrap: wrap;}
+.nowrap {flex-wrap: nowrap;}
+
 .justify-content-start {justify-content: flex-start;}
 .justify-content-center {justify-content: center;}
 .justify-content-end {justify-content: flex-end;}
 .justify-content-between {justify-content: space-between;}
+
+.align-items-start {align-items: flex-start;}
+.align-items-end {align-items: flex-end;}
+.align-items-center {align-items: center;}
 
 /* 平直 */
 @media screen and (min-width: 768px) {

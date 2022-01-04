@@ -5,225 +5,238 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACH Nails Studio.</title>
-    <!-- js -->
+    <!-- common setting -->
     <script src="js/common.js"></script>
-    <!-- css -->
+    <!-- index.css -->
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <!-- header -->
-    <header></header>
+    <header>
+        <div class="container">
+            <div class="row row-cols-3 align-items-center">
+                <!-- main menu -->
+                <span class="col open-menu-btn" onclick="popupSize('menu-popup', 'width', '100%')">&#9776;</span>
+                <!-- logo -->
+                <a class="col logo" href="index.html">
+                    <img class="vertical-align-middle" src="img/logo_nb.png" alt="ACH logo">
+                    <span class="vertical-align-middle none">ACH Nails Studio.</span>
+                </a>
+                <!-- side menu -->
+                <div class="col side-menu">
+                    <a class="about decoration-line none" href="#">關於</a>
+                    <a class="search decoration-line" class="open-menu-btn" onclick="popupSize('search-popup', 'height', '10%')">搜尋</a>
+                    <a class="collect decoration-line" onclick="popupSize('collection-popup', 'width', '100%')" href="#">我的收藏</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- bounce wrap (fixed) -->
+        <!-- main menu nav (full window) -->
+        <div class="menu-popup" id="menu-popup">
+            <a class="closebtn" onclick="popupSize('menu-popup', 'width', '0')">&times;</a>
+            <nav class="main-menu">
+                <a class="style decoration-line" href="#">樣式</a>
+                <a class="appointment decoration-line" href="#">預約</a>
+                <a class="info decoration-line" href="#">其他資訊</a>
+            </nav>
+        </div>
+        <!-- search bar (top) -->
+        <div class="search-popup" id="search-popup">
+            <a href="javascript:void(0)" class="closebtn" onclick="popupSize('search-popup', 'height', '0')">&times;</a>
+            <nav class="search-bar">
+                <input type="text" placeholder="想看看新年樣式嗎..?">
+                <input type="button" value="找!">
+            </nav>
+        </div>
+        <!-- collection (full window) -->
+        <div class="collection-popup" id="collection-popup">
+            <a href="javascript:void(0)" class="closebtn" onclick="popupSize('collection-popup', 'width', '0')">&times;</a>
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/100/?random=2">
+                </div>
+                <div class="txt">
+                    <h3>據說公路</h3>
+                    <input type="button" value="預約">
+                </div>
+            </div>
+        </div>
+    </header>
 
     <!-- main -->
     <main>
         <!-- news -->
         <section class="container news">
-            <div class="row item">
-                <div class="col-6 txt">
-                    <h2>本月新款</h2>
-                    <h3 class="productName">南雅奇岩</h3>
-                    <p>靈感來自於瑞芳有個叫「南雅奇岩」的美麗岩石岩面上的紋路就像樹木年輪，記錄了大自然經年歲月的痕跡與生命力。</p>
-                    <button class="appointmentBtn">預約</button>
-                </div>
-                <div class="col-6 pic">
-                    <span class="like"></span>
-                    <img class="newsItem" src="img/products/create/28.jpg" alt="">
+            <div class="row nowrap">
+                <div class="col-12">
+                    <div class="item row row-cols-2">
+                        <div class="col txt">
+                            <h2>最新樣式</h2>
+                            <h3>南雅奇岩</h3>
+                            <p>
+                                靈感來自於瑞芳有個叫「南雅奇岩」的美麗岩石岩面上的紋路就像樹木年輪，記錄了大自然經年歲月的痕跡與生命力。
+                            </p>
+                            <button class="appointment-btn">預約</button>
+                        </div>
+                        <div class="col pic">
+                            <img src="img/products/create/7.jpg">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
         <!-- appointment -->
         <section class="container appointment">
-            <div class="row item">
-                <h2 class="col-12">預約 Appointment</h2>
-                <div class="col pic">
-                    <img src="img/products/create/6.jpg" alt="樣式6">
+            <div class="row">
+                <div class="col-12">
+                    <div class="item row row-cols-1 row-cols-lg-2">
+                        <div class="col pic">
+                            <img src="img/products/create/8.jpg">
+                        </div>
+                        <div class="col schedule">
+                            <div id="schedule"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col appointmentItem schedule" id="schedule"></div>
             </div>
         </section>
-        <!-- appointment block: appointment btn onclick -->
-        <div class="displayNone appointmentBlock">
-            <button id="closeAppointment">&#10539;</button>
-            <div class="productName">
-                <span>樣式名稱:</span>
-                <select id="style">
-                    <option>南雅奇岩</option>
-                    <option>聖誕節</option>
-                    <option>旋轉跳躍閉著眼</option>
-                    <option>恭喜鴨恭喜發鴨發大財</option>
-                </select>
-            </div>
-            <div class="pic">
-                <img src="img/products/create/28.jpg" alt="">
-                <button class="last"></button>
-                <button class="next"></button>
-            </div>
-            <form>
-                <label>預約時段:</label>
-                <input type="date" id="appointmentDate">
-                <select>
-                    <option>12:00~15:00</option>
-                    <option>15:00~18:00</option>
-                    <option>19:00~22:00</option>
-                </select>
-                <div class="customTel displayNone">
-                    <label for="phone">電話:</label>
-                    <input type="tel" id="phone"  value="0952525252">
-                </div>
-                <div class="sec">
-                    <label>施作項目:</label>
-                    <select>
-                        <option>手部</option>
-                        <option>足部</option>
-                        <option>純保養</option>
-                        <option>純卸甲</option>
-                    </select>
-                    <input type="radio" name="disarm" id="disarm" checked>
-                    <label for="disarm">卸甲</label>
-                    <input type="radio" name="disarm" id="noNeed">
-                    <label for="noNeed">不須卸甲</label>
-                    <button id="confirmAppointment">完成預約</button>
-                </div>
-            </form>
-        </div>
+
         <!-- category -->
-        <div class="container">
-            <section class="mainItem category">
-                <div>
-                    <h2>樣式 Category</h2>
-                    <div class="categoryList">
-                        <svg width="0" height="0">
-                            <defs>
-                                <clipPath id="mask1" clipPathUnits="objectBoundingBox">
-                                    <path id="curve"
-                                          transform="scale(0.003, 0.003)"
-                                          d="M90.77,342.5l15.78-35.9-.59-.13C44.85,292,.5,228.34.5,155,.5,69.81,59.49.5,132,.5S263.5,69.81,263.5,155c0,35.84-10.68,70.76-30.08,98.34-19.12,27.2-45.77,46-75,53l-.59.14,15.82,36Z">
-                                    </path>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <img class="categoryBg" src="img/background/category_bg2.png" alt="拿氣球的手">
-                        <h3 class="cateyes">貓眼 | 鏡面<br>CatEyes<br>Mirror</h3>
-                        <h3 class="single">單色 | 跳色<br>Single<br>Jump</h3>
-                        <h3 class="gardual">單色漸層<br>Single<br>Gardual</h3>
-                        <h3 class="style">客製化造型<br>Custom<br>Style</h3>
-                        <h3 class="franch">法式漸層<br>Franch<br>Gardual</h3>
-                        <img class="showImg" src="img/products/hand/special2.jpg"/>
+        <section class="container category">
+            <div class="row">
+                <div class="col-12">
+                    <div class="item">
+                        <div class="pic">
+                            <img src="img/products/create/7.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <a class="inline-block" href="#">
+                                <span class="block">單色|跳色</span>
+                                <span class="block">Single|Jump</span>
+                            </a>
+                            <a class="inline-block" href="#">
+                                <span class="block">貓眼|鏡面</span>
+                                <span class="block">CatEyes|Mirror</span>
+                            </a>
+                            <a class="inline-block" href="#">
+                                <span class="block">單色漸層</span>
+                                <span class="block">Single Gardual</span>
+                            </a>
+                            <a class="inline-block" href="#">
+                                <span class="block">法式漸層</span>
+                                <span class="block">Franch Gardual</span>
+                            </a>
+                            <a class="inline-block" href="#">
+                                <span class="block">客製化造型</span>
+                                <span class="block">Custom Style</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </div>
-        <!-- others info -->
-        <div class="container">
-            <h2>相關資訊 Info</h2>
-            <section class="mainItem others">
-                <input type="radio" name="infoPage" id="priceList" checked>
-                <input type="radio" name="infoPage" id="notice">
-                <input type="radio" name="infoPage" id="flow">
-                <input type="radio" name="infoPage" id="covid19">
-                <div class="priceList">
-                    <div class="single">
-                        <p class="priceTitle">單色|跳色</p>
-                        <p class="price">NT $900</p>
-                    </div>
-                    <div class="cateyes">
-                        <p class="priceTitle">貓眼|鏡面</p>
-                        <p class="price">NT $1,000</p>
-                    </div>
-                    <div class="gradual">
-                        <p class="priceTitle">單色漸層</p>
-                        <p class="price">NT $1,100</p>
-                    </div>
-                    <div class="french">
-                        <p class="priceTitle">法式漸層</p>
-                        <p class="price">NT $1,200</p>
-                    </div>
-                    <div class="style">
-                        <p class="priceTitle">客製化造型</p>
-                        <p class="price">NT $1,300</p>
+            </div>
+        </section>
+
+        <!-- info -->
+        <section class="container info">
+            <div class="row row-cols-1 infoList">
+                <div class="col">
+                    <div class="item bg">
+                        <div class="pic">
+                            <img src="https://picsum.photos/300/100/?random=1">
+                        </div>
+                        <div class="txt">
+                            <h3>價目表</h3>
+                            <p>
+                                網際快車儘管以前為什麼如何什麼，親自植物寫真環保投票怎樣激烈通訊臉色改進，存款一邊電池今日條件拿出加速少女，批發點此不同半年上來單位含有應該網際，我去本週儘量證書情緒多多我就頻道重新水晶是有期間發行，準確足夠遠遠有一定提前個性全家留言板，食品哪個不得不微。
+                            </p>
+                            <span class="more none">more...</span>
+                        </div>
                     </div>
                 </div>
-                <div class="changePage">
-                    <label for="priceList" class="priceSign">價目表</label>
-                    <label for="notice" class="noticeSign">預約須知</label>
-                    <label for="flow" class="flowSign">預約流程</label>
-                    <label for="covid19" class="covidSign">防疫公告</label>
+
+                <div class="col">
+                    <div class="item bg">
+                        <div class="pic">
+                            <img src="https://picsum.photos/300/100/?random=2">
+                        </div>
+                        <div class="txt">
+                            <h3>預約流程</h3>
+                            <p>
+                                網際快車儘管以前為什麼如何什麼，親自植物寫真環保投票怎樣激烈通訊臉色改進，存款一邊電池今日條件拿出加速少女，批發點此不同半年上來單位含有應該網際，我去本週儘量證書情緒多多我就頻道重新水晶是有期間發行，準確足夠遠遠有一定提前個性全家留言板，食品哪個不得不微。
+                            </p>
+                            <span class="more none">more...</span>
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </div>
+
+                <div class="col">
+                    <div class="item bg">
+                        <div class="pic">
+                            <img src="https://picsum.photos/300/100/?random=3">
+                        </div>
+                        <div class="txt">
+                            <h3>預約須知</h3>
+                            <p>
+                                網際快車儘管以前為什麼如何什麼，親自植物寫真環保投票怎樣激烈通訊臉色改進，存款一邊電池今日條件拿出加速少女，批發點此不同半年上來單位含有應該網際，我去本週儘量證書情緒多多我就頻道重新水晶是有期間發行，準確足夠遠遠有一定提前個性全家留言板，食品哪個不得不微。
+                            </p>
+                            <span class="more none">more...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item bg">
+                        <div class="pic">
+                            <img src="https://picsum.photos/300/100/?random=4">
+                        </div>
+                        <div class="txt">
+                            <h3>FAQ</h3>
+                            <p>
+                                網際快車儘管以前為什麼如何什麼，親自植物寫真環保投票怎樣激烈通訊臉色改進，存款一邊電池今日條件拿出加速少女，批發點此不同半年上來單位含有應該網際，我去本週儘量證書情緒多多我就頻道重新水晶是有期間發行，準確足夠遠遠有一定提前個性全家留言板，食品哪個不得不微。
+                            </p>
+                            <span class="more none">more...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- footer -->
-    <footer></footer>
+    <footer>
+        <div class="container">
+            <div class="row row-cols-4">
+                <div class="col">
+                    <div class="item">
+                        <span>樣式</span>
+                        <p><a class="decoration-line" href="#">單色|跳色</a></p>
+                        <p><a class="decoration-line" href="#">貓眼|鏡面</a></p>
+                        <p><a class="decoration-line" href="#">單色漸層</a></p>
+                        <p><a class="decoration-line" href="#">法式漸層</a></p>
+                        <p><a class="decoration-line" href="#">客製化造型</a></p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="item">
+                        <span>預約</span>
+                        <p><a class="decoration-line" href="#">預約行事曆</a></p>
+                        <p><a class="decoration-line" href="#">我的收藏</a></p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="item">
+                        <span>其他資訊</span>
+                        <p><a class="decoration-line" href="#">價目表</a></p>
+                        <p><a class="decoration-line" href="#">預約流程</a></p>
+                        <p><a class="decoration-line" href="#">預約須知</a></p>
+                        <p><a class="decoration-line" href="#">防疫公告</a></p>
+                        <p><a class="decoration-line" href="#">FAQ</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
-<script>
-    // TODO: open appointment block
-    let element = document.querySelectorAll('.appointmentBtn');
-    for (let i = 0; i < element.length; i++) {
-        element[i].addEventListener('click', function(){
-            let dialog = document.getElementsByClassName('appointmentBlock')[0];
-            dialog.classList.remove('displayNone');
-            dialog.style.animation = "showDialog 1s 1";
-        });
-    }
-    // TODO: close appointment block
-    document.getElementById('closeAppointment').addEventListener('click', function(){
-        let dialog = document.getElementsByClassName('appointmentBlock')[0];
-        dialog.style.animation = "closeDialog 1s 1";
-        setTimeout(() => {
-            dialog.classList.add('displayNone');
-        }, 1000); 
-    });
-    // TODO: change img if selectd onchange
-    let styleList = ['南雅奇岩',
-                    '聖誕節',
-                    '旋轉跳躍閉著眼',
-                    '恭喜鴨恭喜發鴨發大財'];
-    let imgList = ['img/products/create/28.jpg',
-                    'img/products/create/12.jpg',
-                    'img/products/create/8.jpg',
-                    'img/products/create/24.jpg' ]
-    document.getElementById('style').addEventListener('change', function(){
-        document.querySelectorAll('main .appointmentBlock .pic img')[0].src = imgList[styleList.indexOf(document.getElementById('style').value)];
-    });
-    // TODO: click btn -> change title and img
-    let last = document.querySelectorAll('main .appointmentBlock .pic .last')[0];
-    last.addEventListener('click', function(){
-        let title = document.getElementById('style').value;
-        let img = document.querySelectorAll('main .appointmentBlock .pic img')[0];
-        let index = styleList.indexOf(title);
-        index = ((index - 1) === -1) ? styleList.length - 1 : index - 1;
-        document.getElementById('style').value = styleList[index];
-        img.src = imgList[index];
-    });
-    let next = document.querySelectorAll('main .appointmentBlock .pic .next')[0];
-    next.addEventListener('click', function(){
-        let title = document.getElementById('style').value;
-        let img = document.querySelectorAll('main .appointmentBlock .pic img')[0];
-        let index = styleList.indexOf(title);
-        index = ((index + 1) === styleList.length) ? 0 : index + 1;
-        document.getElementById('style').value = styleList[index];
-        img.src = imgList[index];
-    });
-    // TODO: link category page
-    document.querySelectorAll('main .category .categoryList .single')[0].addEventListener('click', function(){
-        window.location = 'products.html?f=single';
-    })
-    document.querySelectorAll('main .category .categoryList .cateyes')[0].addEventListener('click', function(){
-        window.location = 'products.html?f=catEyes';
-    })
-    document.querySelectorAll('main .category .categoryList .gardual')[0].addEventListener('click', function(){
-        window.location = 'products.html?f=singleGradual';
-    })
-    document.querySelectorAll('main .category .categoryList .franch')[0].addEventListener('click', function(){
-        window.location = 'products.html?f=frenchGradual';
-    })
-    document.querySelectorAll('main .category .categoryList .style')[0].addEventListener('click', function(){
-        window.location = 'products.html?f=style';
-    })
-    // TODO: confirm appointment and alert
-    document.getElementById('confirmAppointment').addEventListener('click', function(){
-        alert('預約成功!');
-    });
-</script>
