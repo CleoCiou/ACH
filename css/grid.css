@@ -9,6 +9,9 @@
     margin-left: -10px;
     margin-right: -10px;
 }
+.row.row-reverse {
+    flex-direction: row-reverse;
+}
 
 [class *= col-] {
     padding: 0 10px;

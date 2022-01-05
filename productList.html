@@ -100,38 +100,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="product">
-                        <div class="pic">
-                            <img src="https://picsum.photos/300/200/?random=3">
-                        </div>
-                        <div class="txt none">
-                            <p class="productCategory">單色|跳色</p>
-                            <h3 class="productName">星空</h3>
-                            <h3 class="productPrice">NT $900</h3>
-                            <p class="productDescription">
-                                建築成就條件地址，同學小區推坑大魔王，也可存在點擊告知無門明星感覺到，陽明山也就，然而創新，正常才。
-                            </p>
-                            <span class="appointment-btn">預約</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="product">
-                        <div class="pic">
-                            <img src="https://picsum.photos/300/200/?random=4">
-                        </div>
-                        <div class="txt none">
-                            <p class="productCategory">單色|跳色</p>
-                            <h3 class="productName">星空</h3>
-                            <h3 class="productPrice">NT $900</h3>
-                            <p class="productDescription">
-                                建築成就條件地址，同學小區推坑大魔王，也可存在點擊告知無門明星感覺到，陽明山也就，然而創新，正常才。
-                            </p>
-                            <span class="appointment-btn">預約</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
@@ -173,13 +141,54 @@
 </body>
 </html>
 <script>
-    let element = document.getElementsByClassName('product');
+    let element = document.querySelectorAll('main .container .row .col');
     for (let i = 0; i < element.length; i++) {
-        element[i].addEventListener('click', detail);
+        element[i].addEventListener('click', showDetail);
     }
-    
-    function detail() {
+
+    // TODO: show detail when product onclick
+    function showDetail() {
         this.classList.add('detail');
-        console.log(this);
+        // get viewport width
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        // get viewport heigth
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        // get header
+        const header = document.querySelectorAll('header .container')[0];
+        // get css root setting
+        // use var: --translateX , --translateY
+        // const root = document.documentElement;
+        // get onclick card img
+        const img = this.querySelectorAll('.pic img')[0];
+        // set col to right center
+        this.style.setProperty('--translateX', `${vw - this.offsetLeft - img.width - 30}px`);
+        this.style.setProperty('--translateY', `${(vh - img.height) / 2 - header.offsetHeight}px`);
+        this.classList.add('move');
+
+        // set card to flex and flex-direction: row-reverse
+        const prod = this.querySelectorAll('product')[0];
+
+        // body mask
+        let createElement = document.createElement('div');
+        createElement.classList.add('full-mask');
+        createElement.onclick = hideDetail;
+        let node = document.body;
+        node.append(createElement);
+
+        // show detail
+        let detailTxt = this.querySelectorAll('.txt')[0];
+        detailTxt.classList.remove('none');
+    }
+
+    // TODO: hide detail when full-mask onclick
+    function hideDetail() {
+        const mask = document.querySelectorAll('.full-mask')[0];
+        const el = document.querySelectorAll('.detail')[0];
+        const txt = el.querySelectorAll('.txt')[0];
+        el.classList.remove('move');
+        el.classList.remove('detail');
+        txt.classList.add('none');
+
+        document.body.removeChild(mask);
     }
 </script>

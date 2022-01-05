@@ -35,6 +35,34 @@ body {
     /* padding-bottom: 500px; */
     background-color: var(--main-bg-color);
 }
+/* body mask */
+@keyframes show-by-opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes hide-by-opacity {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.full-mask {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    opacity: 1;
+    top: 0;
+    left: 0;
+    animation: show-by-opacity .5s forwards;
+    z-index: 1;
+}
 
 /* txt */
 h1 {
@@ -71,7 +99,7 @@ a {
     background-color: var(--main-color);
     transition: .4s;
 }
-/* ===== desktop only ===== */
+/* hover style desktop only */
 .decoration-line:hover:after {
     width: 100%;
 }
@@ -93,16 +121,9 @@ a {
     opacity: .3;
 }
 
-/* product */
+/* product card */
 .product {
     padding: 10px 0;
-}
-/* productList.html product on click */
-.product.detail {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
 }
 .product .pic {
     overflow: hidden;
@@ -111,12 +132,35 @@ a {
 .product .pic img {
     transition: .5s;
 }
-/* ===== desktop only ===== */
+/* hover style desktop only */
 .product .pic:hover {
     transform: scale(0.95);
 }
 .product .pic:hover img {
     transform: scale(1.2);
+}
+/* product detail */
+@keyframes move {
+    to {
+        transform: translate(var(--translateX), var(--translateY));
+    }
+}
+.move {
+    animation: move 1s forwards;
+}
+.col.detail {
+    position: relative;
+    z-index: 2;
+    --translateX: 0;
+    --translateY: 0;
+}
+.col.detail .txt {
+    position: absolute;
+    top: 0;
+    left: -90%;
+    width: 90%;
+    opacity: 0;
+    animation: show-by-opacity 1s 1s forwards;
 }
 
 /* button */
@@ -137,7 +181,7 @@ header .container {
 /* main menu */
 [class*=-popup] {
     position: fixed;
-    z-index: 1;
+    z-index: 4;
     top: 3rem;
     background-color: var(--main-bg-color);
     overflow: hidden;
@@ -161,7 +205,6 @@ header .container {
     width: 0;
     right: 0;
 }
-
 .menu-popup a {
     padding: 8px;
     font-size: 36px;
@@ -180,15 +223,6 @@ header .container {
     font-size: 60px;
     z-index: 1;
 }
-/* .collection-popup .item {
-    margin: 15px;
-    background-color: var(--main-txt-bg-color);
-    border-radius: 10px;
-    overflow: hidden;
-}
-.collection-popup .item .txt {
-    padding: 10px;
-} */
 
 /* logo */
 header .logo {
@@ -211,6 +245,10 @@ header .logo span {
 .container .row {
     max-width: 1200px;
     margin: auto;
+}
+/* main */
+main {
+    min-height: 100vh;
 }
 /* main first container padding-top 30px */
 main .container {
