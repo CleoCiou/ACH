@@ -8,7 +8,7 @@
     <!-- common setting -->
     <script src="js/common.js"></script>
     <!-- index.css -->
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/productList.css">
 </head>
 <body>
     <!-- header -->
@@ -148,6 +148,7 @@
 
     // TODO: show detail when product onclick
     function showDetail() {
+        this.classList.add('detail');
         // get viewport width
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
         // get viewport heigth
@@ -162,10 +163,6 @@
         // set col to right center
         this.style.setProperty('--translateX', `${vw - this.offsetLeft - img.width - 30}px`);
         this.style.setProperty('--translateY', `${(vh - img.height) / 2 - header.offsetHeight}px`);
-        this.classList.add('detail');
-
-        // set card to flex and flex-direction: row-reverse
-        const prod = this.querySelectorAll('product')[0];
 
         // body mask
         let createElement = document.createElement('div');
@@ -184,6 +181,7 @@
         const mask = document.querySelectorAll('.full-mask')[0];
         const el = document.querySelectorAll('.detail')[0];
         const txt = el.querySelectorAll('.txt')[0];
+        el.classList.remove('move');
         el.classList.remove('detail');
         txt.classList.add('none');
 

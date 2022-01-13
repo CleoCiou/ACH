@@ -1,0 +1,47 @@
+/* body mask */
+@keyframes show-by-opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes hide-by-opacity {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.full-mask {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    opacity: 1;
+    top: 0;
+    left: 0;
+    animation: show-by-opacity .5s forwards;
+    z-index: 1;
+}
+
+/* product detail */
+main .col {
+    transform: translate(0, 0);
+    transition: 1s;
+}
+.col.detail {
+    position: relative;
+    z-index: 2;
+    transform: translate(var(--translateX), var(--translateY));
+}
+.col.detail .txt {
+    position: absolute;
+    top: -50%;
+    left: -90%;
+    width: 90%;
+    opacity: 0;
+    animation: show-by-opacity 1s 1s forwards;
+}

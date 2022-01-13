@@ -1,4 +1,5 @@
-// TODO: init
+// TODO: append css, js
+//       add event listener
 window.onload = init;
 function init() {
     const head = document.getElementsByTagName('head')[0];

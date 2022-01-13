@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll To Top</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            padding-bottom: 2000px;
+            position: relative;
+            background: url('img/background/rock.jpg') no-repeat top left / cover;
+        }
+        button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #faf;
+        }
+        .box1 {
+            margin-bottom: 200px;
+        }
+        .box2 {
+            margin-top: 100px;
+            background-color: #fa0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <button>To top</button>
+</body>
+</html>
+<script>
+    // mdn: https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollTo
+    // scrollTo 是 js內建函數，可以使界面滾動到给定元素的指定座標位置
+
+    // 找到按鈕
+    let el = document.querySelectorAll('button')[0];
+
+    // --1. 滾到頁面最上面
+    // 按鈕.監聽('被點擊時', 執行 function scrollToTop(){...} );
+    el.addEventListener('click', scrollToTop); // 看2.的時候註解這行
+
+    // 滾到最上面
+    function scrollToTop() {
+        // 用法: 元素.滾到(哪)
+        window.scrollTo({
+            // 滾到最上面
+            top: 0,
+            // 慢慢滾
+            behavior: 'smooth',
+        });
+    }
+
+
+    // --2.滾到元素上面
+    // 按鈕.監聽('被點擊時', 執行 function scrollToElTop(){...} );
+    // el.addEventListener('click', scrollToElTop); // 要看2.的時候取消註解這行
+
+    // 滾到元素上面
+    function scrollToElTop() {
+        let myEl = document.querySelectorAll('.box')[1]; // 滾到第二個box
+        window.scrollTo({
+            // 滾到元素上面
+            top: myEl.offsetTop, // [註1]
+
+            // 慢慢滾
+            behavior: 'smooth',
+        });
+
+        // [註1]犀牛書 p.490
+        // offsetTop回傳元素(myEl)最上方在文件中的Y座標
+        // -------------------documtnt
+        // |
+        // | ===== myEl.offsetTop
+        // | |   |
+        // | |   |
+        // | |   |
+        // | |   |
+        // | ===== myEl
+        // |
+        // |
+        // -------------------documtnt
+        // *回傳值不會計算元素的margin (我有對box2設定margin-top，但滾完後可以看到上方沒有距離)
+        // *若myEl是定位元素，會回傳依附層的值
+        // console.log(document.querySelectorAll('.box')); // 看console中的offsetParent，可以得知回傳值是以誰為基準計算
+    }
+
+</script>

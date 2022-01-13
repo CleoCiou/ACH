@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        body {
+            padding-bottom: 5000px;
+        }
+        .mask {
+            width: 0;
+            height: 0;
+            background-color: #0005;
+            display: block;
+            position: fixed;
+            transition: .5s;
+            z-index: 1;
+        }
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .container {
+            width: 100%;
+            position: fixed;
+            z-index: 5;
+            background-color: #c2b5ac;
+        }
+        /* main menu */
+        /* burger */
+        .burger {
+            cursor: pointer;
+        }
+        .main-menu .burger span {
+            display: block;
+            width: 1.5em;
+            height: 0.15em;
+            background-color: #68433780;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .burger:before,
+        .burger:after {
+            content: '';
+            display: block;
+            width: 1.5em;
+            height: 0.15em;
+            background-color: #68433780;
+        }
+        /* click burger and show menu */
+        #main-menu:checked ~ .container .main-menu .main-menu-bar {
+            display: initial;
+        }
+        .main-menu a {
+            display: block;
+        }
+        #main-menu:checked ~ .mask {
+            height: 100vh;
+            width: 100vw;
+        }
+        /* main menu bar position after click burger */
+        .main-menu-bar {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        /* logo */
+        .logo {
+            text-align: center;
+        }
+        .logo img {
+            width: 5em;
+            vertical-align: middle;
+        }
+        .logo span {
+            display: none;
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+
+        /* side menu */
+        .side-menu {
+            text-align: right;
+        }
+        .side-menu img {
+            width: 2em;
+        }
+        /* check and show search box */
+        .search-box {
+            display: none;
+        }
+        #search:checked ~ .container .search-box {
+            display: block;
+            position: fixed;
+            top: 3em;
+        }
+        #search:checked ~ .mask {
+            right: 0;
+            width: 100%;
+            height: 7em;
+        }
+        #collection:checked ~ .mask {
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+        @media  screen and (min-width: 768px) {
+            .burger {
+                display: none;
+            }
+            .main-menu-bar {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: translate(0);
+                display: block;
+            }
+            .main-menu a {
+                display: inline;
+            }
+            .logo img {
+                width: 3em;
+            }
+            .logo span {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="pop" id="main-menu">
+    <input type="checkbox" name="pop" id="search">
+    <input type="checkbox" name="pop" id="collection">
+    <div class="mask"></div>
+    <div class="container">
+        <div class="row row-cols-3 align-items-center">
+            <!-- main menu -->
+            <div class="main-menu col">
+                <label class="burger" for="main-menu">
+                    <span></span>
+                </label>
+                <nav class="main-menu-bar">
+                    <a class="news decoration-line col" href="#">最新活動</a>
+                    <a class="appointment decoration-line col" href="#">預約</a>
+                    <a class="style decoration-line col" href="#">樣式</a>
+                    <a class="info decoration-line col" href="#">其他資訊</a>
+                </nav>
+            </div>
+
+            <!-- logo -->
+            <div class="logo col">
+                <img src="img/logo_nb.png" alt="ACH LOGO">
+                <span>ACH Nails Studio.</span>
+            </div>
+
+            <!-- side menu -->
+            <div class="side-menu col">
+                <div class="icon">
+                    <label for="search" class="search">
+                        <img src="img/icon/search.png" alt="">
+                    </label>
+                    <label for="collection" class="collection">
+                        <img src="img/icon/appointment2.png" alt="">
+                    </label>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="想看看新年樣式嗎..?">
+                    <input type="button" value="搜尋">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

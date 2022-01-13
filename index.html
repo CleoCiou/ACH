@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row row-cols-3 align-items-center">
                 <!-- main menu -->
-                <span class="col open-menu-btn" onclick="popupSize('menu-popup', 'width', '100%')">&#9776;</span>
+                <div class="col open-menu-btn" onclick="popupSize('menu-popup', 'width', '100%')"><span></span></div>
                 <!-- logo -->
                 <a class="col logo" href="index.html">
                     <img class="vertical-align-middle" src="img/logo_nb.png" alt="ACH logo">
@@ -112,26 +112,26 @@
                             <img src="img/products/create/7.jpg" alt="">
                         </div>
                         <div class="txt">
-                            <a class="inline-block" href="#">
+                            <div class="block" href="#">
                                 <span class="block">單色|跳色</span>
                                 <span class="block">Single|Jump</span>
-                            </a>
-                            <a class="inline-block" href="#">
+                            </div>
+                            <div class="block" href="#">
                                 <span class="block">貓眼|鏡面</span>
                                 <span class="block">CatEyes|Mirror</span>
-                            </a>
-                            <a class="inline-block" href="#">
+                            </div>
+                            <div class="block" href="#">
                                 <span class="block">單色漸層</span>
                                 <span class="block">Single Gardual</span>
-                            </a>
-                            <a class="inline-block" href="#">
+                            </div>
+                            <div class="block" href="#">
                                 <span class="block">法式漸層</span>
                                 <span class="block">Franch Gardual</span>
-                            </a>
-                            <a class="inline-block" href="#">
+                            </div>
+                            <div class="block" href="#">
                                 <span class="block">客製化造型</span>
                                 <span class="block">Custom Style</span>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -144,14 +144,17 @@
                 <div class="col">
                     <div class="item bg">
                         <div class="pic">
-                            <img src="https://picsum.photos/300/100/?random=1">
+                            <img src="https://picsum.photos/300/500/?random=1">
                         </div>
                         <div class="txt">
                             <h3>價目表</h3>
-                            <p>
-                                網際快車儘管以前為什麼如何什麼，親自植物寫真環保投票怎樣激烈通訊臉色改進，存款一邊電池今日條件拿出加速少女，批發點此不同半年上來單位含有應該網際，我去本週儘量證書情緒多多我就頻道重新水晶是有期間發行，準確足夠遠遠有一定提前個性全家留言板，食品哪個不得不微。
+                            <p class="none">
+                                單色|跳色 Single|Jump    NT $900<br>
+                                貓眼|鏡面 CatEyes|Mirror NT $1,000<br>
+                                單色漸層 Single Gardual  NT $1,100<br>
+                                法式漸層 French Gardual  NT $1,200<br>
+                                客製化造型 Custom Style  NT $1,300
                             </p>
-                            <span class="more none">more...</span>
                         </div>
                     </div>
                 </div>
@@ -159,14 +162,16 @@
                 <div class="col">
                     <div class="item bg">
                         <div class="pic">
-                            <img src="https://picsum.photos/300/100/?random=2">
+                            <img src="https://picsum.photos/300/500/?random=2">
                         </div>
                         <div class="txt">
                             <h3>預約流程</h3>
-                            <p>
-                                網際快車儘管以前為什麼如何什麼，親自植物寫真環保投票怎樣激烈通訊臉色改進，存款一邊電池今日條件拿出加速少女，批發點此不同半年上來單位含有應該網際，我去本週儘量證書情緒多多我就頻道重新水晶是有期間發行，準確足夠遠遠有一定提前個性全家留言板，食品哪個不得不微。
-                            </p>
-                            <span class="more none">more...</span>
+                            <ul class="none">
+                                <li>每月14日晚上8點開放舊客預約</li>
+                                <li>每月15日晚上8點開放新客預約</li>
+                                <li>開放預約日中午12點公告可預約時段</li>
+                                <li>選擇樣式及填寫詳細資料並按下預約</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -174,14 +179,23 @@
                 <div class="col">
                     <div class="item bg">
                         <div class="pic">
-                            <img src="https://picsum.photos/300/100/?random=3">
+                            <img src="https://picsum.photos/300/500/?random=3">
                         </div>
                         <div class="txt">
                             <h3>預約須知</h3>
-                            <p>
-                                網際快車儘管以前為什麼如何什麼，親自植物寫真環保投票怎樣激烈通訊臉色改進，存款一邊電池今日條件拿出加速少女，批發點此不同半年上來單位含有應該網際，我去本週儘量證書情緒多多我就頻道重新水晶是有期間發行，準確足夠遠遠有一定提前個性全家留言板，食品哪個不得不微。
-                            </p>
-                            <span class="more none">more...</span>
+                            <ul class="none">
+                                <li>ACH Nail Studio為個人居家美甲工作室，採預約制度。</li>
+                                <li>限本人預約。</li>
+                                <li>付款方式: 現金、現場網銀轉帳，暫不提供刷卡。</li>
+                                <li>預約保留15分鐘，遲到20分鐘視同取消。</li>
+                                <li>施作時間為2-3小時，時間長短依款式複雜度及皮膚狀況而定。</li>
+                                <li>預約後如需取消或改期，請至少提前五天告知，以利作業。</li>
+                                <li>居家工作室空間有限，不可攜伴。</li>
+                                <li>若兩位同行請選連續時段，由一人代表預約並提供完整兩人預約資料。</li>
+                                <li>需延甲或複雜手繪請在預約時告知，以便安排時間。</li>
+                                <li>自帶圖:無法100%複製，色卡依現場為主。</li>
+                                <li>暫無提供「足部新客」預約。</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -189,14 +203,45 @@
                 <div class="col">
                     <div class="item bg">
                         <div class="pic">
-                            <img src="https://picsum.photos/300/100/?random=4">
+                            <img src="https://picsum.photos/300/500/?random=4">
                         </div>
                         <div class="txt">
                             <h3>FAQ</h3>
-                            <p>
-                                網際快車儘管以前為什麼如何什麼，親自植物寫真環保投票怎樣激烈通訊臉色改進，存款一邊電池今日條件拿出加速少女，批發點此不同半年上來單位含有應該網際，我去本週儘量證書情緒多多我就頻道重新水晶是有期間發行，準確足夠遠遠有一定提前個性全家留言板，食品哪個不得不微。
-                            </p>
-                            <span class="more none">more...</span>
+                            <ul class="none">
+                                <li>
+                                    <p class="q">光療能維持多久?</p>
+                                    <p class="a none">三到四週是一個安全範圍值，但也會因為每個人使用度而有所不同。</p>
+                                </li>
+                                <li>
+                                    <p class="q">前端顏色很快剝落?</p>
+                                    <p class="a none">前端磨損是很正常的，日常生活一直頻繁使用指尖做事也會影響磨損速度。</p>
+                                </li>
+                                <li>
+                                    <p class="q">指甲翻起來怎麼處理?</p>
+                                    <p class="a none">可拿指甲都稍微剪短，修不到的部分盡快找店家做處理，以免勾髮或者發霉。</p>
+                                </li>
+                                <li>
+                                    <p class="q">不想卸甲，都用拔的?</p>
+                                    <p class="a none">建議三到四週要回美甲店卸甲
+                                        ，若用拔的會導致真假損傷、分層、變薄。</p>
+                                </li>
+                                <li>
+                                    <p class="q">如何延長光療壽命?</p>
+                                    <p class="a none">盡量減少使用指尖做事，改為使用指腹；太燙的水、使用清潔劑及流手汗也都會影響光療的維持度。</p>
+                                </li>
+                                <li>
+                                    <p class="q">為甚麼會導致發霉?</p>
+                                    <p class="a none">可能為使用習慣不好，如摳甲、咬甲、泡水等等，導致真甲與光療面產生隙縫進水或空氣，而手部長時間為乾燥就會導致發霉。因此需要定時卸甲，不要看似完整就不卸除。</p>
+                                </li>
+                                <li>
+                                    <p class="q">長綠黴菌如何處理?</p>
+                                    <p class="a none">回店家卸甲後看發霉程度，黴菌是由甲面往下生長到的甲肉，輕微黴菌可使用海綿拋拋除，若嚴重黴菌則需看醫生。</p>
+                                </li>
+                                <li>
+                                    <p class="q">卸甲後指甲變軟?</p>
+                                    <p class="a none">可能因已經習慣有硬度的甲面做事，卸完後才覺得變軟；也可能為店家過度拋磨或使用不好的底膠導致。建議變薄的指甲要休息三到四個月。</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -240,3 +285,13 @@
     </footer>
 </body>
 </html>
+<script>
+    let el = document.querySelectorAll('.info h3');
+    for (let i = 0; i < el.length; i++) {
+        console.log(el[i].parentElement);
+        el[i].addEventListener('click', function() {
+            let showEl = el[i].parentElement.querySelectorAll('.none')[0];
+            showEl.classList.remove('none');
+        })
+    }
+</script>

@@ -1,11 +1,22 @@
+/* news */
 main .news {
     background: linear-gradient(to bottom, transparent 40%, #ebe9e2ff),
         url(../img/background/news_bg.svg) center bottom no-repeat;
     background-size: cover;
 }
+main .news .txt p {
+    padding: 10px 0;
+}
+/* appointment */
 main .appointment #schedule {
     background-color: var(--main-txt-bg-color);
+    padding: 15px;
 }
+/* info list */
 main .infoList .item {
     padding: 0;
+}
+main .info .txt h3 {
+    position: relative;
+    z-index: 1;
 }

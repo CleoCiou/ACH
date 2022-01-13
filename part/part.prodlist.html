@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+            min-height: 100vh;
+        }
+        .none {
+            display: none;
+        }
+
+        /* background */
+        .prodlist:before {
+            content: '';
+            width: 100vw;
+            height: 100vh;
+            background: url('img/background/rock.jpg') no-repeat top left / cover;
+            display: block;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 1;
+            opacity: 0.5;
+        }
+        /* ensure content z-index bigger than background */
+        .container .row {
+            position: relative;
+            z-index: 2;
+        }
+        .prodlist .row {
+            z-index: 3;
+        }
+
+        /* after click img show img info */
+        .prodlist .row.small {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ccc5;
+            transform-origin: top left;
+            transform: translate(2%, 85vh) scale(0.2);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: none;
+            height: 200vh;
+            padding: 5%;
+        }
+        .prodlist .row.small.small-on-click {
+            transform: translate(2%, 59vh) scale(0.2);
+            overflow-y: scroll;
+            background-color: #ccca;
+        }
+        .prodlist .row.small:hover {
+            transform: translate(2%, 59vh) scale(0.2);
+            overflow-y: scroll;
+        }
+        .prodlist .row.small.transition {
+            transition: .8s;
+        }
+        /* item */
+        .prodlist .item {
+            padding: 2%;
+        }
+        .prodlist .item .pic {
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 0;
+        }
+        .pic img {
+            width: 100%;
+            display: block;
+            margin: auto;
+            border-radius: 10px;
+            transition: 1s;
+            cursor: pointer;
+        }
+        .prodlist .item .pic:hover img {
+            transform: scale(1.2);
+        }
+        /* .prodlist .item .txt {
+            display: none;
+        } */
+        .prodlist .active {
+            opacity: 0.3;
+        }
+        /* item.clone */
+        .prodlist .item.clone {
+            /* flex-direction: row-reverse; */
+            /* justify-content: center; */
+            /* position: relative; */
+            animation: fade-in 2s;
+            height: 100vh;
+            /* align-items: center; */
+            /* padding: auto 0; */
+            z-index: 2;
+        }
+        /* .prodlist .item.clone .pic {
+            width: 40%;
+        } */
+        .prodlist .item.clone img {
+            opacity: 1;
+        }
+        /* .prodlist .item.clone .txt {
+            display: initial;
+        } */
+
+        /* animation */
+        @keyframes fade-in {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .fade-in {
+            animation: fade-in .5s forwards;
+        }
+        @keyframes fade-out {
+            from {opacity: 1;}
+            to {opacity: 0;}
+        }
+        .fade-out {
+            animation: fade-out .5s forwards;
+        }
+
+        /* rwd */
+        @media screen and (max-width: 767px) {
+            .prodlist .item.clone .pic {
+                width: 50%;
+            }
+            .prodlist .item.clone .txt {
+                padding: 0 20%;
+            }
+        }
+        @media screen and (min-width: 768px) {
+            .col:nth-child(3n) .item {
+                flex-direction: row-reverse;
+            }
+            .prodlist .item .pic {
+                width: 40%;
+            }
+            .prodlist .item.clone {
+                flex-direction: row-reverse;
+                justify-content: center;
+                position: relative;
+                /* animation: fade-in 2s; */
+                /* height: 100vh; */
+                align-items: center;
+                /* padding: auto 0; */
+                /* z-index: 2; */
+            }
+        }
+
+        /* side menu */
+        .side-menu {
+            position: fixed;
+            z-index: 2;
+            right: 0;
+            top: 0;
+            font-size: 1em;
+            z-index: 4;
+            animation: fade-in 2s;
+        }
+        .side-menu a {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            padding: 10px 0;
+            text-decoration: none;
+            color: #555;
+        }
+        .side-menu a:after {
+            content: '';
+            display: inline-block;
+            height: 1.5px;
+            width: 5em;
+            background-color: #61413580;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .side-menu a.active {
+            font-size: 1.5em;
+            transform: translate(-1em);
+        }
+        .side-menu a.active:after {
+            display: block;
+            transition: .5s;
+            height: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- side menu -->
+    <div class="side-menu none">
+        <a href="#prodlist" class="active">樣式簡介</a>
+        <a href="#prodinfo">詳細介紹</a>
+        <a href="#otherinfo">其他資訊</a>
+    </div>
+
+    <!-- product list -->
+    <div class="container prodlist" id="prodlist">
+        <div class="row row-cols-2">
+
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/20.jpeg">
+                        <!-- <img src="img/products/21.jpeg">
+                        <img src="img/products/22.jpeg">
+                        <img src="img/products/23.jpeg">
+                        <img src="img/products/24.jpeg"> -->
+                    </div>
+                    <div class="col txt none">
+                        <p class="prodCtg">單色|跳色</p>
+                        <h3 class="prodTitle">琥珀</h3>
+                        <p class="prodPrice">NT $900</p>
+                        <p class="prodDesc">蘭陵美酒鬱金香，玉碗盛來琥珀光。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/40.jpeg">
+                    </div>
+                    <div class="col txt none">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/41.jpeg">
+                    </div>
+                    <div class="col txt none">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/42.jpeg">
+                    </div>
+                    <div class="col txt none">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/43.jpeg">
+                    </div>
+                    <div class="col txt none">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/44.jpeg">
+                    </div>
+                    <div class="col txt none">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/45.jpeg">
+                    </div>
+                    <div class="col txt none">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/46.jpeg">
+                    </div>
+                    <div class="col txt none">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/28.jpeg">
+                    </div>
+                    <div class="col txt none">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/29.jpeg">
+                    </div>
+                    <div class="col txt none">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- product info -->
+    <div class="container prodinfo none" id="prodinfo">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col item">
+                <h3>南雅奇岩</h3>
+                <p>南雅是東北角海岸的一個賞遊點，以奇岩景觀著稱，除了觸目可見的海蝕礁岸外，最令人稱奇的便是千狀萬態，鬼斧神工的風化紋石錯落其間，彷彿一座戶外大型雕塑博物館。南雅風化紋地形為臺灣所罕見，其成因為砂岩中的節理經風化作用造成含鐵礦物氧化，於是顯露出氧化鐵的帶狀花紋，饒富造形之美。</p>
+                <div class="pic">
+                    <img src="img/prodinfo/nanya_rock.jpg">
+                </div>
+            </div>
+            <div class="col pic">
+                <img src="img/products/28.jpeg">
+            </div>
+        </div>
+    </div>
+
+    <!-- others info -->
+    <div class="container otherinfo none" id="otherinfo">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col item">
+                <h3>預約須知</h3>
+                <ul>
+                    <li>ACH Nail Studio為個人居家美甲工作室，採預約制度。</li>
+                    <li>限本人預約。</li>
+                    <li>付款方式: 現金、現場網銀轉帳，暫不提供刷卡。</li>
+                    <li>預約保留15分鐘，遲到20分鐘視同取消。</li>
+                    <li>施作時間為2-3小時，時間長短依款式複雜度及皮膚狀況而定。</li>
+                    <li>預約後如需取消或改期，請至少提前五天告知，以利作業。</li>
+                    <li>居家工作室空間有限，不可攜伴。</li>
+                    <li>若兩位同行請選連續時段，由一人代表預約並提供完整兩人預約資料。</li>
+                    <li>需延甲或複雜手繪請在預約時告知，以便安排時間。</li>
+                    <li>自帶圖:無法100%複製，色卡依現場為主。</li>
+                    <li>暫無提供「足部新客」預約。</li>
+                </ul>
+            </div>
+            <div class="col item">
+                <h3>預約流程</h3>
+                <ul>
+                    <li>每月14日晚上8點開放舊客預約</li>
+                    <li>每月15日晚上8點開放新客預約</li>
+                    <li>開放預約日中午12點公告可預約時段</li>
+                    <li>選擇樣式及填寫詳細資料並按下預約</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    
+    // window.addEventListener('load', init);
+    // function init() {
+    //     let pic = document.querySelectorAll('.pic');
+    //     for (let i = 0; i < pic.length; i++) {
+    //         let imgH = pic[i].querySelector('img');
+    //         pic[i].style.setProperty('--img-h', `${imgH.offsetHeight}px`);
+    //     }
+    // }
+
+
+    // TODO: show product info when click img
+    // ===============================================================================================
+    // function: ???
+    // - click .row when on left bottom (.row.classlist contains small)
+    // ===============================================================================================
+    // -- show all / hide part product list (classlist.toggle: small-on-click)
+    // -- hover and change background (class: .row.small:hover)
+    // ===============================================================================================
+
+    let myRow = document.querySelectorAll('.prodlist .row')[0];
+
+    // img onclick pos n size n destination pos
+    let imgW, imgH, mx, my, dx, dy;
+
+    document.addEventListener('click', myEvent);
+    function myEvent(e) {
+        // console.log(e.target.classList);
+        if (e.target.tagName === 'IMG'){
+            // console.log(myRow.classList.contains('small'));
+            if(myRow.classList.contains('small'))
+                changeImg(e);
+            else {
+                mvImg(e);
+                cloneImg(e);
+            }
+        }
+        else if (e.target.classList.contains('prodlist') || e.target.classList.contains('clone'))
+            resetImg(e);
+        else if (e.target.classList.contains('item'))
+            document.querySelectorAll('.small')[0].classList.toggle('small-on-click');
+    }
+
+    let sideMenua = document.querySelectorAll('.side-menu a');
+    for (let i = 0; i < sideMenua.length; i++) {
+        sideMenua[i].addEventListener('click', function(e) {
+            let aActive = document.querySelectorAll('a.active')[0];
+            aActive.classList.remove('active');
+            e.target.classList.add('active');
+        })
+    }
+
+
+    // ===============================================================================================
+    // function: myImg(img on click)
+    // - click img, if .row not move and scale to left bottom (.row.classlist not contains small)
+    // ===============================================================================================
+    // -- move and scale .row to left bottom (classlist.add: small)
+    // -- fade when move and scale (with class: fade-in, fade-out | function: toggleRow)
+    // -- change .row transition hv sec (classlist.add: transition)
+    // -- change body overflow to hidden
+    // -- change img on click opacity to half (classlist.add: active)
+    // -- show side menu
+    // ===============================================================================================
+    function mvImg(e) {
+        // fade in / out animation
+        myRow.classList.add('fade-out');
+        myRow.addEventListener('animationend', toggleRow);
+
+        // set body overflow
+        // document.body.style.overflow = 'hidden';
+
+        // set img opacity
+        e.target.classList.add('active');
+
+        // show side menu
+        let sideMenu = document.querySelectorAll('.side-menu');
+        sideMenu[0].classList.toggle('none');
+
+        // add event listener to scroll
+        window.addEventListener('scroll', changeSideMenu);
+    }
+    
+    // ===============================================================================================
+    // function: cloneImg(img on click)
+    // - click img, if .row not move and scale to left bottom (.row.classlist not contains small)
+    // ===============================================================================================
+    // -- clone img, move and scale to right center
+    // -- show/update product info and other info (classlist.remove: none)
+    // ===============================================================================================
+    function cloneImg(e) {
+        // .item > (.pic > img) + (.txt > h3 + p)
+        let clone = e.target.parentNode.parentNode.cloneNode(true);
+        clone.classList.add('clone');
+        // show txt
+        let txt = clone.querySelector('.txt');
+        txt.classList.remove('none');
+        // console.log(clone);
+        let appendParent = document.querySelectorAll('.prodlist')[0];
+        appendParent.appendChild(clone);
+        // show product info and other info if display: none
+        let none = document.querySelectorAll('.container.none');
+        for (let i = 0; i < none.length; i++) {
+            none[i].classList.remove('none');
+        }
+
+        // change product info ==========================
+    }
+
+    // ===============================================================================================
+    // function: resetImg(.prodlist)
+    // - click .prodlist
+    // ===============================================================================================
+    // -- recover .row to ori position and size (classlist.remove: small)
+    // -- fade when move and scale (with class: fade-in, fade-out | function: toggleRow)
+    // -- remove class for product info from .row (classlist.remove: small-on-click)
+    // -- change .row transition to none (classlist.remove: transtition)
+    // -- change body overflow to visible
+    // -- change img on click opacity to 1 (classlist.remove: active)
+    // -- remove clone item with animate =(X)
+    // -- hide product info and others info (classlist.add: none)
+    // -- hide side menu set active to first child
+    // ===============================================================================================
+    function resetImg(e) {
+        myRow.classList.add('fade-out');
+        myRow.addEventListener('animationend', toggleRow);
+        document.querySelectorAll('.small')[0].classList.remove('small-on-click');
+
+        // set img opacity
+        let activeImg = document.querySelectorAll('img.active')[0];
+        activeImg.classList.remove('active');
+
+        // remove clone item
+        let clone = document.querySelectorAll('.clone');
+        if (clone.length === 1) {
+            clone[0].remove();
+        }
+
+        // hide product info and others info
+        let none = document.querySelectorAll('.container:not(.prodlist)');
+        for (let i = 0; i < none.length; i++) {
+            none[i].classList.add('none');
+        }
+        
+        // hide side menu
+        let sideMenu = document.querySelectorAll('.side-menu');
+        sideMenu[0].classList.toggle('none');
+
+        // remove event listener to scroll
+        window.removeEventListener('scroll', changeSideMenu);
+
+        // =========================================================這裡這裡=========================================================
+        // set active to first child
+        // scroll and change sidemenu
+        // click not first child hide prodlist row
+        // scroll to not first child hide prodlist row
+        // =========================================================這裡這裡=========================================================
+    }
+
+    // ===============================================================================================
+    // function: changeImg(img on click)
+    // - click img, if .row aleady move and scale to left bottom (.row.classlist contains small)
+    // ===============================================================================================
+    // -- change opacity img to which on click
+    // -- change big img to selected with animate =(X)
+    // ===============================================================================================
+    function changeImg(e) {
+        document.querySelectorAll('.active')[0].classList.remove('active');
+        e.target.classList.add('active');
+        let oriClone = document.querySelectorAll('.clone')[0];
+        oriClone.remove();
+        cloneImg(e);
+    }
+
+
+    // ===============================================================================================
+    // function: changeSideMenu()
+    // - scroll in product info
+    // ===============================================================================================
+    // -- hide small row(product list), if scroll on info section(class: .prodinfo, .otherinfo)
+    // -- change side menu style to section title
+    // ===============================================================================================
+    function changeSideMenu() {
+        // =======================================
+    }
+
+    // fade-in / fade-out and toggle .small
+    function toggleRow() {
+        if (myRow.classList.contains('fade-out')) {
+            myRow.classList.toggle('small');
+            myRow.classList.remove('fade-out');
+            myRow.classList.add('fade-in');
+        }
+        else if (myRow.classList.contains('fade-in')) {
+            myRow.classList.remove('fade-in');
+            myRow.classList.toggle('transition');
+        }
+    }
+</script>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/schedule.css">
+    <script defer src="js/schedule.js"></script>
+    <style>
+        body {
+            padding-bottom: 500px;
+        }
+        .container {
+            position: relative;
+        }
+        .container:before {
+            content: '';
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 70%;
+            top: 0;
+            left: 0;
+            opacity: .3;
+            background: linear-gradient(to bottom, transparent 50%, #fff 100%),
+                        url('img/background/rock.jpg') no-repeat left top / cover;
+            z-index: 1;
+        }
+        .container:after {
+            content: '';
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 30%;
+            bottom: 0;
+            left: 0;
+            opacity: .3;
+            background: linear-gradient(to top, transparent 50%, #fff 100%),
+                        url('img/background/room.jpg') no-repeat left bottom 30% / cover;
+            z-index: 1;
+        }
+        .row {
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+        .container > .row > .col-12 {
+            position: relative;
+        }
+        .container > .row > .col-12:after {
+            content: '';
+            width: 1em;
+            height: 1em;
+            display: block;
+            position: fixed;
+            top: 2.5em;
+            left: 0;
+            transform: translate(1em, -50%);
+            background-color: #61413580;
+            border-radius: 50%;
+        }
+        .wrap {
+            padding: 30px 0;
+        }
+        .wrap > .col {
+            width: 100%;
+        }
+        .wrap .col > span {
+            font-size: 1.5em;
+        }
+        .wrap .col > span:before {
+            content: attr(data-step);
+            margin-right: 1em;
+        }
+        .pic img {
+            width: 70%;
+            display: block;
+            margin: auto;
+            border-radius: 10px;
+        }
+        .credit:checked ~ .credit-num {
+            display: initial;
+        }
+        .credit-num {
+            display: none;
+        }
+        .info {
+            padding: 5px 0;
+        }
+        .wrap:first-child .item {
+            opacity: 0;
+            animation: fade-in 2s forwards;
+        }
+        .wrap:not(:first-child) .item {
+            opacity: 0;
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translate(0, -25px);
+            }
+            to {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+        }
+        .fade-in {
+            animation: fade-in 2s forwards;
+        }
+
+        @media  screen and (min-width: 768px) {
+            .container:before {
+                width: 65%;
+                height: 100%;
+                top: 0;
+                right: 0;
+                left: auto;
+                background: url('img/background/rock.jpg') no-repeat left top / cover;
+            }
+            .container:after {
+                width: 35%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: url('img/background/room.jpg') no-repeat left bottom 30% / cover;
+            }
+            .wrap > .col.item {
+                width: 65%;
+            }
+            .wrap > .col:first-child {
+                width: 35%;
+                text-align: center;
+            }
+            .container > .row > .col-12:after {
+                top: 38px;
+                left: 35%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+
+                <!-- step1: select style -->
+                <div class="wrap row">
+                    <div class="col">
+                        <span data-step="I">選擇樣式</span>
+                    </div>
+                    <div class="col item">
+                        <div class="pic">
+                            <img src="img/products/45.jpeg">
+                        </div>
+                        <div class="txt">
+                            <h3>少女的玫瑰</h3>
+                            <p>建材循環，把我臉上。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- step2: select date -->
+                <div class="wrap row">
+                    <div class="col">
+                        <span data-step="II">選擇日期</span>
+                    </div>
+                    <div class="col item">
+                        <div class="schedule" id="schedule"></div>
+                    </div>
+                </div>
+
+                <!-- step3: form -->
+                <div class="wrap row">
+                    <div class="col">
+                        <span data-step="III">確認預約資料</span>
+                    </div>
+                    <div class="col item user-info">
+                        <form>
+                            <!-- selected style -->
+                            <div class="info">
+                                <label for="style">樣式名稱: </label>
+                                <input type="text" id="style">
+                            </div>
+                            <!-- appointment date -->
+                            <div class="info">
+                                <label for="date">預約日期: </label>
+                                <input type="date" id="date">
+                            </div>
+                            <!-- appointment time -->
+                            <div class="info">
+                                <label for="date">預約時段: </label>
+                                <select id="date">
+                                    <option>12:00~15:00</option>
+                                    <option>15:00~18:00</option>
+                                    <option>19:00~22:00</option>
+                                </select>
+                            </div>
+                            <!-- customer name -->
+                            <div class="info">
+                                <label for="custName">姓名: </label>
+                                <input type="text" id="custName">
+                            </div>
+                            <!-- customer phone -->
+                            <div class="info">
+                                <label for="custName">電話: </label>
+                                <input type="tel" id="custTel">
+                            </div>
+                            <!-- customer email -->
+                            <div class="info">
+                                <label for="custName">信箱: </label>
+                                <input type="email" id="custEmail">
+                            </div>
+                            <!-- customer payment -->
+                            <div class="info">
+                                <label>付款方式: </label>
+                                <input type="radio" id="cash" name="pay">
+                                <label for="cash">現金</label>
+                                <input type="radio" class="credit" id="credit" name="pay">
+                                <label for="credit">信用卡</label>
+                                <label for="creditNum" class="credit-num">卡號: </label>
+                                <input type="text" class="credit-num" id="creditNum">
+                            </div>
+                            <div class="info">
+                                <input type="submit" value="預約" class="appointment-btn">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let el = document.querySelectorAll('.item');
+    window.addEventListener('scroll', fadIn);
+    function fadIn() {
+        for (let i = 1; i < el.length; i++) {
+            let view = el[i].getBoundingClientRect().top;
+            if (view < window.pageYOffset) {
+                el[i].classList.add('fade-in');
+            }
+        }
+    } fadIn();
+</script>

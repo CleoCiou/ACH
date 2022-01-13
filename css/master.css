@@ -16,7 +16,8 @@
 }
 
 /* common */
-@media screen and (min-width: 768px) {/* txt */
+@media screen and (min-width: 768px) {
+    /* txt */
     h1 {
         font-size: 28px;
         padding: 5px 0;
@@ -29,7 +30,7 @@
         font-size: 20px;
         padding: 3px 0;
     }
-    p {
+    p, span, a {
         font-size: 18px;
     }
     a {
@@ -77,34 +78,6 @@ body {
     /* padding-bottom: 500px; */
     background-color: var(--main-bg-color);
 }
-/* body mask */
-@keyframes show-by-opacity {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-@keyframes hide-by-opacity {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-.full-mask {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--main-bg-color);
-    opacity: 1;
-    top: 0;
-    left: 0;
-    animation: show-by-opacity .5s forwards;
-    z-index: 1;
-}
 
 /* txt */
 h1 {
@@ -119,7 +92,7 @@ h3 {
     font-size: 16px;
     padding: 3px 0;
 }
-p {
+p, span, a {
     font-size: 14px;
 }
 a {
@@ -159,7 +132,7 @@ a {
 }
 .bg img {
     position: absolute;
-    width: 100%;
+    /* width: 100%; */
     opacity: .3;
 }
 
@@ -181,29 +154,46 @@ a {
 .product .pic:hover img {
     transform: scale(1.2);
 }
-/* product detail */
-main .col {
-    transform: translate(0, 0);
-    transition: 1s;
-}
-.col.detail {
-    position: relative;
-    z-index: 2;
-    transform: translate(var(--translateX), var(--translateY));
-}
-.col.detail .txt {
-    position: absolute;
-    top: -50%;
-    left: -90%;
-    width: 90%;
-    opacity: 0;
-    animation: show-by-opacity 1s 1s forwards;
+
+/* inupt */
+input[type='text'],
+input[type='tel'],
+input[type='date'],
+input[type='email'],
+select {
+    background-color: #fcfaf5;
+    border: 2px solid #68433750;
+    border-radius: 100px;
+    line-height: 1.5;
+    padding: 0 15px;
 }
 
 /* button */
+/* appointment btn */
 .appointment-btn {
     cursor: pointer;
     background-color: var(--main-btn-bg-color);
+    border: none;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+/* hover style desktop only */
+.appointment-btn:hover {
+    background-color: #E3C284;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+/* other btn */
+.other-btn {
+    background-color: #c2b5ac;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 /* header */
@@ -213,52 +203,67 @@ header .container {
     top: 0;
     left: 0;
     z-index: 2;
-    background-color: var(--main-bg-color);
+    background-color: #c2b5ac;
 }
+
 /* main menu */
-[class*=-popup] {
-    position: fixed;
-    z-index: 4;
-    top: 3rem;
-    background-color: var(--main-bg-color);
-    overflow: hidden;
-    transition: 0.5s;
-}
-/* menu */
-.menu-popup {
-    height: 100%;
-    width: 0;
-    left: 0;
-}
-/* search */
-.search-popup {
-    height: 0;
-    width: 100%;
-    left: 0;
-}
-/* collection */
-.collection-popup {
-    height: 100%;
-    width: 0;
-    right: 0;
-}
-.menu-popup a {
-    padding: 8px;
-    font-size: 36px;
-    color: #818181;
+/* hanburger */
+.main-menu .burger {
     display: block;
-    transition: 0.3s;
+    width: 1.5em;
+    height: 0.15em;
+    background-color: #68433780;
+    font-size: 16px;
+    margin: 5px 0;
 }
-.open-menu-btn {
-    cursor: pointer;
+.main-menu:before,
+.main-menu:after {
+    content: '';
+    display: block;
+    width: 1.5em;
+    height: 0.15em;
+    background-color: #68433770;
 }
-.closebtn {
-    position: absolute;
-    color: #818181;
+/* side menu */
+.side-menu {
+    text-align: right;
+}
+.side-menu .about-btn img,
+.side-menu .search-btn img, 
+.side-menu .collect-btn img {
+    width: 2em;
+}
+/* popup content */
+.pop-window {
+    overflow: hidden;
+    transition: .5s;
+    position: fixed;
+    background-color: #c2b5ac;
     top: 0;
+    padding-top: 3em;
+    white-space: nowrap;
+}
+.menu {
+    left: 0;
+    width: 0;
+    height: 100%;
+}
+.collection {
     right: 0;
-    font-size: 60px;
-    z-index: 1;
+    width: 0;
+    height: 100%;
+}
+.search {
+    left: 0;
+    width: 100%;
+    height: 0;
+}
+#menu:checked + .menu,
+#collection:checked + .collection {
+    width: 100%;
+}
+#search:checked + .search {
+    height: 6em;
 }
 
 /* logo */
@@ -269,11 +274,7 @@ header .logo img {
     width: 80px;
 }
 header .logo span {
-    font-size: 24px;
-}
-/* side menu icon */
-.side-menu {
-    text-align: right;
+    /* font-size: 24px; */
 }
 /* (default) block size */
 .container {

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveBg</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <style>
+        * {
+            /* outline: 1px solid red; */
+            line-height: 2;
+            font-size: 2em;
+            letter-spacing: .1em;
+        }
+        @keyframes autoMove {
+            0% {transform: translate(-2%, -2%);}
+            50% {transform: translate(2%, 2%);}
+            100% {transform: translate(0, 0);}
+        }
+        .bg {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .bg:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('img/products/19.jpeg') no-repeat left 20% top 45%,
+                        url('img/products/02.jpeg') no-repeat left top,
+                        url('img/products/20.jpeg') no-repeat left bottom 5%,
+                        url('img/products/10.jpg') no-repeat center top 10%,
+                        url('img/products/18.jpeg') no-repeat right top -10%,
+                        url('img/products/13.jpg') no-repeat right 15% bottom 45%,
+                        url('img/products/16.jpeg') no-repeat center bottom 10%,
+                        url('img/products/27.jpeg') no-repeat right bottom -5%;
+            background-size: auto 25vh, auto 20vh, auto 25vh, auto 20vh, auto 25vh, auto 20vh, auto 25vh, auto 20vh;
+            position: relative;
+            opacity: 0.4;
+            animation: autoMove 35s linear infinite;
+        }
+        @media screen and (min-width: 768px) {
+            .bg:before {
+            background-size: auto 25vh, auto 20vh, auto 25vh, auto 20vh, auto 25vh, auto 20vh, auto 25vh, auto 20vh;
+            }
+        }
+        @media screen and (min-width: 992px) {
+            .bg:before {
+            background-size: auto 35vh, auto 30vh, auto 35vh, auto 30vh, auto 35vh, auto 30vh, auto 35vh, auto 30vh;
+            }
+        }
+        .contain {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 5;
+        }
+        .contain > * {
+            margin-bottom: .5em;
+        }
+        .contain .pic img {
+            width: 40%;
+        }
+        .panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            z-index: 1;
+            transition: 1s;
+        }
+        .panel:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+        .left-panel {
+            background: linear-gradient(0, #fff 10%, #fff5 100%),
+                        url('img/background/calendar.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        .right-panel {
+            background: linear-gradient(180deg, #fff 10%, #fff5 100%),
+                        url('img/background/style3.jpeg') no-repeat bottom center;
+            background-size: cover;
+            right: 0;
+            left: auto;
+            bottom: 0;
+            top: auto;
+        }
+        .panel .txt h2 {
+            color: #614135;
+            font-size: 3em;
+        }
+        @media screen and (min-width: 768px) {
+            .panel {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                z-index: 1;
+                transition: 1s;
+                opacity: 0;
+            }
+            .right-panel {
+                right: 0;
+                left: auto;
+            }
+            .panel .txt h2 {
+                color: #614135;
+                font-size: 8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="contain">
+            <div class="pic">
+                <img src="img/logo/logo_nb.png" alt="">
+            </div>
+            <h1>ACH Nails Studio.</h1>
+            <p>個人美甲居家工作室</p>
+        </div>
+        
+        <div class="panel left-panel">
+            <div class="txt">
+                <h2>預約</h2>
+            </div>
+        </div>
+        <div class="panel right-panel">
+            <div class="txt">
+                <h2>樣式</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // track mouse
+    // const root = document.documentElement;
+    // document.addEventListener('mousemove', evt => {
+    //     let x = evt.clientX / innerWidth;
+    //     let y = evt.clientY / innerHeight;
+    
+    //     root.style.setProperty('--mouse-x', x);
+    //     root.style.setProperty('--mouse-y', y);
+    // });
+</script>

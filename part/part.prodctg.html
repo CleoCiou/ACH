@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Category List</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            /* outline: 1px solid red; */
+        }
+        /* background */
+        body {
+            position: relative;
+            min-height: 100vh;
+        }
+        body:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: url('img/background/rock.jpg') no-repeat top left;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            height: 100vh;
+            overflow: hidden;
+            max-width: 1200px;
+        }
+        .item {
+            padding-top: 10%;
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            transition: 1s;
+            top: 0;
+            left: 50%;
+            transform: translate(0, 0);
+        }
+        .select {
+            display: inline-block;
+            position: absolute;
+            font-size: 1.5em;
+            margin: auto;
+            left: 50%;
+            bottom: -3em;
+            padding: 10px;
+            border-radius: 10px;
+            transform: translate(-50%, 0);
+            background-color: #61413580;
+            color: #fff;
+            cursor: pointer;
+            transition: .5s;
+        }
+        .select:hover {
+            background-color: #614135;
+        }
+        /* show when radio on select */
+        input[name=category] {
+            display: none;
+        }
+        #single:checked ~ [category=single],
+        #cateyes:checked ~ [category=cateyes],
+        #gradual:checked ~ [category=gradual],
+        #french:checked ~ [category=french],
+        #custom:checked ~ [category=custom] {
+            z-index: 2;
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+        
+        .pic img {
+            width: auto;
+            max-width: 100%;
+            border-radius: 10px;
+            margin: auto;
+            display: block;
+        }
+        .txt {
+            margin-top: 10%;
+            text-align: center;
+            font-size: 1.2em;
+            color: #614135;
+        }
+        /* english title */
+        .txt:after {
+            content: attr(eng-title);
+        }
+        .txt > * {
+            padding: 10px;
+        }
+
+        /* last, next btn */
+        .btn {
+            width: 2em;
+            height: 2em;
+            border-radius: 50%;
+            background-color: #61413580;
+            display: block;
+            position: absolute;
+            bottom: 2em;
+            cursor: pointer;
+            transition: .5s;
+        }
+        /* last */
+        .last-btn {
+            left: 1.5em;
+            background: url('img/icon/left.png') no-repeat left 40% center / 40% auto;
+            background-color: #61413580;
+        }
+        .last-btn:hover {
+            background: url('img/icon/left.png') no-repeat left 20% center / 40% auto;
+            background-color: #614135;
+        }
+        /* next */
+        .next-btn {
+            right: 1.5em;
+            background: url('img/icon/right.png') no-repeat right 40% center / 40% auto;
+            background-color: #61413580;
+        }
+        .next-btn:hover {
+            background: url('img/icon/right.png') no-repeat right 20% center / 40% auto;
+            background-color: #614135;
+        }
+
+        @media screen and (min-width: 768px) {
+            .item {
+                left: 60%;
+            }
+            input[name=category] {
+                display: initial;
+                appearance: none;
+                font-size: 1em;
+                display: block;
+                margin: 10px;
+                cursor: pointer;
+            }
+            input[name=category]:first-child {
+                padding-top: 30vh;
+            }
+            input[name=category]:before {
+                content: '';
+                height: 2px;
+                width: 0;
+                background-color: #614135;
+                display: inline-block;
+                margin: 0 1em;
+                vertical-align: middle;
+                transition: .5s;
+            }
+            input[name=category]:checked:before {
+                width: 100px;
+            }
+            input[name=category]:after {
+                content: attr(value);
+                display: inline-block;
+                font-size: 1.2em;
+                vertical-align: middle;
+                color: #614135;
+            }
+            .pic img {
+                max-width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="radio" name="category" id="single" value="單色|跳色 Single|Jump" checked>
+        <input type="radio" name="category" id="cateyes" value="貓眼|鏡面 CatEyes|Mirror">
+        <input type="radio" name="category" id="gradual" value="單色漸層 Single Gardual">
+        <input type="radio" name="category" id="french" value="法式漸層 French Gardual">
+        <input type="radio" name="category" id="custom" value="客製化樣式 Custom Style">
+
+        <!-- categroy list -->
+        <!-- single -->
+        <div class="item active" category="single">
+            <div class="pic">
+                <img src="img/products/16.jpeg" alt="">
+            </div>
+            <div class="txt" eng-title="Single | Jump">
+                <h3>單色 | 跳色</h3>
+            </div>
+            <span class="select">Select</span>
+        </div>
+        <!-- cateyes -->
+        <div class="item" category="cateyes">
+            <div class="pic">
+                <img src="img/products/18.jpeg" alt="">
+            </div>
+            <div class="txt" eng-title="Cat Eyes | Mirror">
+                <h3>貓眼 | 鏡面</h3>
+            </div>
+            <span class="select">Select</span>
+        </div>
+        <!-- single gradual -->
+        <div class="item" category="gradual">
+            <div class="pic">
+                <img src="img/products/20.jpeg" alt="">
+            </div>
+            <div class="txt" eng-title="Single Gradual">
+                <h3>單色漸層</h3>
+            </div>
+            <span class="select">Select</span>
+        </div>
+        <!-- french gradual -->
+        <div class="item" category="french">
+            <div class="pic">
+                <img src="img/products/21.jpeg" alt="">
+            </div>
+            <div class="txt" eng-title="French Gradula">
+                <h3>法式漸層</h3>
+            </div>
+            <span class="select">Select</span>
+        </div>
+        <!-- custom style -->
+        <div class="item" category="custom">
+            <div class="pic">
+                <img src="img/products/22.jpeg" alt="">
+            </div>
+            <div class="txt" eng-title="Custom Style">
+                <h3>客製化造型</h3>
+            </div>
+            <span class="select">Select</span>
+        </div>
+        <span class="btn last-btn"></span>
+        <span class="btn next-btn"></span>
+    </div>
+</body>
+</html>
+<script>
+    document.onload = init();
+    function init() {
+        // last item btn onclick
+        document.querySelectorAll('.last-btn')[0].addEventListener('click', function() {
+            // get onselect index
+            let active = document.querySelectorAll('.active')[0];
+            let items = document.querySelectorAll('.item');
+            let index = Array.from(items).indexOf(active);
+            // remove active class
+            items[index].classList.remove('active');
+            // loop
+            if (index === 0) {
+                // radio id = attr:category
+                let radioId = items[items.length - 1].getAttribute('category');
+                // check radio
+                document.getElementById(radioId).checked = true;
+                // add active class to last item
+                items[items.length - 1].classList.add('active');
+            }
+            else {
+                // radio id = attr:category
+                let radioId = items[index - 1].getAttribute('category');
+                // check radio
+                document.getElementById(radioId).checked = true;
+                // add active class to last item
+                items[index - 1].classList.add('active');
+            }
+        })
+
+        // next item btn onclick
+        document.querySelectorAll('.next-btn')[0].addEventListener('click', function() {
+            // get onselect index
+            let active = document.querySelectorAll('.active')[0];
+            let items = document.querySelectorAll('.item');
+            let index = Array.from(items).indexOf(active);
+            // remove active class
+            items[index].classList.remove('active');
+            // loop
+            if (index === items.length - 1) {
+                // radio id = attr:category
+                let radioId = items[0].getAttribute('category');
+                // check radio
+                document.getElementById(radioId).checked = true;
+                // add active class to next item
+                items[0].classList.add('active');
+            }
+            else {
+                // radio id = attr:category
+                let radioId = items[index + 1].getAttribute('category');
+                // check radio
+                document.getElementById(radioId).checked = true;
+                // add active class to last item
+                items[index + 1].classList.add('active');
+            }
+        })
+
+        // input[name=category] on hover change img 
+        let el = document.querySelectorAll('input[name=category]');
+        for (let i = 0; i < el.length; i++) {
+            el[i].addEventListener('mouseover', function() {
+                el[i].checked = true;
+                // remove ori active class
+                let active = document.querySelectorAll('.active')[0];
+                active.classList.remove('active');
+                // add active class to item on hover
+                document.querySelectorAll('.item')[i].classList.add('active');
+            })
+        }
+    }
+</script>

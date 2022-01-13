@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container:before {
+            content: '';
+            width: 100vw;
+            height: 100vh;
+            background: url('img/background/rock.jpg') no-repeat top left / cover;
+            display: block;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 1;
+            opacity: 0.5;
+        }
+        .row {
+            position: relative;
+            z-index: 2;
+        }
+        @keyframes small {
+            from {
+                width: 100%;
+                transition: (0, 0);
+                background-color: transparent;
+            }
+            to {
+                width: 30%;
+                transform: translate(10px, var(--ty));
+                background-color: var(--bgc);
+            }
+        }
+        .row.small {
+            position: absolute;
+            bottom: 0;
+            border-radius: 10px;
+            animation: small 1s forwards;
+            z-index: 3;
+            cursor: pointer;
+            transition: 1s;
+            --bgc: #ccc5;
+            --ty: 70%;
+        }
+        .small:hover {
+            --bgc: #ccc8;
+        }
+
+        .row > .col {
+            padding: 10px;
+        }
+        .item .txt {
+            display: none;
+        }
+        .item .pic {
+            overflow: hidden;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+        .item .pic:hover img {
+            transform: scale(1.3);
+        }
+        .item .pic img {
+            width: 100%;
+            display: block;
+            margin: auto;
+            transition: 2s;
+            border-radius: 5px;
+        }
+        /* append class */
+        .prodInfo {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            top: 0;
+            left: 0;
+        }
+        .clone {
+            width: var(--imgW);
+            height: var(--imgH);
+            opacity: 0;
+            border-radius: 10px;
+        }
+
+        /* animation */
+        /* fade in */
+        @keyframes show {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .show {
+            animation: show 1s forwards;
+        }
+        /* fade out */
+        @keyframes hide {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        .hide {
+            animation: hide 1s forwards;
+        }
+        /* move with fade in */
+        @keyframes move {
+            from {
+                transform: translate(var(--mx), var(--my));
+                opacity: 0;
+            }
+            to {
+                transform: translate(var(--dx), var(--dy)) scale(1.2);
+                opacity: 1;
+            }
+        }
+        .move {
+            animation: move 1s forwards;
+        }
+
+        /* rwd */
+        @media screen and (min-width: 768px) {
+            .col:nth-child(3n) .item {
+                flex-direction: row-reverse;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row row-cols-2">
+
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/39.jpeg">
+                    </div>
+                    <div class="col txt">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/39.jpeg">
+                    </div>
+                    <div class="col txt">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/39.jpeg">
+                    </div>
+                    <div class="col txt">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/39.jpeg">
+                    </div>
+                    <div class="col txt">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/39.jpeg">
+                    </div>
+                    <div class="col txt">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/39.jpeg">
+                    </div>
+                    <div class="col txt">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/39.jpeg">
+                    </div>
+                    <div class="col txt">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/39.jpeg">
+                    </div>
+                    <div class="col txt">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/39.jpeg">
+                    </div>
+                    <div class="col txt">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="item row row-cols-1 row-cols-md-2">
+                    <div class="col pic">
+                        <img src="img/products/39.jpeg">
+                    </div>
+                    <div class="col txt">
+                        <h3>琥珀</h3>
+                        <p>身後進一步一件來源</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let imgW, imgH, mx, my, dx, dy; // img onclick pos n size n destination pos
+
+    let el = document.querySelectorAll('.pic img');
+    for (let i = 0; i < el.length; i++) {
+        el[i].addEventListener('click', mvImg);
+    }
+
+    function mvImg(e) {
+        this.style.opacity = '.5';
+
+        // create product background
+        let appenNode = document.querySelectorAll('.container')[0];
+        let createEl = document.createElement('div');
+        createEl.onclick = showProdList;
+        createEl.classList.add('prodInfo');
+
+        // clone product onclick img
+        let cloneEl = this.cloneNode(true);
+        cloneEl.classList.add('clone');
+
+        // imgW, imgH => get img size
+        imgW = this.offsetWidth;
+        imgH = this.offsetHeight;
+        cloneEl.style.setProperty('--imgW', `${imgW}px`);
+        cloneEl.style.setProperty('--imgH', `${imgH}px`);
+
+        // mx, my => get img onclick position
+        mx = this.getBoundingClientRect().left;
+        my = this.getBoundingClientRect().top
+        cloneEl.style.setProperty('--mx', `${mx}px`);
+        cloneEl.style.setProperty('--my', `${my}px`);
+
+        // get img destination position (right, center on screen)
+        dx = window.innerWidth - this.offsetWidth * 1.2 - 20;
+        dy = (window.innerHeight - this.offsetHeight * 1.2) / 2;
+        cloneEl.style.setProperty('--dx', `${dx}px`);
+        cloneEl.style.setProperty('--dy', `${dy}px`);
+        
+        // animation
+        cloneEl.classList.add('move');
+        createEl.appendChild(cloneEl);
+        appenNode.appendChild(createEl);
+
+        
+        let rowEl = document.querySelectorAll('.container .row')[0];
+        rowEl.onclick = showAllList;
+        // hide all img
+        // let hideEl = document.querySelectorAll('.pic img:not(.move)');
+        // for (let i = 0; i < hideEl.length; i++){
+        //     hideEl[i].classList.add('hide');
+        // }
+        function showAllList() {
+            if(this.classList.contains('small')) {
+                let ty = this.style.getPropertyValue('--ty');
+                if (ty === '0') {
+                    this.style.setProperty('--ty', '70%');
+                }
+                else {
+                    this.style.setProperty('--ty', 0);
+                }
+            }
+            else {
+                rowEl.classList.add('small');
+                this.style.setProperty('--ty', '70%');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function showProdList() {
+            e.target.style.opacity = 1;
+            let prodList = document.querySelectorAll('.prodInfo')[0];
+            prodList.classList.add('hide');
+            prodList.addEventListener('animationend', function() {
+                this.remove();
+            })
+            let smallRow = document.querySelectorAll('.small')[0];
+            smallRow.classList.remove('small');
+            document.body.style.overflow = 'auto';
+            // show all img
+            // let showEl = document.querySelectorAll('.pic img:not(.move)');
+            // for (let i = 0; i < showEl.length; i++){
+            //     showEl[i].classList.remove('hide');
+            // }
+        }
+    }
+</script>
