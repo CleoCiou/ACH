@@ -165,8 +165,8 @@ function init() {
         footerAbout.style.animation = 'rotate 1s';
     })
     footerAbout.addEventListener('animationend', function(e){
-        let cookie = document.cookie.split(';');
-        if (cookie.indexOf(' footer=true') === -1) {
+        let cookie = document.cookie.split('; ');
+        if (cookie.indexOf('footer=true') === -1) {
             alert('找到一張9折優惠券!');
             document.cookie = "footer=true";
         }

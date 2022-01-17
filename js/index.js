@@ -10,8 +10,9 @@ window.addEventListener('load', function() {
         setTimeout(() => {
             document.querySelectorAll('header .logo')[0].style.opacity = 1;
             setTimeout(() => {
-                let cookie = document.cookie.split(';');
-                if (cookie.indexOf(' enter=true') === -1) {
+                let cookie = document.cookie.split('; ');
+                console.log(cookie);
+                if (cookie.indexOf('enter=true') === -1) {
                     alert('掉出了一張7折優惠券!');
                     document.cookie = "enter=true";
                 }
