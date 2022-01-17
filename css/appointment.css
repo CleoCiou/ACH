@@ -1,3 +1,8 @@
+header .logo:after {
+    content: '|預約';
+    display: inline-block;
+    vertical-align: middle;
+}
 main {
     background: none;
     padding-top: 3em;
@@ -119,6 +124,9 @@ main .container > .row > .col-12:after {
 .fade-in {
     animation: fade-in 2s forwards;
 }
+.appointment-btn {
+    display: none;
+}
 @media screen and (max-width: 767px) {
     .wrap .slider-wrap {
         width: 100%;
@@ -156,7 +164,6 @@ main .container > .row > .col-12:after {
     }
     .wrap > .col:first-child {
         width: 35%;
-        text-align: center;
     }
     main .container > .row > .col-12:after {
         background-color: transparent;

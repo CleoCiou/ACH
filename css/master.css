@@ -98,18 +98,18 @@ main .container .row {
     border: none;
     color: #fff;
     font-size: 1em;
-    padding: 5px 15px;
+    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
     letter-spacing: 3px;
 }
 .collect-btn {
     margin: 10px 0;
-    background-color: #61413580;
+    background-color: #614135aa;
     border: none;
     color: #fff;
     font-size: 1em;
-    padding: 5px 15px;
+    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
     letter-spacing: 3px;
@@ -234,7 +234,17 @@ footer {
     footer .back {
         text-align: right;
     }
+    footer .col.about {
+        cursor: pointer;
+    }
 
+@keyframes rotate {
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(1deg);}
+    55%{transform: rotate(-2deg);}
+    80%{transform: rotate(2deg);}
+    100%{transform: rotate(0deg);}
+}
 /* ----- rwd ----- */
 @media screen and (max-width: 767px) {
     main ul li:not(.labelBtn) {

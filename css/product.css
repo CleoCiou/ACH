@@ -1,3 +1,8 @@
+header .logo:after {
+    content: '|樣式';
+    display: inline-block;
+    vertical-align: middle;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -12,6 +17,9 @@ main .container {
 }
 .container.prodlist .row {
     z-index: 3;
+}
+.category-list {
+    margin-bottom: 10px;
 }
 .prodlist .category-list span {
     padding-right: 1em;
@@ -37,7 +45,7 @@ main .container {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #ccc5;
+    background-color: #8885;
     transform-origin: top left;
     transform: translate(2%, 85vh) scale(0.2);
     border-radius: 20px;
@@ -46,13 +54,16 @@ main .container {
     height: 200vh;
     padding: 5%;
 }
+.prodlist .row.small .item .pic {
+    width: 50%;
+}
 .prodlist .row.small .category-list {
     display: none;
 }
 .prodlist .row.small.small-on-click {
     transform: translate(2%, 59vh) scale(0.2);
     overflow-y: scroll;
-    background-color: #ccca;
+    background-color: #fffa;
 }
 .prodlist .row.small:hover {
     transform: translate(2%, 59vh) scale(0.2);
@@ -89,24 +100,13 @@ main .container {
 }
 /* item.clone */
 .prodlist .item.clone {
-    /* flex-direction: row-reverse; */
-    /* justify-content: center; */
-    /* position: relative; */
     animation: fade-in 2s;
-    height: 100vh;
-    /* align-items: center; */
-    /* padding: auto 0; */
+    margin-top: 100px;
     z-index: 2;
 }
-/* .prodlist .item.clone .pic {
-    width: 40%;
-} */
 .prodlist .item.clone img {
     opacity: 1;
 }
-/* .prodlist .item.clone .txt {
-    display: initial;
-} */
 
 /* animation */
 @keyframes fade-in {
@@ -124,42 +124,6 @@ main .container {
     animation: fade-out .5s forwards;
 }
 
-/* rwd */
-@media screen and (max-width: 767px) {
-    .prodlist .item.clone .pic {
-        width: 50%;
-    }
-    .prodlist .item.clone .txt {
-        padding: 0 20%;
-    }
-}
-@media screen and (min-width: 768px) {
-    .col:nth-child(3n) .item {
-        flex-direction: row-reverse;
-    }
-    .prodlist .item .pic {
-        width: 40%;
-    }
-    .prodlist .item.clone {
-        flex-direction: row-reverse;
-        justify-content: center;
-        position: relative;
-        align-items: center;
-    }
-
-    .prodinfo .pic {
-        margin: auto;
-    }
-    .prodinfo .col.pic img {
-        width: 70%;
-    }
-    .otherinfo .row {
-        background-color: #d9d9d985;
-        border-radius: 20px;
-        padding: 15px;
-    }
-}
-
 /* side menu */
 .side-menu {
     position: fixed;
@@ -168,13 +132,15 @@ main .container {
     top: 3em;
     font-size: 1em;
     z-index: 4;
+    transition: 1s;
     animation: fade-in 2s;
 }
 .side-menu a {
     display: block;
     position: relative;
     cursor: pointer;
-    padding: 10px 0;
+    padding: 5px 0;
+    padding-left: 5px;
     text-decoration: none;
     color: #555;
 }
@@ -190,9 +156,63 @@ main .container {
 .side-menu a.active {
     font-size: 1.5em;
     transform: translate(-1em);
+    background-color: #fffa;
+    border-radius: 5px;
 }
 .side-menu a.active:after {
     display: block;
     transition: .5s;
     height: 2px;
+}
+.recommend .product .txt {
+    padding-left: 5px;
+}
+
+/* rwd */
+@media screen and (max-width: 767px) {
+    .otherinfo {
+        margin-top: 50px;
+        background-color: #fffa;
+    }
+    .otherinfo .col:nth-child(2) {
+        padding: 50px 0;
+    }
+    .prodlist .row.small {
+        display: none;
+    }
+}
+@media screen and (min-width: 768px) {
+    header .main-nav a:nth-child(3) {
+        position: relative;
+        color: #614135;
+        border-bottom: 1px solid #614135;
+    }
+    .col:nth-child(3n) .item {
+        flex-direction: row-reverse;
+    }
+    .prodlist .item .pic {
+        width: 40%;
+    }
+    .prodlist .item.clone {
+        flex-direction: row-reverse;
+        justify-content: center;
+        position: relative;
+        align-items: center;
+    }
+    main .container.prodinfo,
+    main .container.otherinfo,
+    main .container.recommend {
+        padding-bottom: 50px;
+    }
+    .prodinfo .pic {
+        margin: auto;
+    }
+    .prodinfo .col.pic img {
+        width: 70%;
+    }
+    .otherinfo .row {
+        background-color: #fffa;
+        border-radius: 20px;
+        padding: 2em;
+    }
 }

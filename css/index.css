@@ -293,7 +293,7 @@ main section.category .row {
     main section.category .select {
         margin-top: 10px;
         display: inline-block;
-        padding: 6px 8px;
+        padding: 6px 5px;
         background-color: #61413580;
         color: #fff;
         cursor: pointer;
@@ -368,6 +368,9 @@ main section.category .row {
         width: 95%;
     }
     /* ----- category ----- */
+    .category .row {
+        overflow: hidden;
+    }
     .category-list > label {
         transition: 1s;
         background: linear-gradient(90deg, #61413555, transparent) no-repeat;

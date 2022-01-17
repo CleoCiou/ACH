@@ -127,7 +127,7 @@ function resetImg(e) {
     }
 
     // hide product info and others info
-    let none = document.querySelectorAll('.container:not(.prodlist)');
+    let none = document.querySelectorAll('main .container:not(.prodlist)');
     for (let i = 0; i < none.length; i++) {
         none[i].classList.add('none');
     }
@@ -138,13 +138,6 @@ function resetImg(e) {
 
     // remove event listener to scroll
     window.removeEventListener('scroll', changeSideMenu);
-
-    // =========================================================這裡這裡=========================================================
-    // set active to first child
-    // scroll and change sidemenu
-    // click not first child hide prodlist row
-    // scroll to not first child hide prodlist row
-    // =========================================================這裡這裡=========================================================
 }
 
 // ===============================================================================================
@@ -162,7 +155,6 @@ function changeImg(e) {
     cloneImg(e);
 }
 
-
 // ===============================================================================================
 // function: changeSideMenu()
 // - scroll in product info
@@ -171,7 +163,36 @@ function changeImg(e) {
 // -- change side menu style to section title
 // ===============================================================================================
 function changeSideMenu() {
-    // =======================================
+    let sideMenu = document.querySelectorAll('.side-menu:not(.none) a');
+    if (sideMenu.length > 0) {
+        let activeMenu = document.querySelectorAll('.side-menu:not(.none) a.active')[0];
+        let prodinfo = document.querySelectorAll('#prodinfo')[0];
+        let otherinfo = document.querySelectorAll('#otherinfo')[0];
+        if (window.scrollY > otherinfo.offsetTop-200) {
+            if (Array.from(sideMenu).indexOf(activeMenu) !== 2) {
+                activeMenu.classList.remove('active');
+                sideMenu[2].classList.add('active');
+                document.querySelectorAll('.side-menu')[0].style.top = '-1em';
+            }
+        }
+        else if (window.scrollY > prodinfo.offsetTop-200) {
+            if (Array.from(sideMenu).indexOf(activeMenu) !== 1) {
+                activeMenu.classList.remove('active');
+                sideMenu[1].classList.add('active');
+                document.querySelectorAll('.side-menu')[0].style.top = '1em';
+                document.querySelectorAll('.prodlist .small')[0].style.left = '-20%';
+            }
+        }
+        else {
+            if (Array.from(sideMenu).indexOf(activeMenu) !== 0) {
+                activeMenu.classList.remove('active');
+                sideMenu[0].classList.add('active');
+                document.querySelectorAll('.side-menu')[0].style.top = '3em';
+                document.querySelectorAll('.prodlist .small')[0].removeAttribute('style');
+            }
+        }
+    }
+    
 }
 
 // fade-in / fade-out and toggle .small

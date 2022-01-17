@@ -159,6 +159,22 @@ function init() {
 
     // append calendar with #schedule -- schedule.js
     if (document.getElementById('schedule') !== null) createCalendar();
+
+    let footerAbout = document.querySelectorAll('footer .col.about')[0];
+    footerAbout.addEventListener('click', function(){
+        footerAbout.style.animation = 'rotate 1s';
+    })
+    footerAbout.addEventListener('animationend', function(e){
+        let cookie = document.cookie.split(';');
+        if (cookie.indexOf(' footer=true') === -1) {
+            alert('找到一張9折優惠券!');
+            document.cookie = "footer=true";
+        }
+        else {
+            alert('這裡沒有東西了!');
+        }
+        e.target.removeAttribute('style');
+    })
 }
 
 window.addEventListener('load', init);

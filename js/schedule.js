@@ -102,7 +102,7 @@ function createCalendar(){
     // appointment button
     node = document.createElement('button');
     node.innerText = '預約';
-    node.classList.add('appointmentBtn');
+    node.classList.add('appointment-btn');
     document.getElementById('calendarFooter').appendChild(node);
 
 

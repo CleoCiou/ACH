@@ -1,5 +1,9 @@
 /* header */
-
+header .logo:after {
+    content: '|其他資訊';
+    display: inline-block;
+    vertical-align: middle;
+}
 main {
     padding-top: 5em;
 }
