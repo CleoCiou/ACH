@@ -165,10 +165,11 @@ function init() {
         footerAbout.style.animation = 'rotate 1s';
     })
     footerAbout.addEventListener('animationend', function(e){
-        let cookie = document.cookie.split('; ');
-        if (cookie.indexOf('footer=true') === -1) {
+        console.log(document.cookie);
+        let cookie = document.cookie.split(';');
+        if (cookie.indexOf('footer') === -1) {
             alert('找到一張9折優惠券!');
-            document.cookie = "footer=true";
+            document.cookie = 'footer';
         }
         else {
             alert('這裡沒有東西了!');

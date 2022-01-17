@@ -12,9 +12,9 @@ window.addEventListener('load', function() {
             setTimeout(() => {
                 let cookie = document.cookie.split('; ');
                 console.log(cookie);
-                if (cookie.indexOf('enter=true') === -1) {
+                if (cookie.indexOf('enter') === -1) {
                     alert('掉出了一張7折優惠券!');
-                    document.cookie = "enter=true";
+                    document.cookie = 'enter';
                 }
                 window.scrollTo({
                     top: document.querySelectorAll('.container.news')[0].offsetTop+30,
