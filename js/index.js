@@ -164,6 +164,15 @@ window.addEventListener('load', function() {
                 changeCtg(document.getElementById(e.target.htmlFor));
         });
     }
+    let ctgList = document.querySelectorAll('.category-list label');
+    for (let i = 0; i < ctgList.length; i++) {
+        ctgList[i].addEventListener('click', function() {
+            location.href = 'product.html';
+        })
+    }
+    document.querySelectorAll('.container.category .pic .select')[0].addEventListener('click', function() {
+        location.href = 'product.html';
+    })
     function changeCtg(item) {
         let category = document.querySelectorAll('input[name=category]');
         let active = document.querySelectorAll('input[name=category]:checked')[0];

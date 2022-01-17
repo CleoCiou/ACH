@@ -46,23 +46,10 @@ main {
     justify-content: center;
 }
 .wrap.row > .title {
-    position: sticky;
     top: 3em;
 }
 .container > .row > .col-12 {
     position: relative;
-}
-main .container > .row > .col-12:after {
-    content: '';
-    width: 15em;
-    height: 1.2em;
-    display: block;
-    position: fixed;
-    top: 4em;
-    left: 0;
-    transform: translate(1em, -50%);
-    background-color: #61413550;
-    /* border-radius: 50%; */
 }
 .wrap {
     padding-bottom: 30px;

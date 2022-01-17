@@ -1,3 +1,10 @@
+let appointmentBtn = document.querySelectorAll('.appointment-btn');
+for (let i = 0; i < appointmentBtn.length; i++) {
+    appointmentBtn[i].addEventListener('click', function(){
+        location.href = 'appointment.html';
+    })
+}
+
 let span = document.querySelectorAll('.prodlist .category-list span');
 for (let i = 0; i < span.length; i++) {
     span[i].addEventListener('click', function(e) {
@@ -6,6 +13,7 @@ for (let i = 0; i < span.length; i++) {
 }
 function changeCtg(e) {
     let activeSpan = document.querySelectorAll('.prodlist .category-list span.active')[0];
+
     activeSpan.classList.remove('active');
     e.target.classList.add('active');
 }
@@ -86,6 +94,9 @@ function cloneImg(e) {
     let txt = clone.querySelector('.txt');
     txt.classList.remove('none');
     // console.log(clone);
+    clone.querySelectorAll('.appointment-btn')[0].addEventListener('click', function(){
+        location.href = 'appointment.html';
+    })
     let appendParent = document.querySelectorAll('.prodlist')[0];
     appendParent.appendChild(clone);
     // show product info and other info if display: none

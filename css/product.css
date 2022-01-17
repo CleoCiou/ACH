@@ -10,7 +10,7 @@ main .container {
     padding-top: 3em;
 }
 /* ensure content z-index bigger than background */
-.container .row {
+main .container .row {
     position: relative;
     z-index: 2;
     width: 80%;
