@@ -8,10 +8,12 @@ function animate() {
     document.querySelectorAll('.quick-start .logo')[0].classList.add('fade-bottom');
     setTimeout(() => {
         document.querySelectorAll('header .logo')[0].style.opacity = 1;
-        window.scrollTo({
-            top: document.querySelectorAll('.container.news')[0].offsetTop+30,
-            behavior: 'smooth',
-        });
+        setTimeout(() => {
+            window.scrollTo({
+                top: document.querySelectorAll('.container.news')[0].offsetTop+30,
+                behavior: 'smooth',
+            });
+        }, 100);
         scrollback = true;
     }, 1000);
 }
