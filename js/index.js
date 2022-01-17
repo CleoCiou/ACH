@@ -3,6 +3,7 @@ window.addEventListener('load', function() {
     let enter = document.querySelectorAll('.quick-start .logo')[0];
     let scrollback = true;
     enter.addEventListener('click', animate);
+    enter.addEventListener('touchstart', animate);
     function animate() {
         document.querySelectorAll('.quick-start .panel.appointment')[0].classList.add('fade-left-top');
         document.querySelectorAll('.quick-start .panel.category')[0].classList.add('fade-right-bottom');
@@ -11,7 +12,6 @@ window.addEventListener('load', function() {
             document.querySelectorAll('header .logo')[0].style.opacity = 1;
             setTimeout(() => {
                 let cookie = document.cookie.split('; ');
-                console.log(cookie);
                 if (cookie.indexOf('enter') === -1) {
                     alert('掉出了一張7折優惠券!');
                     document.cookie = 'enter';
@@ -25,6 +25,12 @@ window.addEventListener('load', function() {
         }, 1000);
     }
     document.querySelectorAll('.container.news')[0].addEventListener('wheel', function(e) {
+        newsScroll(e);
+    })
+    document.querySelectorAll('.container.news')[0].addEventListener('touchmove', function(e) {
+        newsScroll(e);
+    })
+    function newsScroll(e) {
         if (e.deltaY < 0 && scrollback) {
             if (window.scrollY < document.querySelectorAll('.quick-start')[0].clientHeight) {
                 scrollback = false;
@@ -33,7 +39,7 @@ window.addEventListener('load', function() {
                 document.querySelectorAll('.quick-start .panel.category')[0].classList.remove('fade-right-bottom');
             }
         }
-    })
+    }
     // ========== news ==========
     window.addEventListener('scroll', checkScroll);
     let setCarousel = true;
