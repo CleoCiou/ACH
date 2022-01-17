@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.main-header{
+			background-color: #ccc;
+			display: flex;
+			padding: 5px 10px;
+			justify-content: space-between;
+			position: relative;
+			margin-bottom: 20px;
+		}
+		.logo{
+			font-size: 12px;
+			height: 40px;
+			background-color: #f00;
+		}
+		#menu-check{
+			display: none;
+		}
+		.main-nav a{
+			padding: 10px;
+			color: #fff;
+			text-decoration: none;
+		}
+		
+		/*手機專用*/
+		@media screen and (max-width: 767px){
+			.main-header{
+				position: sticky;
+				top: 0;
+			}
+			.hb{
+				width: 40px;
+				height: 40px;
+				background-color: #f00;
+				position: relative;
+			}
+			.hb:before,
+			.hb:after{
+				content: '';
+				position: absolute;
+				width: 80%;
+				height: 4px;
+				background-color: #fff;
+				right: 0;
+				left: 0;
+				margin: auto;
+				transform: rotate(0deg);
+			}
+			.hb:before{
+				top: 5px;
+				box-shadow: 0px 13px 0px #ff0;
+				transition: box-shadow .3s .6s,
+							top        .3s .3s,
+							transform  .3s 0s;
+			}
+			.hb:after{
+				bottom: 5px;
+				transition: bottom     .3s .3s,
+							transform  .3s 0s;
+			}
+			#menu-check:checked ~ .main-header .hb:before{
+				top: 18px;
+				box-shadow: 0px 13px 0px #ff00;
+				transform: rotate(45deg);
+				transition: box-shadow .3s 0s,
+							top        .3s .3s,
+							transform  .3s .6s;
+			}
+			#menu-check:checked ~ .main-header .hb:after{
+				bottom: 18px;
+				transform: rotate(-45deg);
+				transition: bottom     .3s .3s,
+							transform  .3s .6s;
+			}
+			.main-nav{
+				/*display: none;*/
+				position: absolute;
+				width: 90%;
+				top: 100%;
+				left: -90%;
+				opacity: 0;
+				background-color: #f00;
+				transition: opacity 1s, left 0s .9s;
+			}
+			#menu-check:checked ~ .main-header .main-nav{
+				left: 0;
+				opacity: 1;
+				transition: 1s;
+			}
+			.main-nav a{
+				display: block;
+			}
+			.main-nav a + a{
+				border-top: 1px solid #fff;
+			}	
+		}
+
+		/*平版*/
+		@media screen and (min-width: 768px){
+			.hb{
+				display: none;
+			}
+			.main-nav a{
+				display: inline-block;
+			}
+		}
+	</style>
+</head>
+<body>
+	<input type="checkbox" id="menu-check">
+
+	<header class="main-header">
+		<a href="#" class="logo">
+			<h1><img src="https://picsum.photos/id/666/80/40" alt=""></h1>
+		</a>
+
+		<label for="menu-check" class="hb"></label>
+
+		<nav class="main-nav">
+			<a href="#">link</a>
+			<a href="#">link</a>
+			<a href="#">link</a>
+			<a href="#">link</a>
+			<a href="#">link</a>
+		</nav>
+	</header>
+
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, sed, totam. Aliquid labore magnam nihil rem. Sunt iure nisi pariatur exercitationem ducimus, explicabo blanditiis quae tenetur iste qui error consectetur.</p>
+	<p>Ea, culpa eaque doloremque iusto autem ex delectus illum necessitatibus quos. Et ipsa vitae, ullam ratione mollitia consequuntur iusto! Accusamus veniam eligendi deserunt nobis quidem cupiditate dolor repellendus velit aut.</p>
+	<p>Enim ad ipsa soluta vero, voluptatem optio quam quidem, eum sequi doloribus expedita corrupti delectus, quod quibusdam nisi voluptatum sed consequatur impedit odio ab maiores, voluptatibus ullam ducimus. Reprehenderit, corporis.</p>
+	<p>Maiores, molestiae? Quis, consequatur? Placeat qui exercitationem facilis, praesentium quas perferendis beatae earum vitae nemo accusamus atque maxime! Nam vitae dolores magnam eos velit, veritatis voluptate voluptatem vero blanditiis dignissimos.</p>
+	<p>Exercitationem, aut asperiores quod corporis et temporibus laborum ratione totam accusantium nobis cupiditate at ad vitae quisquam deserunt dolorum fuga beatae cumque esse eius fugiat assumenda molestias alias ut amet.</p>
+	<p>Ullam voluptates exercitationem obcaecati ipsam culpa, unde at, quas perferendis. Amet reprehenderit nesciunt praesentium quisquam esse ipsam voluptas et voluptatem quas placeat perspiciatis molestias dignissimos qui, aperiam animi at debitis.</p>
+	<p>Eos error, eaque voluptas illo reprehenderit, hic nesciunt ullam repellat ex nulla nisi iusto obcaecati. Repellendus id consequuntur vel, et doloremque exercitationem, cumque nisi ex optio expedita provident at, eos!</p>
+	<p>Deserunt esse unde culpa molestiae minus tempora omnis aliquam iusto dolores. Harum deleniti at hic perferendis, minus, unde sed corporis. Quaerat molestiae voluptatem est nemo error rem eveniet accusamus laboriosam.</p>
+	<p>Distinctio quam natus eius nostrum aliquam mollitia atque iusto facilis minima libero architecto magni, rem non excepturi explicabo ipsa maxime dolorem dolor? Fuga amet commodi eius a itaque, reprehenderit, quam?</p>
+	<p>Quia consequatur in accusamus labore nostrum earum aliquid, asperiores expedita accusantium quisquam cumque, consequuntur sunt quibusdam doloribus excepturi quod voluptates? Obcaecati, quam expedita assumenda cum dolor reprehenderit minus debitis corrupti.</p>
+
+
+
+
+
+</body>
+</html>

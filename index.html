@@ -4,294 +4,185 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACH Nails Studio.</title>
-    <!-- common setting -->
+    <title>ACH Nails Studio</title>
+    
     <script src="js/common.js"></script>
-    <!-- index.css -->
     <link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
-    <!-- header -->
-    <header>
-        <div class="container">
-            <div class="row row-cols-3 align-items-center">
-                <!-- main menu -->
-                <div class="col open-menu-btn" onclick="popupSize('menu-popup', 'width', '100%')"><span></span></div>
-                <!-- logo -->
-                <a class="col logo" href="index.html">
-                    <img class="vertical-align-middle" src="img/logo_nb.png" alt="ACH logo">
-                    <span class="vertical-align-middle none">ACH Nails Studio.</span>
-                </a>
-                <!-- side menu -->
-                <div class="col side-menu">
-                    <a class="about decoration-line none" href="#">關於</a>
-                    <a class="search decoration-line" class="open-menu-btn" onclick="popupSize('search-popup', 'height', '10%')">搜尋</a>
-                    <a class="collect decoration-line" onclick="popupSize('collection-popup', 'width', '100%')" href="#">我的收藏</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- bounce wrap (fixed) -->
-        <!-- main menu nav (full window) -->
-        <div class="menu-popup" id="menu-popup">
-            <a class="closebtn" onclick="popupSize('menu-popup', 'width', '0')">&times;</a>
-            <nav class="main-menu">
-                <a class="style decoration-line" href="#">樣式</a>
-                <a class="appointment decoration-line" href="#">預約</a>
-                <a class="info decoration-line" href="#">其他資訊</a>
-            </nav>
-        </div>
-        <!-- search bar (top) -->
-        <div class="search-popup" id="search-popup">
-            <a href="javascript:void(0)" class="closebtn" onclick="popupSize('search-popup', 'height', '0')">&times;</a>
-            <nav class="search-bar">
-                <input type="text" placeholder="想看看新年樣式嗎..?">
-                <input type="button" value="找!">
-            </nav>
-        </div>
-        <!-- collection (full window) -->
-        <div class="collection-popup" id="collection-popup">
-            <a href="javascript:void(0)" class="closebtn" onclick="popupSize('collection-popup', 'width', '0')">&times;</a>
-            <div class="item">
+<!-- header append from common.js -->
+<header></header>
+
+<!-- main -->
+<main>
+    <!-- quick start -->
+    <section class="container quick-start">
+        <div class="row row-cols-1 row-cols-md-2">
+
+            <!-- logo: go to news -->
+            <a class="logo" href="#">
                 <div class="pic">
-                    <img src="https://picsum.photos/300/100/?random=2">
+                    <img src="img/logo_nb.png" alt="LOGO">
                 </div>
                 <div class="txt">
-                    <h3>據說公路</h3>
-                    <input type="button" value="預約">
+                    <p>ACH Nails Studio.</p>
+                    <p>個人居家美甲工作室</p>
                 </div>
-            </div>
-        </div>
-    </header>
+                <span class="enter">enter</span>
+            </a>
+            <!-- go to appointment.html -->
+            <a class="col panel appointment" href="appointment.html">
+                <div class="txt">
+                    <h2>預約</h2>
+                </div>
+            </a>
+            <!-- go to category -->
+            <a class="col panel category" href="#category">
+                <div class="txt">
+                    <h2>樣式</h2>
+                </div>
+            </a>
 
-    <!-- main -->
-    <main>
-        <!-- news -->
-        <section class="container news">
-            <div class="row nowrap">
-                <div class="col-12">
-                    <div class="item row row-cols-2">
+            <span class="faq">FAQ</span>
+            <span class="about">ABOUT</span>
+        </div>
+    </section>
+
+    <!-- news -->
+    <section class="container news" id="news">
+        <h2 class="col-12 title" data-eng-title="News">最新活動</h2>
+        <span class="last-btn"></span>
+        <span class="next-btn"></span>
+        <div class="wrap">
+
+            <div class="slider">
+                <!-- new style -->
+                <div class="product new active">
+                    <div class="row row-cols-1 row-cols-md-2 align-items-center">
                         <div class="col txt">
-                            <h2>最新樣式</h2>
-                            <h3>南雅奇岩</h3>
-                            <p>
-                                靈感來自於瑞芳有個叫「南雅奇岩」的美麗岩石岩面上的紋路就像樹木年輪，記錄了大自然經年歲月的痕跡與生命力。
-                            </p>
+                            <p>本月新款</p>
+                            <h3 class="productName">花樣中國紅</h3>
+                            <p>勝日尋芳泗水濱，無邊光景一時新。<br>等閑識得東風麵，萬紫千紅總是春。</p>
                             <button class="appointment-btn">預約</button>
                         </div>
                         <div class="col pic">
-                            <img src="img/products/create/7.jpg">
+                            <img src="img/products/redflow.jpg" alt="花樣中國紅">
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- appointment -->
-        <section class="container appointment">
-            <div class="row">
-                <div class="col-12">
-                    <div class="item row row-cols-1 row-cols-lg-2">
+                <!-- on sale -->
+                <div class="product onsale">
+                    <div class="row row-cols-1 row-cols-md-2 align-items-center">
+                        <div class="col txt">
+                            <p>優惠款式</p>
+                            <h3 class="productName">南雅奇岩</h3>
+                            <p>靈感來自於有個叫「南雅奇岩」的美麗岩石岩面上的紋路就像樹木年輪，記錄了大自然經年歲月的痕跡與生命力。</p>
+                            <button class="appointment-btn">預約</button>
+                        </div>
                         <div class="col pic">
-                            <img src="img/products/create/8.jpg">
-                        </div>
-                        <div class="col schedule">
-                            <div id="schedule"></div>
+                            <img src="img/products/nanya_rock.jpg" alt="南雅奇岩樣式">
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- category -->
-        <section class="container category">
-            <div class="row">
-                <div class="col-12">
-                    <div class="item">
-                        <div class="pic">
-                            <img src="img/products/create/7.jpg" alt="">
-                        </div>
-                        <div class="txt">
-                            <div class="block" href="#">
-                                <span class="block">單色|跳色</span>
-                                <span class="block">Single|Jump</span>
-                            </div>
-                            <div class="block" href="#">
-                                <span class="block">貓眼|鏡面</span>
-                                <span class="block">CatEyes|Mirror</span>
-                            </div>
-                            <div class="block" href="#">
-                                <span class="block">單色漸層</span>
-                                <span class="block">Single Gardual</span>
-                            </div>
-                            <div class="block" href="#">
-                                <span class="block">法式漸層</span>
-                                <span class="block">Franch Gardual</span>
-                            </div>
-                            <div class="block" href="#">
-                                <span class="block">客製化造型</span>
-                                <span class="block">Custom Style</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- info -->
-        <section class="container info">
-            <div class="row row-cols-1 infoList">
-                <div class="col">
-                    <div class="item bg">
-                        <div class="pic">
-                            <img src="https://picsum.photos/300/500/?random=1">
-                        </div>
-                        <div class="txt">
-                            <h3>價目表</h3>
-                            <p class="none">
-                                單色|跳色 Single|Jump    NT $900<br>
-                                貓眼|鏡面 CatEyes|Mirror NT $1,000<br>
-                                單色漸層 Single Gardual  NT $1,100<br>
-                                法式漸層 French Gardual  NT $1,200<br>
-                                客製化造型 Custom Style  NT $1,300
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="item bg">
-                        <div class="pic">
-                            <img src="https://picsum.photos/300/500/?random=2">
-                        </div>
-                        <div class="txt">
-                            <h3>預約流程</h3>
-                            <ul class="none">
-                                <li>每月14日晚上8點開放舊客預約</li>
-                                <li>每月15日晚上8點開放新客預約</li>
-                                <li>開放預約日中午12點公告可預約時段</li>
-                                <li>選擇樣式及填寫詳細資料並按下預約</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="item bg">
-                        <div class="pic">
-                            <img src="https://picsum.photos/300/500/?random=3">
-                        </div>
-                        <div class="txt">
-                            <h3>預約須知</h3>
-                            <ul class="none">
-                                <li>ACH Nail Studio為個人居家美甲工作室，採預約制度。</li>
-                                <li>限本人預約。</li>
-                                <li>付款方式: 現金、現場網銀轉帳，暫不提供刷卡。</li>
-                                <li>預約保留15分鐘，遲到20分鐘視同取消。</li>
-                                <li>施作時間為2-3小時，時間長短依款式複雜度及皮膚狀況而定。</li>
-                                <li>預約後如需取消或改期，請至少提前五天告知，以利作業。</li>
-                                <li>居家工作室空間有限，不可攜伴。</li>
-                                <li>若兩位同行請選連續時段，由一人代表預約並提供完整兩人預約資料。</li>
-                                <li>需延甲或複雜手繪請在預約時告知，以便安排時間。</li>
-                                <li>自帶圖:無法100%複製，色卡依現場為主。</li>
-                                <li>暫無提供「足部新客」預約。</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="item bg">
-                        <div class="pic">
-                            <img src="https://picsum.photos/300/500/?random=4">
-                        </div>
-                        <div class="txt">
-                            <h3>FAQ</h3>
-                            <ul class="none">
-                                <li>
-                                    <p class="q">光療能維持多久?</p>
-                                    <p class="a none">三到四週是一個安全範圍值，但也會因為每個人使用度而有所不同。</p>
-                                </li>
-                                <li>
-                                    <p class="q">前端顏色很快剝落?</p>
-                                    <p class="a none">前端磨損是很正常的，日常生活一直頻繁使用指尖做事也會影響磨損速度。</p>
-                                </li>
-                                <li>
-                                    <p class="q">指甲翻起來怎麼處理?</p>
-                                    <p class="a none">可拿指甲都稍微剪短，修不到的部分盡快找店家做處理，以免勾髮或者發霉。</p>
-                                </li>
-                                <li>
-                                    <p class="q">不想卸甲，都用拔的?</p>
-                                    <p class="a none">建議三到四週要回美甲店卸甲
-                                        ，若用拔的會導致真假損傷、分層、變薄。</p>
-                                </li>
-                                <li>
-                                    <p class="q">如何延長光療壽命?</p>
-                                    <p class="a none">盡量減少使用指尖做事，改為使用指腹；太燙的水、使用清潔劑及流手汗也都會影響光療的維持度。</p>
-                                </li>
-                                <li>
-                                    <p class="q">為甚麼會導致發霉?</p>
-                                    <p class="a none">可能為使用習慣不好，如摳甲、咬甲、泡水等等，導致真甲與光療面產生隙縫進水或空氣，而手部長時間為乾燥就會導致發霉。因此需要定時卸甲，不要看似完整就不卸除。</p>
-                                </li>
-                                <li>
-                                    <p class="q">長綠黴菌如何處理?</p>
-                                    <p class="a none">回店家卸甲後看發霉程度，黴菌是由甲面往下生長到的甲肉，輕微黴菌可使用海綿拋拋除，若嚴重黴菌則需看醫生。</p>
-                                </li>
-                                <li>
-                                    <p class="q">卸甲後指甲變軟?</p>
-                                    <p class="a none">可能因已經習慣有硬度的甲面做事，卸完後才覺得變軟；也可能為店家過度拋磨或使用不好的底膠導致。建議變薄的指甲要休息三到四個月。</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- footer -->
-    <footer>
-        <div class="container">
-            <div class="row row-cols-4">
-                <div class="col">
-                    <div class="item">
-                        <span>樣式</span>
-                        <p><a class="decoration-line" href="#">單色|跳色</a></p>
-                        <p><a class="decoration-line" href="#">貓眼|鏡面</a></p>
-                        <p><a class="decoration-line" href="#">單色漸層</a></p>
-                        <p><a class="decoration-line" href="#">法式漸層</a></p>
-                        <p><a class="decoration-line" href="#">客製化造型</a></p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="item">
-                        <span>預約</span>
-                        <p><a class="decoration-line" href="#">預約行事曆</a></p>
-                        <p><a class="decoration-line" href="#">我的收藏</a></p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="item">
-                        <span>其他資訊</span>
-                        <p><a class="decoration-line" href="#">價目表</a></p>
-                        <p><a class="decoration-line" href="#">預約流程</a></p>
-                        <p><a class="decoration-line" href="#">預約須知</a></p>
-                        <p><a class="decoration-line" href="#">防疫公告</a></p>
-                        <p><a class="decoration-line" href="#">FAQ</a></p>
-                    </div>
-                </div>
+    
             </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- appointment -->
+    <section class="container appointment">
+        <h2 class="col-12 title" data-eng-title="Appointment">預約</h2>
+        <div class="row align-items-center">
+
+            <div class="col-12 col-md-4 pic">
+                <img src="img/products/special11.JPG" alt="樣式6">
+            </div>
+
+            <div class="col-12 col-md-8 schedule">
+                <!-- schedule append from common.js -->
+                <div id="schedule"></div>
+            </div>
+
+        </div>
+    </section>
+    <!-- appointment block: appointment btn onclick -->
+    <div class="appointmentBlock none">
+        <button id="closeAppointment">&#10539;</button>
+        <div class="productName">
+            <span>樣式名稱:</span>
+            <select id="style">
+                <option>南雅奇岩</option>
+                <option>花樣中國紅</option>
+                <option>海洋傳說</option>
+                <option>大地水彩</option>
+            </select>
+        </div>
+        <div class="pic">
+            <img src="img/products/nanya_rock.jpg" alt="">
+            <button class="last"></button>
+            <button class="next"></button>
+        </div>
+        <form>
+            <label>預約時段:</label>
+            <input type="date" id="appointmentDate">
+            <select>
+                <option>12:00~15:00</option>
+                <option>15:00~18:00</option>
+                <option>19:00~22:00</option>
+            </select>
+            <div class="customTel none">
+                <label for="phone">電話:</label>
+                <input type="tel" id="phone"  value="0952525252">
+            </div>
+            <div class="sec">
+                <label>施作項目:</label>
+                <select>
+                    <option>手部</option>
+                    <option>足部</option>
+                    <option>純保養</option>
+                    <option>純卸甲</option>
+                </select>
+                <input type="radio" name="disarm" id="disarm" checked>
+                <label for="disarm">卸甲</label>
+                <input type="radio" name="disarm" id="noNeed">
+                <label for="noNeed">不須卸甲</label>
+                <button id="confirmAppointment">完成預約</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- check category -->
+    <input type="radio" name="category" id="check-single" value="單色|跳色 Single|Jump" checked>
+    <input type="radio" name="category" id="check-cateyes" value="貓眼|鏡面 CatEyes|Mirror">
+    <input type="radio" name="category" id="check-gradual" value="單色漸層 Single Gardual">
+    <input type="radio" name="category" id="check-french" value="法式漸層 French Gardual">
+    <input type="radio" name="category" id="check-custom" value="客製化樣式 Custom Style">
+    <!-- category -->
+    <section class="container category" id="category">
+        <h2 class="col-12 title" data-eng-title="Category">樣式</h2>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 category-list">
+                <label data-eng-title="Single | Jump" for="check-single">單色 | 跳色</label>
+                <label data-eng-title="CatEyes | Mirror" for="check-cateyes">貓眼 | 鏡面</label>
+                <label data-eng-title="Single Gardual" for="check-gradual">單色漸層</label>
+                <label data-eng-title="French Gardual" for="check-french">法式漸層</label>
+                <label data-eng-title="Custom Gardual" for="check-custom">客製化造型</label>
+            </div>
+            <div class="col-12 col-md-4 pic">
+                <img src="img/products/special4.jpg" alt="單色">
+                <span class="select">select</span>
+                <span class="last-btn"></span>
+                <span class="next-btn"></span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- footer append from common.js -->
+<footer></footer>
+
 </body>
 </html>
-<script>
-    let el = document.querySelectorAll('.info h3');
-    for (let i = 0; i < el.length; i++) {
-        console.log(el[i].parentElement);
-        el[i].addEventListener('click', function() {
-            let showEl = el[i].parentElement.querySelectorAll('.none')[0];
-            showEl.classList.remove('none');
-        })
-    }
-</script>
+<script src="js/index.js"></script>

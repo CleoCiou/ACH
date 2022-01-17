@@ -8,7 +8,7 @@ let year = today.getFullYear();
 // getMonth(): 0-11
 let month = today.getMonth() + 1;
 // get weekday of month first day
-let myDate = new Date(year + ', ' + month + ', 01');
+let myDate = new Date(year , month , 1);
 // get all days of month
 let alldays = new Date(year, month, 0);
 // switch of calendar date num
@@ -16,7 +16,7 @@ let boo = false;
 // first date of month
 let day = 1;
 
-if (document.getElementById('schedule') !== null) window.onload = createCalendar();
+// if (document.getElementById('schedule') !== null) window.onload = createCalendar;
 function createCalendar(){
     // calendar header
     // month
@@ -71,7 +71,7 @@ function createCalendar(){
                 // day over all days of this month -- end filled date num
                 if (day>alldays.getDate()) boo=false;
                 if (boo) {
-                    node.innerText=day;
+                    node.innerHTML='<p>'+day.toString()+'</p>';
                     day++;
                 }
             }
@@ -102,8 +102,12 @@ function createCalendar(){
     // appointment button
     node = document.createElement('button');
     node.innerText = '預約';
-    node.classList.add('appointment-btn');
+    node.classList.add('appointmentBtn');
     document.getElementById('calendarFooter').appendChild(node);
+
+
+    fakeData();
+    showDetail();
 }
 
 function reset(){
@@ -134,4 +138,57 @@ function nextMonth(){
     if ( month === 1) year++;
     reset();
     createCalendar();
+}
+
+function fakeData() {
+    let day = document.querySelectorAll('.week:not(#week0) .day:not(:empty)');
+    for (let i = 0; i < day.length; i++) {
+        if (i % 4 === 0) {
+            let el = document.createElement('span');
+            el.classList.add('time-12');
+            day[i].append(el);
+        }
+        if (i % 11 === 0 || i % 17 == 3) {
+            let el = document.createElement('span');
+            el.classList.add('time-15');
+            day[i].append(el);
+        }
+        if (i % 6 === 0) {
+            let el = document.createElement('span');
+            el.classList.add('time-19');
+            day[i].append(el);
+        }
+    }
+    showDetail();
+}
+
+function showDetail() {
+    let el = document.querySelectorAll('.week:not(#week0) .day:not(:empty)');
+    for (let i = 0; i < el.length; i++) {
+        if (el[i].querySelectorAll('span').length > 0) {
+            el[i].addEventListener('click', function(e) {
+                appointment(e);
+            });
+        }
+    }
+}
+function appointment(e) {
+    let selectMonth = document.querySelectorAll('#calendarHeader .month')[0].innerText;
+    selectMonth = monthName.indexOf(selectMonth) + 1;
+    let selectDay = e.target.querySelectorAll('p')[0].innerText;
+    selectMonth =  (selectMonth < 10) ?'0'+selectMonth : selectMonth;
+    selectDay =  (selectDay < 10) ?'0'+selectDay : selectDay;
+    document.getElementById('appointmentDate').value = `2022-${selectMonth}-${selectDay}`;
+    let time = e.target.querySelectorAll('span');
+    let timeSelect = document.querySelectorAll('#appointmentDate + select')[0];
+    let newSelection = ''
+    for (let i = 0; i < time.length; i++) {
+        let tmp = time[i].classList[0].replace('time-','');
+        newSelection += `<option>${tmp}:00~${parseInt(tmp)+3}:00</option>`;
+    }
+    timeSelect.innerHTML = newSelection;
+
+    let el = document.querySelectorAll('.appointmentBlock')[0];
+    el.classList.remove('none');
+    el.style.animation = "showDialog 1s 1";
 }

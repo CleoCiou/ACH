@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <style>
+        body {
+            min-height: 100vh;
+            background: url('img/background/rock.jpg') no-repeat top left / cover;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        #check-nav {
+            display: none;
+        }
+        .logo > * {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .logo img {
+            width: 80px;
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .main-nav {
+            display: block;
+            margin: auto 0;
+        }
+        .main-nav a {
+            padding: 5px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .logo h1 {
+                display: none;
+            }
+            .hb {
+                position: absolute;
+                top: 10px;
+                bottom: 10px;
+                right: 10px;
+                width: 50px;
+                background-color: #aaa;
+                cursor: pointer;
+            }
+
+            .main-nav {
+                position: absolute;
+                top: 100%;
+                right: 100%;
+            }
+            #check-nav:checked ~ .main-header .main-nav {
+                right: 0;
+            }
+
+            .main-nav a {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .hb {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="check-nav">
+
+    <header class="main-header">
+        <a href="#" class="logo">
+            <img src="img/logo_nb.png" alt="">
+            <h1>ACH Nails Studio.</h1>
+        </a>
+
+        <nav class="main-nav">
+            <a href="#">最新活動</a>
+            <a href="#">預約</a>
+            <a href="#">全部樣式</a>
+            <a href="#">其他資訊</a>
+            <a href="#">關於ACH</a>
+            <input type="search">
+        </nav>
+
+        <label for="check-nav" class="hb"></label>
+
+    </header>
+</body>
+</html>

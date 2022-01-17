@@ -5,147 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/grid.css">
+    <script src="js/schedule.js"></script>
     <style>
-        * {
-            box-sizing: border-box;
-            text-decoration: none;
-        }
-        input[type="checkbox"] {
-            display: none;
-        }
-
-        /* main menu */
-        /* burger */
-        .burger {
-            cursor: pointer;
-        }
-        .main-menu .burger span {
-            display: block;
-            width: 1.5em;
-            height: 0.15em;
-            background-color: #68433780;
-            font-size: 16px;
-            margin: 5px 0;
-        }
-        .burger:before,
-        .burger:after {
-            content: '';
-            display: block;
-            width: 1.5em;
-            height: 0.15em;
-            background-color: #68433770;
-        }
-        /* click burger and show menu */
-        #main-menu:checked + .main-menu-bar {
-            display: initial;
-        }
-        .main-menu a {
-            display: block;
-        }
-        /* main menu bar position after click burger */
-        .main-menu-bar {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-        }
-
-        /* logo */
-        .logo {
-            text-align: center;
-        }
-        .logo img {
-            width: 5em;
-            vertical-align: middle;
-        }
-        .logo span {
-            display: none;
-            font-size: 1.2em;
-            vertical-align: middle;
-        }
-
-        /* side menu */
-        .side-menu {
-            text-align: right;
-        }
-        .side-menu img {
-            width: 2em;
-        }
-        .search-box {
-            display: none;
-        }
-        #search:checked + .search-box {
-            display: block;
-            position: fixed;
-            top: 3em;
-        }
-        @media  screen and (min-width: 768px) {
-            .burger {
-                display: none;
-            }
-            .main-menu-bar {
-                position: relative;
-                top: 0;
-                left: 0;
-                transform: translate(0);
-                display: block;
-            }
-            .main-menu a {
-                display: inline;
-            }
-            .logo img {
-                width: 3em;
-            }
-            .logo span {
-                display: inline-block;
-            }
+        #schedule {
+            width: 100%;
+            height: 500px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row row-cols-3 align-items-center">
-            <!-- main menu -->
-            <div class="main-menu col">
-                <label class="burger" for="main-menu">
-                    <span></span>
-                </label>
-                <input type="checkbox" name="pop" id="main-menu">
-                <nav class="main-menu-bar">
-                    <a class="news decoration-line col" href="#">最新活動</a>
-                    <a class="appointment decoration-line col" href="#">預約</a>
-                    <a class="style decoration-line col" href="#">樣式</a>
-                    <a class="info decoration-line col" href="#">其他資訊</a>
-                </nav>
-            </div>
-
-            <!-- logo -->
-            <div class="logo col">
-                <img src="img/logo_nb.png" alt="ACH LOGO">
-                <span>ACH Nails Studio.</span>
-            </div>
-
-            <!-- side menu -->
-            <div class="side-menu col">
-                <div class="icon">
-                    <label for="search" class="search">
-                        <img src="img/icon/search.png" alt="">
-                    </label>
-                    <label for="collection" class="collection">
-                        <img src="img/icon/appointment2.png" alt="">
-                    </label>
-                </div>
-                <input type="checkbox" id="search">
-                <div class="search-box">
-                    <input type="text" placeholder="想看看新年樣式嗎..?">
-                    <input type="button" value="搜尋">
-                </div>
-            </div>
-
-        </div>
+    <div class="schedule">
+        <div id="schedule"></div>
     </div>
 </body>
 </html>
+<script>
+    createCalendar();
+</script>

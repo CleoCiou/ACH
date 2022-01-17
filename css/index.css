@@ -1,22 +1,475 @@
-/* news */
-main .news {
-    background: linear-gradient(to bottom, transparent 40%, #ebe9e2ff),
-        url(../img/background/news_bg.svg) center bottom no-repeat;
-    background-size: cover;
+html {
+    scroll-behavior: smooth;
 }
-main .news .txt p {
+section.container .title {
+    position: sticky;
+    top: 2em;
+    z-index: 3;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+header .logo {
+    transition: 1s;
+}
+/* ----- quick start ----- */
+.quick-start {
+    padding: 0;
+    position: relative;
+    z-index: 6;
+    overflow: hidden;
+}
+.quick-start .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    transition: 2s;
+}
+.quick-start .logo.fade-bottom {
+    opacity: 1;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) rotate3d(0,1,0,1turn) scale(0.5);
+}
+.quick-start .logo .pic {
+    width: 8em;
+    margin: auto;
+}
+.quick-start .logo .txt {
     padding: 10px 0;
 }
-/* appointment */
-main .appointment #schedule {
-    background-color: var(--main-txt-bg-color);
-    padding: 15px;
+@keyframes twinkle {
+      0% {opacity: 1;}
+     50% {opacity: 0;}
+    100% {opacity: 1;}
 }
-/* info list */
-main .infoList .item {
-    padding: 0;
+.quick-start .logo span {
+    display: inline-block;
+    font-size: 1.2em;
+    vertical-align: middle;
+    animation: twinkle 5s infinite;
+    color: #614135;
 }
-main .info .txt h3 {
+.quick-start .logo span:before,
+.quick-start .logo span:after {
+    content: '';
+    height: 1px;
+    width: .5em;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #614135;
+    margin: 0 8px;
+}
+.quick-start .panel {
     position: relative;
-    z-index: 1;
+    transition: 2s;
+}
+/* after enter animation */
+.quick-start .panel.fade-left-top {
+    opacity: 0;
+    transform: translate(-50px, -50px);
+}
+.quick-start .panel.fade-right-bottom {
+    opacity: 0;
+    transform: translate(50px, 50px);
+}
+.quick-start .panel .txt {
+    text-align: center;
+}
+.quick-start .panel .txt h2:after {
+    content: '- click -';
+    font-size: 0.4em;
+    display: block;
+    margin-top: -1.5em;
+}
+
+.quick-start .about {
+    position: absolute;
+    top: 1%;
+    right: 3%;
+    color: #61413550;
+    transform: rotate(180deg);
+}
+.quick-start .faq {
+    position: absolute;
+    bottom: 1%;
+    left: 3%;
+    transform-origin: left bottom;
+    color: #61413550;
+}
+
+/* ----- news ----- */
+.news {
+    height: 100vh;
+    padding-top: 5em;
+    position: relative;
+}
+.news .wrap {
+    overflow: hidden;
+}
+.news .wrap .product {
+    width: 100%;
+    flex-shrink: 0;
+    margin-right: 50px;
+}
+.news .product .txt {
+    margin: auto;
+}
+.news .slider {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.news .product.new .pic,
+.news .product.onsale .pic {
+    position: relative;
+}
+.news .product.new .pic:after {
+    content: 'NEW';
+    width: 10em;
+    color: #fff;
+    background-color: #A5896A;
+    display: block;
+    padding: 3px;
+    position: absolute;
+    right: -1.8em;
+    bottom: .8em;
+    font-size: 0.5em;
+    text-align: center;
+    transform: rotate(-30deg);
+}
+.news .product.onsale .pic:after{
+    content: 'ON SALE';
+    width: 12em;
+    color: #fff;
+    background-color: #E3C284;
+    display: block;
+    padding: 3px;
+    position: absolute;
+    right: -2em;
+    bottom: 1.3em;
+    font-size: 0.5em;
+    text-align: center;
+    transform: rotate(-30deg);
+}
+
+/* ----- appointment ----- */
+main section.appointment {
+    min-height: 100vh;
+    padding-top: 5em;
+}
+main section.appointment .row {
+    background-color: #fffa;
+    border-radius: 20px;
+    padding: 20px;
+}
+main section.appointment #schedule {
+    height: 100%;
+}
+.appointment .time-12 {
+    background-color: #A5896A;
+}
+.appointment .time-15 {
+    background-color: #7E9A8A;
+}
+.appointment .time-19 {
+    background-color: #E3C284;
+}
+/* ----- appointment Block ----- */
+@keyframes showDialog {
+    from {top: 0px; opacity: 0;}
+    to {top: 50%; opacity: 1;}
+}
+@keyframes closeDialog {
+    from {top: 50%; opacity: 1;}
+    to {top: 0px; opacity: 0;}
+}
+main .appointmentBlock {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fcfaf5;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 3px #68433780;
+    transition: .5s;
+    z-index: 2;
+}
+main .appointmentBlock > button {
+    position: absolute;
+    background-color: #fcfaf5;
+    top: 5px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    line-height: 1;
+    border-radius: 50%;
+    color: #c2b5ac;
+}
+main .appointmentBlock .productName,
+main .appointmentBlock form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+main .appointmentBlock .sec {
+    margin-top: 5px;
+}
+main .appointmentBlock .productName {
+    background-color: #c2b5ac;
+    padding: 5px 0;
+}
+main .appointmentBlock .productName select {
+    background-color: #fcfaf5;
+}
+main .appointmentBlock .pic {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    position: relative;
+}
+main .appointmentBlock .pic .last {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 0px;
+    transform: translate(0, -50%);
+    opacity: 0.5;
+    background: url(../img/icon/left.png) no-repeat;
+    background-size: contain;
+    border: none;
+}
+main .appointmentBlock .pic .next {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    right: 0px;
+    transform: translate(0, -50%);
+    opacity: 0.5;
+    background: url(../img/icon/right.png) no-repeat;
+    background-size: contain;
+    border: none;
+}
+main .appointmentBlock .pic img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ----- category ----- */
+main section.category {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    position: relative;
+}
+main section.category .row {
+    position: relative;
+}
+    /* category list text */
+    main section.category .category-list {
+        padding-left: 30px;
+    }
+    main section.category .category-list > label {
+        color: #614135;
+        cursor: pointer;
+    }
+    main section.category .pic {
+        position: relative;
+        text-align: center;
+        transition: 1s;
+    }
+    main section.category .pic img {
+        border-radius: 10px;
+    }
+    main section.category .pic.active {
+        transform: translate(25%);
+        opacity: 0;
+    }
+    main section.category .select {
+        margin-top: 10px;
+        display: inline-block;
+        padding: 6px 8px;
+        background-color: #61413580;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: .5s;
+    }
+    main section.category .select:hover {
+        background-color: #614135;
+    }
+
+/* ----- rwd ----- */
+@media screen and (max-width: 767px) {
+    /* ----- quick start ----- */
+    .quick-start .panel {
+        height: 50vh;
+    }
+    .quick-start .panel.appointment {
+        background: linear-gradient(0, #fff 10%, #fff8 100%),
+                    url('../img/background/calendar.jpg') no-repeat right center / cover;
+    }
+    .quick-start .panel.category {
+        background: linear-gradient(180deg, #fff 10%, #fff8 100%),
+                    url('../img/background/style3.jpeg') no-repeat bottom center / cover;
+    }
+    .quick-start .appointment .txt {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5em;
+    }
+    .quick-start .category .txt {
+        position: absolute;
+        top: 70%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5em;
+    }
+
+    /* ----- news ----- */
+    .news {
+        min-height: 100vh;
+        margin-bottom: 5em;
+    }
+    .news .pic {
+        width: 80%;
+        margin: auto;
+    }
+    .container.news .product .row {
+        flex-wrap: wrap-reverse;
+    }
+    /* ----- appointment ----- */
+    .container.appointment {
+        margin-top: 3em;
+    }
+    .appointment .pic {
+        display: none;
+    }
+    .appointment .time-12,
+    .appointment .time-15,
+    .appointment .time-19 {
+        margin: 0.2em 0;
+        width: .8em;
+        height: .8em;
+        border-radius: 50%;
+        display: block;
+    }
+    .appointment #calendarFooter #timePeriod span {
+        display: block;
+    }
+    .appointmentBlock {
+        width: 95%;
+    }
+    /* ----- category ----- */
+    .category-list > label {
+        transition: 1s;
+        background: linear-gradient(90deg, #61413555, transparent) no-repeat;
+        background-position: .5em 1em;
+        display: inline-block;
+        padding: 0.2em 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 0.8em;
+    }
+    #check-single:checked ~ .category .category-list > label:nth-child(1),
+    #check-cateyes:checked ~ .category .category-list > label:nth-child(2),
+    #check-gradual:checked ~ .category .category-list > label:nth-child(3),
+    #check-french:checked ~ .category .category-list > label:nth-child(4),
+    #check-custom:checked ~ .category .category-list > label:nth-child(5) {
+        background-position: left top;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main .container:not(.quick-start) .row {
+        width: 80%;
+    }
+    /* ----- quick start ----- */
+    .quick-start .panel {
+        min-height: 100vh;
+    }
+    /* background */
+    .panel.appointment {
+        background: linear-gradient(-90deg, #fff 10%, #fff5 100%),
+                    url('../img/background/calendar.jpg') no-repeat center center / cover;
+    }
+    .panel.category {
+        background: linear-gradient(90deg, #fff 10%, #fff5 100%),
+                    url('../img/background/style3.jpeg') no-repeat bottom center / cover;
+    }
+    .quick-start .appointment .txt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5em;
+    }
+    .quick-start .category .txt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5em;
+    }
+
+    /* ----- news ----- */
+    .news .pic {
+        width: 40%;
+        margin: auto;
+    }
+
+    /* ----- appointment ----- */
+    .appointment .time-12,
+    .appointment .time-15,
+    .appointment .time-19 {
+        margin: 2em .3em 1em;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .appointmentBlock {
+        width: 70%;
+    }
+    
+    /* ----- category ----- */
+    .category .category-list > label {
+        cursor: pointer;
+        display: block;
+        padding: 1em;
+    }
+    .category .category-list > label:before {
+        content: '';
+        height: 1px;
+        width: 0;
+        background-color: #614135;
+        display: inline-block;
+        margin: 0 1em;
+        vertical-align: middle;
+        transition: .5s;
+    }
+    #check-single:checked ~ .category .category-list > label:nth-child(1):before,
+    #check-cateyes:checked ~ .category .category-list > label:nth-child(2):before,
+    #check-gradual:checked ~ .category .category-list > label:nth-child(3):before,
+    #check-french:checked ~ .category .category-list > label:nth-child(4):before,
+    #check-custom:checked ~ .category .category-list > label:nth-child(5):before {
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    /* ----- category ----- */
+    .category .category-list > label:after {
+        content: attr(data-eng-title);
+        padding-left: 10px;
+    }
+    .appointmentBlock {
+        width: 40%;
+    }
 }

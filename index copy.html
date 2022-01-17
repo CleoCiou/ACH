@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACH Nails Studio</title>
+    
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+<!-- header append from common.js -->
+<header></header>
+
+<!-- main -->
+<main>
+    <!-- quick start -->
+    <section class="container quick-start">
+        <div class="row row-cols-1 row-cols-md-2">
+
+            <!-- logo: go to news -->
+            <a class="logo" href="#">
+                <div class="pic">
+                    <img src="img/logo_nb.png" alt="LOGO">
+                </div>
+                <p>ACH Nails Studio.</p>
+                <p>個人居家美甲工作室</p>
+                <span>Enter</span>
+            </a>
+            <!-- go to appointment.html -->
+            <a class="col panel appointment" href="#">
+                <div class="txt">
+                    <h2>預約</h2>
+                </div>
+            </a>
+            <!-- go to category -->
+            <a class="col panel category" href="#">
+                <div class="txt">
+                    <h2>樣式</h2>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- news -->
+    <section class="container news">
+        <h2 class="col-12 title" data-eng-title="News">最新活動</h2>
+        <span class="last-btn"></span>
+        <span class="next-btn"></span>
+        <div class="wrap">
+            <!-- new style -->
+            <div class="product">
+                <div class="row row-cols-1 row-cols-md-2 align-items-center">
+                    <div class="col txt">
+                        <h3 class="productName">花樣中國紅</h3>
+                        <p>勝日尋芳泗水濱，無邊光景一時新。<br>等閑識得東風麵，萬紫千紅總是春。</p>
+                        <button class="appointment-btn">預約</button>
+                    </div>
+                    <div class="col pic">
+                        <img src="img/products/redflow.jpg" alt="花樣中國紅">
+                    </div>
+                </div>
+            </div>
+            <!-- on sale -->
+            <div class="product">
+                <div class="row row-cols-1 row-cols-md-2 align-items-center">
+                    <div class="col txt">
+                        <h3 class="productName">南雅奇岩</h3>
+                        <p>靈感來自於有個叫「南雅奇岩」的美麗岩石岩面上的紋路就像樹木年輪，記錄了大自然經年歲月的痕跡與生命力。</p>
+                        <button class="appointment-btn">預約</button>
+                    </div>
+                    <div class="col pic">
+                        <img src="img/products/nanya_rock.jpg" alt="南雅奇岩樣式">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- appointment -->
+    <section class="container appointment">
+        <h2 class="col-12 title" data-eng-title="Appointment">預約</h2>
+        <div class="row align-items-center">
+
+            <div class="col-12 col-md-4 pic">
+                <img src="img/products/special11.JPG" alt="樣式6">
+            </div>
+
+            <div class="col-12 col-md-8 schedule">
+                <!-- schedule append from common.js -->
+                <div id="schedule"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- check category -->
+    <input type="radio" name="category" id="check-single" value="單色|跳色 Single|Jump" checked>
+    <input type="radio" name="category" id="check-cateyes" value="貓眼|鏡面 CatEyes|Mirror">
+    <input type="radio" name="category" id="check-gradual" value="單色漸層 Single Gardual">
+    <input type="radio" name="category" id="check-french" value="法式漸層 French Gardual">
+    <input type="radio" name="category" id="check-custom" value="客製化樣式 Custom Style">
+    <!-- category -->
+    <section class="container category">
+        <h2 class="col-12 title" data-eng-title="Category">樣式</h2>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-7 category-list">
+                <label data-eng-title="Single | Jump" for="check-single">單色 | 跳色</label>
+                <label data-eng-title="CatEyes | Mirror" for="check-cateyes">貓眼 | 鏡面</label>
+                <label data-eng-title="Single Gardual" for="check-gradual">單色漸層</label>
+                <label data-eng-title="French Gardual" for="check-french">法式漸層</label>
+                <label data-eng-title="Custom Gardual" for="check-custom">客製化造型</label>
+            </div>
+            <div class="col-12 col-md-5 pic">
+                <img src="img/products/16.jpeg" alt="單色">
+                <span class="select">select</span>
+                <span class="last-btn"></span>
+                <span class="next-btn"></span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- footer append from common.js -->
+<footer></footer>
+
+</body>
+</html>
+<script>
+    // let container = document.querySelectorAll('main .container');
+    // function init() {
+    //     for (let i = 0; i < container.length; i++) {
+    //         container[i].addEventListener('wheel', function(e) {
+    //             changePage(e);
+    //         });
+    //     }
+    // }
+
+    // let newsIndex = 0;
+    // function changePage(e) {
+    //     e.preventDefault();
+    //     // console.log(e.path);
+
+    //     // get container node
+    //     let parentNode = e.path[e.path.length - 6];
+    //     let nowIndex = Array.from(container).indexOf(parentNode);
+    //     let el;
+    //     switch (nowIndex) {
+    //         // quick start
+    //         case 0:
+    //             // appointment
+    //             el = container[nowIndex].querySelectorAll('.appointment')[0];
+    //             if (e.deltaY > 0) {
+    //                 el.style.setProperty('--mx', '-50px');
+    //                 el.style.setProperty('--my', '-50px');
+    //                 el.style.setProperty('--opacity', '0');
+    //             }
+    //             else if (e.deltaY < 0) {
+    //                 el.removeAttribute('style');
+    //             }
+    //             // category
+    //             el = container[nowIndex].querySelectorAll('.category')[0];
+    //             if (e.deltaY > 0) {
+    //                 el.style.setProperty('--mx', '50px');
+    //                 el.style.setProperty('--my', '50px');
+    //                 el.style.setProperty('--opacity', '0');
+    //             }
+    //             else if (e.deltaY < 0) {
+    //                 el.removeAttribute('style');
+    //             }
+    //             // logo
+    //             el = container[nowIndex].querySelectorAll('.logo')[0];
+    //             if (e.deltaY > 0) {
+    //                 el.style.setProperty('--rotateX', '1');
+    //                 el.style.setProperty('--opacity', '0');
+    //                 // next container: news
+    //                 setTimeout(() => {
+    //                     container[nowIndex].style.setProperty('--zindex', '-1');
+    //                 }, 2000);
+    //                 container[nowIndex + 1].style.setProperty('--zindex', '1');
+    //                 container[nowIndex + 1].style.setProperty('--opacity', '1');
+    //                 newsIndex = 0;
+    //             }
+    //             else if (e.deltaY < 0) {
+    //                 el.removeAttribute('style');
+    //             }
+
+    //             break;
+
+    //         // news
+    //         case 1:
+    //             el = container[nowIndex].querySelectorAll('.wrap')[0];
+    //             let news = el.querySelectorAll('.product');
+
+    //             if (e.deltaY > 0) {
+    //                 if ((newsIndex + 1) === news.length) {
+    //                     // next container: calendar
+    //                     setTimeout(() => {
+    //                         container[nowIndex].style.setProperty('--zindex', '-1');
+    //                     }, 2000);
+    //                     container[nowIndex].style.setProperty('--opacity', '0');
+    //                     container[nowIndex + 1].style.setProperty('--zindex', '1');
+    //                     container[nowIndex + 1].style.setProperty('--opacity', '1');
+    //                     newsIndex = 0;
+    //                 }
+    //                 else {
+    //                     newsIndex++;
+    //                     el.style.setProperty('--mx', `${-1 * newsIndex *100}%`);
+    //                 }
+    //             }
+    //             else if (e.deltaY < 0) {
+    //                 if ((newsIndex - 1) === -1) {
+    //                     // newsIndex = news.length - 1;
+    //                     // el.style.setProperty('--mx', `${-1 * newsIndex *100}%`);
+    //                     container[nowIndex - 1].removeAttribute('style');
+    //                     // container[nowIndex].style.setProperty('--zindex', '-1')
+    //                     container[nowIndex-1].style.setProperty('--zindex', '5')
+    //                     console.log(container[nowIndex-1]);
+    //                 }
+    //                 else {
+    //                     newsIndex--;
+    //                     el.style.setProperty('--mx', `${-1 * newsIndex *100}%`);
+    //                 }
+    //             }
+    //             break;
+    //     }
+        
+
+        /*
+        console.log(nowIndex);
+        // console.log(parentNode);
+        // console.log(container[nowIndex + 1]);
+        // console.log(e.deltaY);
+        console.log(Array.from(container).indexOf(parentNode));
+        if (e.deltaY > 0 && opacity > 0.2) {
+            opacity -= 0.2;
+            parentNode.style.opacity = opacity;
+            // container[nowIndex + 1].style.opacity = (1 - opacity);
+            // console.log(1);
+        }
+        else if (e.deltaY < 0 && opacity < 1.2) {
+            opacity += 0.2;
+            parentNode.style.opacity = opacity;
+            container[nowIndex + 1].style.opacity = (1 - opacity);
+        }
+    }
+    */
+
+    window.addEventListener('load', init);
+</script>

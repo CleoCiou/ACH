@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACH Nails Studio |預約</title>
+    
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/appointment.css">
+
+</head>
+<body>
+<!-- header append from common.js -->
+<header></header>
+
+<!-- main -->
+<main>
+    <input type="checkbox" id="check-info">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+
+                <!-- step1: select style -->
+                <div class="wrap row">
+                    <div class="col title">
+                        <span data-step="I">選擇樣式</span>
+                    </div>
+                    <div class="col slider-wrap">
+                            <span class="last-btn"></span>
+                            <span class="next-btn"></span>
+                        <div class="slider">
+                            <div class="col item active">
+                                <div class="pic">
+                                    <img src="img/products/redflow.jpg">
+                                </div>
+                                <div class="txt">
+                                    <h3>花樣中國紅</h3>
+                                    <p>勝日尋芳泗水濱，無邊光景一時新。<br>等閑識得東風麵，萬紫千紅總是春。</p>
+                                </div>
+                            </div>
+                            <div class="col item">
+                                <div class="pic">
+                                    <img src="img/products/nanya_rock.jpg">
+                                </div>
+                                <div class="txt">
+                                    <h3>南雅奇岩</h3>
+                                    <p>岩面上的紋路就像樹木年輪，記錄了大自然經年歲月的痕跡與生命力。</p>
+                                </div>
+                            </div>
+                            <div class="col item">
+                                <div class="pic">
+                                    <img src="img/products/special2.jpg">
+                                </div>
+                                <div class="txt">
+                                    <h3>海洋傳說</h3>
+                                    <p>海浪打在礁石上，碎玉似的濺開，像一簇簇白梅，微雨似的紛落在海裡...</p>
+                                </div>
+                            </div>
+                            <div class="col item">
+                                <div class="pic">
+                                    <img src="img/products/39.jpeg">
+                                </div>
+                                <div class="txt">
+                                    <h3>大地水彩</h3>
+                                    <p>用素描寫下大地的無情與悲涼，<br>用水彩描繪生命的堅韌與重生。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- step2: select date -->
+                <div class="wrap row">
+                    <div class="col title">
+                        <span data-step="II">選擇日期</span>
+                    </div>
+                    <div class="col item">
+                        <div class="schedule" id="schedule"></div>
+                    </div>
+                </div>
+
+                <!-- step3: form -->
+                <div class="wrap row">
+                    <div class="col title">
+                        <span data-step="III">確認預約資料</span>
+                    </div>
+                    <div class="col item user-info">
+                        <form>
+                            <!-- selected style -->
+                            <div class="info">
+                                <label for="style">樣式名稱: </label>
+                                <input type="text" id="style">
+                            </div>
+                            <!-- appointment date -->
+                            <div class="info">
+                                <label for="date">預約日期: </label>
+                                <input type="date" id="date">
+                            </div>
+                            <!-- appointment time -->
+                            <div class="info">
+                                <label for="date">預約時段: </label>
+                                <select id="date">
+                                    <option>12:00~15:00</option>
+                                    <option>15:00~18:00</option>
+                                    <option>19:00~22:00</option>
+                                </select>
+                            </div>
+                            <!-- customer name -->
+                            <div class="info">
+                                <label for="custName">姓名: </label>
+                                <input type="text" id="custName">
+                            </div>
+                            <!-- customer phone -->
+                            <div class="info">
+                                <label for="custName">電話: </label>
+                                <input type="tel" id="custTel">
+                            </div>
+                            <!-- customer email -->
+                            <div class="info">
+                                <label for="custName">信箱: </label>
+                                <input type="email" id="custEmail">
+                            </div>
+                            <!-- customer payment -->
+                            <div class="info">
+                                <label>付款方式: </label>
+                                <input type="radio" id="cash" name="pay">
+                                <label for="cash">現金</label>
+                                <input type="radio" class="credit" id="credit" name="pay">
+                                <label for="credit">信用卡</label>
+                                <label for="creditNum" class="credit-num">卡號: </label>
+                                <input type="text" class="credit-num" id="creditNum">
+                            </div>
+                            <div class="info">
+                                <input type="submit" value="預約" class="appointment-btn">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- footer append from common.js -->
+<footer></footer>
+
+</body>
+</html>
+<script>
+    function init() {
+        // create step1: last, next btn click eventlistener
+        let lastBtn = document.querySelectorAll('.last-btn')[0];
+        lastBtn.addEventListener('click', function() {
+            changeItem('prev');
+        });
+        let nextBtn = document.querySelectorAll('.next-btn')[0];
+        nextBtn.addEventListener('click', function() {
+            changeItem('next');
+        });
+    }
+
+    // change item when click last, next button
+    function changeItem(item) {
+        // get all product
+        let product = document.querySelectorAll('.slider .item');
+        // get now product
+        let active = document.querySelectorAll('.slider .item.active')[0];
+        // get now product index from all product
+        let nextActive = Array.from(product).indexOf(active);
+        switch (item) {
+            case 'prev':
+                nextActive--;
+                if (nextActive === -1) nextActive = product.length - 1;
+                break;
+            case 'next':
+                nextActive++;
+                if (nextActive === product.length) nextActive = 0;
+                break;
+        }
+        
+        document.querySelectorAll('.slider')[0].style.left =( -1 * nextActive * product[nextActive].clientWidth - nextActive *100) + 'px';
+        // switch product
+        active.classList.remove('active');
+        product[nextActive].classList.add('active');
+    }
+    
+    window.addEventListener('load', init);
+</script>

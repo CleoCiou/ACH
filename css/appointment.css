@@ -1,0 +1,164 @@
+main {
+    background: none;
+    padding-top: 3em;
+}
+.container {
+    position: relative;
+}
+.container:before {
+    content: '';
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 70%;
+    top: 0;
+    left: 0;
+    opacity: .3;
+    background: linear-gradient(to bottom, transparent 50%, #fff 100%),
+                url('../img/background/rock.jpg') no-repeat left top / cover;
+    z-index: 1;
+}
+.container:after {
+    content: '';
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    left: 0;
+    opacity: .3;
+    background: linear-gradient(to top, transparent 50%, #fff 100%),
+                url('../img/background/room.jpg') no-repeat left bottom 30% / cover;
+    z-index: 1;
+}
+.row {
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+.wrap.row {
+    justify-content: center;
+}
+.wrap.row > .title {
+    position: sticky;
+    top: 3em;
+}
+.container > .row > .col-12 {
+    position: relative;
+}
+main .container > .row > .col-12:after {
+    content: '';
+    width: 15em;
+    height: 1.2em;
+    display: block;
+    position: fixed;
+    top: 4em;
+    left: 0;
+    transform: translate(1em, -50%);
+    background-color: #61413550;
+    /* border-radius: 50%; */
+}
+.wrap {
+    padding-bottom: 30px;
+}
+.wrap > .col {
+    width: 100%;
+}
+.wrap .col > span {
+    font-size: 1.5em;
+}
+.wrap .col > span:before {
+    content: attr(data-step);
+    margin-right: 1em;
+}
+.pic img {
+    width: 70%;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+.credit:checked ~ .credit-num {
+    display: initial;
+}
+.credit-num {
+    display: none;
+}
+.info {
+    padding: 5px 0;
+}
+.wrap:first-child .item {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+}
+.wrap .slider-wrap {
+    overflow: hidden;
+    position: relative;
+}
+.slider {
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    left: 0;
+}
+.wrap .slider .col.item {
+    width: 100%;
+    flex-shrink: 0;
+    margin-right: 100px;
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translate(0, -25px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+.fade-in {
+    animation: fade-in 2s forwards;
+}
+@media screen and (max-width: 767px) {
+    .wrap .slider-wrap {
+        width: 100%;
+    }
+}
+@media  screen and (min-width: 768px) {
+    header .main-nav a:nth-child(2) {
+        position: relative;
+        color: #614135;
+        border-bottom: 1px solid #614135;
+    }
+
+    .container:before {
+        width: 65%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        left: auto;
+        background: url('../img/background/rock.jpg') no-repeat left top / cover;
+        z-index: -1;
+    }
+    .container:after {
+        width: 35%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url('../img/background/room.jpg') no-repeat left bottom 30% / cover;
+        z-index: -1;
+    }
+    .wrap .item {
+        width: 55%;
+    }
+    .wrap .slider-wrap {
+        width: 55%;
+    }
+    .wrap > .col:first-child {
+        width: 35%;
+        text-align: center;
+    }
+    main .container > .row > .col-12:after {
+        background-color: transparent;
+    }
+}
