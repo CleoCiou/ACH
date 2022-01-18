@@ -167,9 +167,9 @@ function init() {
     footerAbout.addEventListener('animationend', function(e){
         // console.log(document.cookie);
         let cookie = document.cookie.split(';');
-        if (cookie.indexOf(' footer') === -1) {
+        if (cookie.indexOf(' footer=check') === -1) {
             alert('找到一張9折優惠券!');
-            document.cookie = 'footer';
+            document.cookie = 'footer=check';
         }
         else {
             alert('這裡沒有東西了!');
