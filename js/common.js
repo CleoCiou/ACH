@@ -103,20 +103,19 @@ function init() {
                 <div class="col category">
                     <label class="list-title" for="check-category">樣式</label>
                     <ul>
-                        <li><a href="products.html">最新活動</a></li>
-                        <li><a href="products.html">單色 | 跳色</a></li>
-                        <li><a href="products.html">貓眼 | 鏡面</a></li>
-                        <li><a href="products.html">單色漸層</a></li>
-                        <li><a href="products.html">法式凝膠</a></li>
-                        <li><a href="products.html">客製化造型</a></li>
+                        <li><a href="index.html#news">最新活動</a></li>
+                        <li><a href="product.html">單色 | 跳色</a></li>
+                        <li><a href="product.html">貓眼 | 鏡面</a></li>
+                        <li><a href="product.html">單色漸層</a></li>
+                        <li><a href="product.html">法式凝膠</a></li>
+                        <li><a href="product.html">客製化造型</a></li>
                     </>
                 </div>
                 <div class="col appointment">
                     <label class="list-title" for="check-appointment">預約</label>
                     <ul>
                         <li><a href="appointment.html">立即預約</a></li>
-                        <li><a href="member.html?p=appointment">預約行事曆</a></li>
-                        <li><a href="member.html?p=like">我的收藏</a></li>
+                        <li><a href="index.html">預約行事曆</a></li>
                     </ul>
                 </div>
 
@@ -124,10 +123,10 @@ function init() {
                     <label class="list-title" for="check-others">其他資訊</label>
                     <ul>
                         <li><a href="information.html">價目表</a></li>
-                        <li><a href="information.html?f=appointmentFlow">預約流程</a></li>
-                        <li><a href="information.html?f=appointmentNotice">預約須知</a></li>
-                        <li><a href="information.html?f=covid19">防疫公告</a></li>
-                        <li><a href="information.html?f=faq">FAQ</a></li>
+                        <li><a href="information.html">預約流程</a></li>
+                        <li><a href="information.html">預約須知</a></li>
+                        <li><a href="information.html">防疫公告</a></li>
+                        <li><a href="information.html">FAQ</a></li>
                     </ul>
                 </div>
 
