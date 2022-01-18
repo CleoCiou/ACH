@@ -161,16 +161,13 @@ function init() {
     if (document.getElementById('schedule') !== null) createCalendar();
 
     let footerAbout = document.querySelectorAll('footer .col.about')[0];
-    footerAbout.addEventListener('touchstart', function(){
-        footerAbout.style.animation = 'rotate 1s';
-    })
     footerAbout.addEventListener('click', function(){
         footerAbout.style.animation = 'rotate 1s';
     })
     footerAbout.addEventListener('animationend', function(e){
         // console.log(document.cookie);
         let cookie = document.cookie.split(';');
-        if (cookie.indexOf('footer') === -1) {
+        if (cookie.indexOf(' footer') === -1) {
             alert('找到一張9折優惠券!');
             document.cookie = 'footer';
         }
